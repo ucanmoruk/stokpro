@@ -90,7 +90,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.combo_deger.Properties.Items.AddRange(new object[] {
             "Uygun",
-            "Uygun Değil"});
+            "Uygun Değil",
+            "Değerlendirme Yapılmadı"});
             this.combo_deger.Size = new System.Drawing.Size(142, 20);
             this.combo_deger.TabIndex = 3;
             // 

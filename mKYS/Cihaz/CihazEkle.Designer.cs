@@ -649,7 +649,7 @@
             this.tabNavigationPage1.Controls.Add(this.labelControl2);
             this.tabNavigationPage1.Controls.Add(this.labelControl1);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(853, 354);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(991, 356);
             // 
             // btn_print
             // 
@@ -679,7 +679,7 @@
             this.gridControl5.Location = new System.Drawing.Point(503, 25);
             this.gridControl5.MainView = this.gridView8;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(338, 303);
+            this.gridControl5.Size = new System.Drawing.Size(464, 303);
             this.gridControl5.TabIndex = 13;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8});
@@ -898,9 +898,9 @@
             this.tabNavigationPage1,
             this.tabNavigationPage2,
             this.tabNavigationPage4});
-            this.tabPane1.RegularSize = new System.Drawing.Size(853, 381);
+            this.tabPane1.RegularSize = new System.Drawing.Size(991, 383);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(853, 381);
+            this.tabPane1.Size = new System.Drawing.Size(991, 383);
             this.tabPane1.TabIndex = 9;
             this.tabPane1.Text = "Cihaz Bilgileri";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
@@ -960,15 +960,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(853, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(991, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 381);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 383);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(853, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(991, 0);
             // 
             // barDockControlLeft
             // 
@@ -976,21 +976,21 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 381);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 383);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(853, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(991, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 381);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 383);
             // 
             // CihazEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 381);
+            this.ClientSize = new System.Drawing.Size(991, 383);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

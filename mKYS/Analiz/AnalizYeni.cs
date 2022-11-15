@@ -40,16 +40,6 @@ namespace mKYS.Analiz
             gridLookUpEdit2.Properties.ValueMember = "ID";
         }
 
-        //void birimbul()
-        //{
-        //    SqlCommand komut2 = new SqlCommand("Select Birim from StokFirmaBirim where FirmaID = N'" + Anasayfa.firmaID + "' and Durum = N'Aktif' ", bgl.baglanti());
-        //    SqlDataReader dr2 = komut2.ExecuteReader();
-        //    while (dr2.Read())
-        //    {
-        //        combo_birim.Properties.Items.Add(dr2[0]);
-        //    }
-        //    bgl.baglanti().Close();
-        //}
 
         int akod;
         void kontrol()
@@ -81,7 +71,8 @@ namespace mKYS.Analiz
 
         void ekleme()
         {
-            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7) ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim, Method, AdEn, MethodEn, Sure, Numune, NumGereklilik, NumDipnot, NumDipnotEn) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14,@a15) " +
+                " SET @ID=SCOPE_IDENTITY();", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             if (String.IsNullOrEmpty(kaynak))
@@ -103,11 +94,27 @@ namespace mKYS.Analiz
             {
                 add.Parameters.AddWithValue("@a7", birim);
             }
+            add.Parameters.AddWithValue("@a8", txt_method.Text);
+            add.Parameters.AddWithValue("@a9", txt_aden.Text);
+            add.Parameters.AddWithValue("@a10", txt_methoden.Text);
+            add.Parameters.AddWithValue("@a11", Convert.ToInt32(txt_sure.Text));
+            add.Parameters.AddWithValue("@a12", memoEdit1.Text);
+            add.Parameters.AddWithValue("@a13", txt_gerek.Text);
+            add.Parameters.AddWithValue("@a14", memoEdit2.Text);
+            add.Parameters.AddWithValue("@a15", memoEdit3.Text);
+            add.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
             add.ExecuteNonQuery();
+            string AnalizID = add.Parameters["@ID"].Value.ToString();
             bgl.baglanti().Close();
 
             MessageBox.Show("Yeni analiz başarıyla eklenmiştir!", "Ooppsss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
+            AnalizAlt.AnalizID = AnalizID;
+            this.Close();
+            AnalizAlt fr = new AnalizAlt();
+            fr.Show();
+         
+            
         }
 
         void listele()
@@ -125,13 +132,22 @@ namespace mKYS.Analiz
                 string gmetot = drI["Metot"].ToString();
                 gridLookUpEdit1.EditValue = gbirim;
                 gridLookUpEdit2.EditValue = gmetot;
+                txt_aden.Text = drI["AdEn"].ToString();
+                txt_method.Text = drI["Method"].ToString();
+                txt_methoden.Text = drI["MethodEn"].ToString();
+                txt_sure.Text = drI["Sure"].ToString();
+                txt_gerek.Text = drI["NumGereklilik"].ToString();
+                memoEdit1.Text = drI["Numune"].ToString();
+                memoEdit2.Text = drI["NumDipnot"].ToString();
+                memoEdit3.Text = drI["NumDipnotEn"].ToString();
             }
             bgl.baglanti().Close();
         }
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 where Kod = '"+kod+"' ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 , " +
+                " Method=@a8, AdEn=@a9, MethodEn=@a10, Sure=@a11, Numune=@a12, NumGereklilik=@a13, NumDipnot = @a14, NumDipnotEn = @a15 where ID = '" + aID+"' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             if (String.IsNullOrEmpty(kaynak))
@@ -152,16 +168,25 @@ namespace mKYS.Analiz
             {
                 add.Parameters.AddWithValue("@a6", birim);
             }
+            add.Parameters.AddWithValue("@a8", txt_method.Text);
+            add.Parameters.AddWithValue("@a9", txt_aden.Text);
+            add.Parameters.AddWithValue("@a10", txt_methoden.Text);
+            add.Parameters.AddWithValue("@a11", Convert.ToInt32(txt_sure.Text));
+            add.Parameters.AddWithValue("@a12", memoEdit1.Text);
+            add.Parameters.AddWithValue("@a13", txt_gerek.Text);
+            add.Parameters.AddWithValue("@a14", memoEdit2.Text);
+            add.Parameters.AddWithValue("@a15", memoEdit3.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
             MessageBox.Show("Analiz bilgileri başarıyla güncellenmiştir!", "Ooppsss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
         }
 
-        public static string kod;
+        public static string kod, aID;
         private void AnalizYeni_Load(object sender, EventArgs e)
         {
-            if (kod == "" || kod == null)
+            if (aID == "" || aID == null)
             {                
                 glistele();
             }
@@ -181,7 +206,8 @@ namespace mKYS.Analiz
 
             if (btn_add.Text == "Güncelle")
             {
-                guncelle();
+                guncelle(); 
+           
             }
             else
             {
@@ -207,6 +233,15 @@ namespace mKYS.Analiz
                         gridLookUpEdit1.EditValue = null;
                         gridLookUpEdit2.EditValue = null;
                         combo_akre.Text = "";
+                        txt_sure.Text = "";
+                        txt_aden.Text = "";
+                        txt_gerek.Text = "";
+                        txt_method.Text = "";
+                        txt_methoden.Text = "";
+                        memoEdit1.Text = "";
+                        memoEdit2.Text = "";
+                        memoEdit3.Text = "";
+
                     }
 
                    
@@ -281,10 +316,23 @@ namespace mKYS.Analiz
                 birim = gridLookUpEdit1.EditValue.ToString();
         }
 
+        private void txt_sure_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08 && e.KeyChar != (char)44)
+            // text'e sadece sayıların girmesi,geri silme tuşu(ascii kodu:08),virgül(ascii kodu:44) karakterinin girilmesini sağlar.
+            //del tuşununda aktif olmasını isterseniz del ascıı kodu:127
+            //
+            {
+                e.Handled = true;
+            }
+
+        }
 
         private void AnalizYeni_FormClosing(object sender, FormClosingEventArgs e)
         {
-            kod = "";
+            kod = null;
+            aID = null;
         }
 
     }

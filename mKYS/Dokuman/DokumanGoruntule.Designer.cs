@@ -52,7 +52,6 @@
             this.Name = "DokumanGoruntule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doküman Görüntüleme";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DokumanGoruntule_FormClosing);
             this.Load += new System.EventHandler(this.DokumanGoruntule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();

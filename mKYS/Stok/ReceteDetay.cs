@@ -27,7 +27,7 @@ namespace mKYS.Stok
          //   SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'"+skod+"' order by r.StokKod", bgl.baglanti());
          //   SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
             SqlDataAdapter da2 = new SqlDataAdapter("select l.Kod, l.Ad, l.Miktar as 'Stok Miktarı', r.Miktar as 'Kullanılan Miktar', l.Birim, l.Limit as 'Kritik Limit' " +
-                " from StokListesi l left join StokRecete r on l.ID = r.StokID where r.AnalizID = '" + aID + "'", bgl.baglanti());
+                " from StokListesi l left join StokRecete r on l.ID = r.StokID where r.AnalizID = '" + aID + "' order by l.Kod", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -90,6 +90,11 @@ namespace mKYS.Stok
             mfrm.YeniRecete();
 
             this.Close();
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

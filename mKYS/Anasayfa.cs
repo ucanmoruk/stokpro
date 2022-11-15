@@ -21,6 +21,8 @@ using DevExpress.XtraBars;
 using mKYS.Dokuman;
 using mKYS.Talep;
 using mKYS.Duyuru;
+using mKYS.Musteri;
+using DevExpress.LookAndFeel;
 
 namespace mKYS
 {
@@ -212,6 +214,10 @@ namespace mKYS
             kullanicibul();
             firmabul();
             yetkibul();
+
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.Dragonfly);
+
+
             //if (Giris.db == "2")
             //{
             //    tanitim();
@@ -506,7 +512,7 @@ namespace mKYS
         {
             var mfrm = (DuyuruListe)Application.OpenForms["DuyuruListe"];
             if (mfrm != null)
-                mfrm.okundu();
+                mfrm.Okundu();
         }
 
         Duyuru.DuyuruEx dex;
@@ -651,6 +657,129 @@ namespace mKYS
                 de = new Cihaz.BakimDetay();
                 de.MdiParent = this;
                 de.Show();
+            }
+        }
+        
+        Musteri.Teklif te;
+        private void barButtonItem71_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (te == null || te.IsDisposed)
+            {
+                te = new Teklif();
+                te.MdiParent = this;
+                te.Show();
+            }
+        }
+
+        Limit lim;
+        private void barButtonItem69_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lim == null || lim.IsDisposed)
+            {
+                lim = new Limit();
+                lim.MdiParent = this;
+                lim.Show();
+            }
+        }
+
+        TanimlamaListesi til;
+        private void barButtonItem76_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (til == null || til.IsDisposed)
+            {
+                til = new TanimlamaListesi();
+                til.MdiParent = this;
+                til.Show();
+            }
+        }
+
+        private void barButtonItem77_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            NumuneKabul nk = new NumuneKabul();
+            nk.Show();
+        }
+
+        NKR n;
+        private void barButtonItem75_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (n == null || n.IsDisposed)
+            {
+                n = new NKR();
+                n.MdiParent = this;
+                n.Show();
+            }
+
+        }
+
+        Musteri.GorusmeList gl;
+        private void barButtonItem78_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (gl == null || gl.IsDisposed)
+            {
+                gl = new GorusmeList();
+                gl.MdiParent = this;
+                gl.Show();
+            }
+        }
+
+        private void barButtonItem79_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Musteri.GorusmeEkle ge = new Musteri.GorusmeEkle();
+            ge.Show();
+        }
+
+        ProformaListesi pol;
+        private void barButtonItem72_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (pol == null || pol.IsDisposed)
+            {
+                pol = new ProformaListesi();
+                pol.MdiParent = this;
+                pol.Show();
+            }
+
+        }
+
+        Firmalar fil;
+        private void barButtonItem74_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (fil == null || fil.IsDisposed)
+            {
+                fil = new Firmalar();
+                fil.MdiParent = this;
+                fil.Show();
+            }
+        }
+
+        Faturax fx;
+        private void barButtonItem73_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (fx == null || fx.IsDisposed)
+            {
+                fx = new Faturax();
+                fx.MdiParent = this;
+                fx.Show();
+            }
+        }
+
+        TalepListe tel;
+        private void barButtonItem80_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tel == null || tel.IsDisposed)
+            {
+                tel = new TalepListe();
+                tel.MdiParent = this;
+                tel.Show();
+            }
+        }
+
+        private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //stok listesi
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.StokListesi();
+                frm.ShowDialog();
             }
         }
 

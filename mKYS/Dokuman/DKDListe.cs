@@ -264,11 +264,19 @@ namespace mKYS.Dokuman
 
         string dkdkod, dkdad, dID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            dkdkod = dr["Kod"].ToString();
-            dkdad = dr["Ad"].ToString();
-            dID = dr["ID"].ToString();
+        {        
+            try
+            {
+                DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                dkdkod = dr["Kod"].ToString();
+                dkdad = dr["Ad"].ToString();
+                dID = dr["ID"].ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Aradığınız doküman bulunamamıştır!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
         }
     }
 }

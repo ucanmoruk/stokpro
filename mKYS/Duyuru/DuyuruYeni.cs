@@ -41,7 +41,7 @@ namespace mKYS.Duyuru
 
                 SqlCommand add = new SqlCommand("insert into StokDuyuru (PersonelID, Tarih, Konu, Duyuru, Durum) values (@a1, @a2, @a3, @a4, @a5) SET @ID = SCOPE_IDENTITY() ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
-                add.Parameters.AddWithValue("@a2", tarih);
+                add.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
                 add.Parameters.AddWithValue("@a3", txt_konu.Text);
                 add.Parameters.AddWithValue("@a4", memo_mesaj.Text);
                 add.Parameters.AddWithValue("@a5", "Aktif");

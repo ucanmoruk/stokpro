@@ -58,37 +58,44 @@ namespace mKYS.Stok
                // miktar = float.Parse(drI["Miktar"].ToString());
                 miktar = Convert.ToDouble(drI["Miktar"].ToString());
                 adet = Convert.ToDouble(txtadet.Text);
-              //  float adet = float.Parse(txtadet.Text);
+                //  float adet = float.Parse(txtadet.Text);
 
-                dusus = miktar * adet * -1;
-
-                SqlCommand add2 = new SqlCommand("insert into StokHareket (StokID, Marka,Miktar,Tarih,Hareket, BirimID, Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7)", bgl.baglanti());
-                add2.Parameters.AddWithValue("@a1", stokid);
-                add2.Parameters.AddWithValue("@a2", "Reçeteden toplu düşüş");
-                add2.Parameters.AddWithValue("@a3", dusus);
-                add2.Parameters.AddWithValue("@a4", dateEdit1.EditValue);
-                add2.Parameters.AddWithValue("@a5", "Çıkış");
-                add2.Parameters.AddWithValue("@a6", Anasayfa.birimID);
-                add2.Parameters.AddWithValue("@a7", "Aktif");
-                add2.ExecuteNonQuery();
-                bgl.baglanti().Close();
-
-
-                SqlCommand komutI = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '" + stokid + "' and Durum = 'Aktif'", bgl.baglanti());
-                SqlDataReader dra = komutI.ExecuteReader();
-                while (dra.Read())
+                if (miktar == 0)
                 {
-                    eskistok = dra[0].ToString();
+
                 }
-                bgl.baglanti().Close();
+                else
+                {
+                    dusus = miktar * adet * -1;
 
-               // yenistok = float.Parse(eskistok);
-                yenistok = Convert.ToDouble(eskistok);
+                    SqlCommand add2 = new SqlCommand("insert into StokHareket (StokID, Marka,Miktar,Tarih,Hareket, BirimID, Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7)", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@a1", stokid);
+                    add2.Parameters.AddWithValue("@a2", "Reçeteden toplu düşüş");
+                    add2.Parameters.AddWithValue("@a3", dusus);
+                    add2.Parameters.AddWithValue("@a4", dateEdit1.EditValue);
+                    add2.Parameters.AddWithValue("@a5", "Çıkış");
+                    add2.Parameters.AddWithValue("@a6", Anasayfa.birimID);
+                    add2.Parameters.AddWithValue("@a7", "Aktif");
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
 
-                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + stokid + "'", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", yenistok);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
+                    SqlCommand komutI = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '" + stokid + "' and Durum = 'Aktif'", bgl.baglanti());
+                    SqlDataReader dra = komutI.ExecuteReader();
+                    while (dra.Read())
+                    {
+                        eskistok = dra[0].ToString();
+                    }
+                    bgl.baglanti().Close();
+
+                    // yenistok = float.Parse(eskistok);
+                    yenistok = Convert.ToDouble(eskistok);
+
+                    SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + stokid + "'", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", yenistok);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+               
 
             }
             bgl.baglanti().Close();
@@ -112,7 +119,6 @@ namespace mKYS.Stok
                 else
                 {
                     cikarma();
-
                     if (Application.OpenForms["StokListesi"] == null)
                     {
 
@@ -128,6 +134,7 @@ namespace mKYS.Stok
 
             }
         }
+
 
         private void txtadet_KeyPress(object sender, KeyPressEventArgs e)
         {

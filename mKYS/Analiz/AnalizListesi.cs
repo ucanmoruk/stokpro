@@ -47,12 +47,14 @@ namespace mKYS.Analiz
             {
                 barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             else
             {
                 barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             }
 
         }
@@ -103,6 +105,7 @@ namespace mKYS.Analiz
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Analiz.AnalizYeni.kod = skod;
+            AnalizYeni.aID = aID;
             Analiz.AnalizYeni any = new AnalizYeni();
             any.Show();
         }
@@ -145,9 +148,17 @@ namespace mKYS.Analiz
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            skod = dr["Kod"].ToString();
-            sad = dr["Analiz Adı"].ToString();
-            aID = dr["ID"].ToString();
+            if (dr == null)
+            {
+
+            }
+            else
+            {
+                skod = dr["Kod"].ToString();
+                sad = dr["Analiz Adı"].ToString();
+                aID = dr["ID"].ToString();
+            }
+
         }
 
         private void AnalizListesi_KeyDown(object sender, KeyEventArgs e)
@@ -198,6 +209,13 @@ namespace mKYS.Analiz
             AnalizDetay.skod = skod;
             AnalizDetay ad = new AnalizDetay();
             ad.Show();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AnalizAlt.AnalizID = aID;
+            AnalizAlt aa = new AnalizAlt();
+            aa.Show();
         }
 
         int redurum;

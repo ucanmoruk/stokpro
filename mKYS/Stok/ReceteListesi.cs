@@ -29,6 +29,10 @@ namespace mKYS.Stok
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView1.Columns["ID"].Visible = false;
+
+            this.gridView1.Columns[1].Width = 50;
+            this.gridView1.Columns[2].Width = 120;
+            this.gridView1.Columns[3].Width = 200;
         }
 
         int yetki;

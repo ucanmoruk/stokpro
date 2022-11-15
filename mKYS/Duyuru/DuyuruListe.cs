@@ -155,35 +155,42 @@ namespace mKYS.Duyuru
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            okundu();
-        }
-
-        public void okundu()
-        {
             if (gridView1.SelectedRowsCount == 0)
             {
                 MessageBox.Show("Lütfen seçim yapınız!", "Ooppss", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                DialogResult cikis = new DialogResult();
-                cikis = MessageBox.Show("Seçili mesajları okuduğunuzu onaylıyor musunuz?", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (cikis == DialogResult.Yes)
+                DuyuruTarih dy = new DuyuruTarih();
+                dy.Show();
+                // Okundu();
+            }
+
+        }
+
+
+        public static string ytarih;
+
+        public void Okundu()
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Seçili mesajları okuduğunuzu onaylıyor musunuz?", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (cikis == DialogResult.Yes)
+            {
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
                 {
-                    for (int i = 0; i < gridView1.SelectedRowsCount; i++)
-                    {
-                        DateTime tarih = DateTime.Now;
-                        int y = Convert.ToInt32(gridView1.GetSelectedRows()[i].ToString());
-                        kID = Convert.ToInt32(gridView1.GetRowCellValue(y, "ID").ToString());
-                        SqlCommand ad = new SqlCommand("update StokDuyuruDurum set Durum = N'Okundu' , Tarih = @a1 where DuyuruID = '" + kID + "' and PersonelID = '" + Anasayfa.kullanici + "'", bgl.baglanti());
-                        ad.Parameters.AddWithValue("@a1", tarih);
-                        ad.ExecuteNonQuery();
-                        bgl.baglanti().Close();
-                    }
-                    listele();
+                    DateTime ptarih = DateTime.Parse(ytarih);
+                    
+                    int y = Convert.ToInt32(gridView1.GetSelectedRows()[i].ToString());
+                    kID = Convert.ToInt32(gridView1.GetRowCellValue(y, "ID").ToString());
+                    SqlCommand ad = new SqlCommand("update StokDuyuruDurum set Durum = N'Okundu' , Tarih = @a1 where DuyuruID = '" + kID + "' and PersonelID = '" + Anasayfa.kullanici + "'", bgl.baglanti());
+                    ad.Parameters.AddWithValue("@a1", ptarih);
+                    ad.ExecuteNonQuery();
+                    bgl.baglanti().Close();
                 }
-            }           
-          
+                listele();
+            }
+
         }
     }
 }

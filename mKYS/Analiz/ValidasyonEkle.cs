@@ -159,7 +159,7 @@ namespace mKYS.Analiz
         int o3;
         void kontrol2()
         {
-            SqlCommand komut12 = new SqlCommand("Select Count(ID) from ValidasyonVeri where AnalizID = N'" + aID + "' and Durum = 'Aktif' and Ek= '"+txt_ek.Text+"' ", bgl.baglanti());
+            SqlCommand komut12 = new SqlCommand("Select Count(ID) from ValidasyonVeri where AnalizID = N'" + aID + "'  and Ek= '"+txt_ek.Text+ "' and Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr12 = komut12.ExecuteReader();
             while (dr12.Read())
             {

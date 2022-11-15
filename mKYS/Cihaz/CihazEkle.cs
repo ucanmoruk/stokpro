@@ -854,7 +854,7 @@ namespace mKYS.Cihaz
                 for (int i = 0; i < gridView3.SelectedRowsCount; i++)
                 {
                     int y = Convert.ToInt32(gridView3.GetSelectedRows()[i].ToString());
-                    aID = gridView2.GetRowCellValue(y, "ID").ToString();
+                    aID = gridView3.GetRowCellValue(y, "ID").ToString();
                     SqlCommand add = new SqlCommand("insert into CihazAnaliz (CihazID, AnalizID) values (@a1, @a2) ", bgl.baglanti());
                     add.Parameters.AddWithValue("@a1", lbl_ycID.Text);
                     add.Parameters.AddWithValue("@a2", aID);

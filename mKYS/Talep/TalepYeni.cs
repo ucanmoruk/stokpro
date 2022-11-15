@@ -125,6 +125,7 @@ namespace mKYS
             try
             {
                 ekleme();
+                kapama = "1";
             }
             catch (Exception ex)
             {
@@ -135,29 +136,29 @@ namespace mKYS
 
         private void TalepYeni_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //if (kapama == "1")
+            //{
+            //    DialogResult sonuc = MessageBox.Show("Yaptığınız değişiklikleri kaydetmeden çıkmak istediğinizden emin misiniz ?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (sonuc == DialogResult.No)
+            //    {
+            //        e.Cancel = true;
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        // eskisil();
+            //        //this.Close();
+
+            //    }
+            //}
+            //else
+            //{
+
+
             
-
-            if (kapama == "1")
-            {
-
-            }
-            else
-            {
-                DialogResult sonuc = MessageBox.Show("Talebinizi kaydetmeden çıkmak istediğinizden emin misiniz ?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (sonuc == DialogResult.No)
-                {
-                    e.Cancel = true;
-                    return;
-                }
-                else
-                {
-                    eskisil();
-                    //this.Close();
-                }
-            }
+            //}
 
             talepno = null;
-
 
         }
 
@@ -305,6 +306,7 @@ namespace mKYS
             {
 
                 silme();
+                kapama = "1";
             }
             catch (Exception ex)
             {

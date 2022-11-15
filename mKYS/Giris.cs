@@ -24,38 +24,40 @@ namespace mKYS
 
         private void Giris_Load(object sender, EventArgs e)
         {
-           // Control.CheckForIllegalCrossThreadCalls = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            labelControl3.Parent = pictureEdit1;
+            labelControl3.BackColor = Color.Transparent;
         }
 
         private void Giris_FormClosing(object sender, FormClosingEventArgs e)
         {
-          //  this.Close();
+         
         }
 
         private void btn_giris_Click(object sender, EventArgs e)
         {
+            if (checkEdit1.Checked == true)
+            {
+                db = "1";
+            }
             giris();
         }
 
-        public static string db;
+        public static string db, katalog;
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void txt_parola_KeyDown(object sender, KeyEventArgs e)
         {
-            //giris();
+            
         }
 
         Anasayfa f2;
         private void giris()
         {
-            //if (combo_ag.Text == "Yerel")
-            //{
-            //    db = "2";
-            //}
-            //else
-            //{
-            //    db = "1";
-            //}
-
 
             SqlCommand detay = new SqlCommand("Select * from StokKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();           

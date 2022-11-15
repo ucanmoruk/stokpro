@@ -28,8 +28,7 @@ namespace mKYS.Talep
             firmabul();
         }
 
-        decimal puanv;
-        int firmaID;
+       // int firmaID;
         void firmabul()
         {
             //SqlCommand komutID = new SqlCommand("Select * From StokTedarikci where ID = '" + fID+ "' ", bgl.baglanti());
@@ -45,7 +44,7 @@ namespace mKYS.Talep
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
-                puanv = Convert.ToDecimal(dr["Puan"].ToString());
+                puanv = dr["Puan"].ToString();
 
             }
             bgl.baglanti().Close();
@@ -62,21 +61,29 @@ namespace mKYS.Talep
             firma = null;
         }
 
+        string fpuan, puanv;
         private void btn_ok_Click(object sender, EventArgs e)
         {
             DateTime tarih = DateTime.Now;
+            fpuan = txt_puan.Text;
 
-            if (puanv == 0 || puanv.ToString() == null)
+            if (puanv == "0" || puanv == null)
             {
+                
+
                 SqlCommand add = new SqlCommand("insert StokTedarikciPuan (FirmaID, Puan, Tarih,Durum,PersonelID, Aciklama) values (@a1,@a2,@a3,@a4,@a5,@a6) ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", fID);
-                add.Parameters.AddWithValue("@a2", Convert.ToDecimal(txt_puan.Text));
+                if (String.IsNullOrEmpty(fpuan))
+                    add.Parameters.AddWithValue("@a2", DBNull.Value);
+                else
+                    add.Parameters.AddWithValue("@a2", fpuan);
                 add.Parameters.AddWithValue("@a3", tarih);
                 add.Parameters.AddWithValue("@a4", combo_deger.Text);
                 add.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
                 add.Parameters.AddWithValue("@a6", txt_aciklama.Text);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
+
             }
             else
             {
@@ -87,7 +94,10 @@ namespace mKYS.Talep
                 if (Secim == DialogResult.Yes)
                 {
                     SqlCommand add = new SqlCommand("update StokTedarikciPuan set Puan=@a1, Tarih=@a2, Durum=@a3, PersonelID=@a4, Aciklama=@a5 where FirmaID = '" + fID + "' ", bgl.baglanti());
-                    add.Parameters.AddWithValue("@a1", Convert.ToDecimal(txt_puan.Text));
+                    if (String.IsNullOrEmpty(fpuan))
+                        add.Parameters.AddWithValue("@a1", DBNull.Value);
+                    else
+                        add.Parameters.AddWithValue("@a1", fpuan);
                     add.Parameters.AddWithValue("@a2", tarih);
                     add.Parameters.AddWithValue("@a3", combo_deger.Text);
                     add.Parameters.AddWithValue("@a4", Anasayfa.kullanici);

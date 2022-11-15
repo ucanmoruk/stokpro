@@ -28,7 +28,7 @@ namespace mKYS.Talep
             DataTable dt = new DataTable();
             //select Row_number() over(order by t.Tur) as 'No',
             SqlDataAdapter da = new SqlDataAdapter(" select t.ID, t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Aciklama as 'Açıklama' , p.Durum from StokTedarikci t " +
-                " left join StokTedarikciPuan p on t.ID = p.FirmaID   left join StokKullanici k on p.PersonelID = k.ID where t.Durum = 'Aktif' order by t.Tur asc ", bgl.baglanti());
+                " left join StokTedarikciPuan p on t.ID = p.FirmaID   left join StokKullanici k on p.PersonelID = k.ID where t.Durum = 'Aktif' order by  t.Durumu, t.Tur, t.Ad asc ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;
@@ -47,7 +47,9 @@ namespace mKYS.Talep
 
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView1.Columns["Açıklama"].ColumnEdit = memo;
+            gridView1.Columns["Durum"].ColumnEdit = memo;
             gridView1.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Durum"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
         }
 
         int yetki;
@@ -209,10 +211,15 @@ namespace mKYS.Talep
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TedarikciPuan.firma = firmad;
-            TedarikciPuan.fID = fID;
-            TedarikciPuan tp = new TedarikciPuan();
-            tp.Show();
+            //TedarikciPuan.firma = firmad;
+            //TedarikciPuan.fID = fID;
+            //TedarikciPuan tp = new TedarikciPuan();
+            //tp.Show();
+
+            TedarikKabul.firma = firmad;
+            TedarikKabul.fID = fID;
+            TedarikKabul tk = new TedarikKabul();
+            tk.Show();
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
