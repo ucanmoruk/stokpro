@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -302,6 +302,12 @@
     <Compile Include="Numune\Mix.Designer.cs">
       <DependentUpon>Mix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numune\Mix2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\Mix2.Designer.cs">
+      <DependentUpon>Mix2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numune\TalepListe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,24 @@
     <Compile Include="Raporlar\Hamveri.designer.cs">
       <DependentUpon>Hamveri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Denetim\Koz1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Denetim\Koz1.Designer.cs">
+      <DependentUpon>Koz1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Denetim\Koz2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Denetim\Koz2.designer.cs">
+      <DependentUpon>Koz2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Denetim\Koz3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Denetim\Koz3.designer.cs">
+      <DependentUpon>Koz3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Kozmetik\RaporKozmetik3.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -440,17 +464,23 @@
     <Compile Include="Raporlar\Rapor3.designer.cs">
       <DependentUpon>Rapor3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Yeni\Yeni1.cs">
+    <Compile Include="Raporlar\Yeni\tReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Yeni\Yeni1.Designer.cs">
-      <DependentUpon>Yeni1.cs</DependentUpon>
+    <Compile Include="Raporlar\Yeni\tReport.Designer.cs">
+      <DependentUpon>tReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Yeni\Yeni2.cs">
+    <Compile Include="Raporlar\Yeni\tReport2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Yeni\Yeni2.Designer.cs">
-      <DependentUpon>Yeni2.cs</DependentUpon>
+    <Compile Include="Raporlar\Yeni\tReport2.Designer.cs">
+      <DependentUpon>tReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Yeni\TSOP11.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Yeni\TSOP11.designer.cs">
+      <DependentUpon>TSOP11.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Yeni\Yeni3.cs">
       <SubType>Component</SubType>
@@ -973,6 +1003,9 @@
     <EmbeddedResource Include="Numune\Mix.resx">
       <DependentUpon>Mix.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numune\Mix2.resx">
+      <DependentUpon>Mix2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Numune\TalepListe.resx">
       <DependentUpon>TalepListe.cs</DependentUpon>
     </EmbeddedResource>
@@ -1013,6 +1046,15 @@
     <EmbeddedResource Include="Raporlar\Hamveri.resx">
       <DependentUpon>Hamveri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Denetim\Koz1.resx">
+      <DependentUpon>Koz1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Denetim\Koz2.resx">
+      <DependentUpon>Koz2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Denetim\Koz3.resx">
+      <DependentUpon>Koz3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Kozmetik\RaporKozmetik3.resx">
       <DependentUpon>RaporKozmetik3.cs</DependentUpon>
     </EmbeddedResource>
@@ -1044,11 +1086,14 @@
     <EmbeddedResource Include="Raporlar\Rapor3.resx">
       <DependentUpon>Rapor3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Yeni\Yeni1.resx">
-      <DependentUpon>Yeni1.cs</DependentUpon>
+    <EmbeddedResource Include="Raporlar\Yeni\tReport.resx">
+      <DependentUpon>tReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Yeni\Yeni2.resx">
-      <DependentUpon>Yeni2.cs</DependentUpon>
+    <EmbeddedResource Include="Raporlar\Yeni\tReport2.resx">
+      <DependentUpon>tReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Yeni\TSOP11.resx">
+      <DependentUpon>TSOP11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\Yeni3.resx">
       <DependentUpon>Yeni3.cs</DependentUpon>
@@ -1173,7 +1218,6 @@
     <EmbeddedResource Include="ÇöpKutusu\Karsilama.resx">
       <DependentUpon>Karsilama.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licensesex.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

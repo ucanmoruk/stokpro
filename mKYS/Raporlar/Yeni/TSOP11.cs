@@ -33,14 +33,7 @@ namespace mKYS.Raporlar.Yeni
                 pRaprev.Value = raporno + " / " + revno;
                 akr = dr["Akreditasyon"].ToString();
 
-                if (akr == "Var")
-                {
-                    xrTable1.Visible = true;
-                }
-                else
-                {
-                    xrTable1.Visible = false;
-                }
+              
             }
             bgl.baglanti().Close();
 
