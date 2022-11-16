@@ -105,9 +105,6 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.pRaporNo = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pRaprev = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pRaporID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pTarih = new DevExpress.XtraReports.Parameters.Parameter();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField3 = new DevExpress.XtraReports.UI.CalculatedField();
@@ -134,9 +131,6 @@
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.groupFooterBand1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.calculatedField4 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.calculatedField5 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.calculatedField6 = new DevExpress.XtraReports.UI.CalculatedField();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow7 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -152,6 +146,9 @@
             this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell38 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.calculatedField4 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField5 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField6 = new DevExpress.XtraReports.UI.CalculatedField();
             this.pAnalizID = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -356,21 +353,6 @@
             this.pRaporNo.AllowNull = true;
             this.pRaporNo.Description = "pRaporNo";
             this.pRaporNo.Name = "pRaporNo";
-            // 
-            // pRaprev
-            // 
-            this.pRaprev.AllowNull = true;
-            this.pRaprev.Description = "pRaprev";
-            this.pRaprev.Name = "pRaprev";
-            // 
-            // pRaporID
-            // 
-            this.pRaporID.Name = "pRaporID";
-            // 
-            // pTarih
-            // 
-            this.pTarih.AllowNull = true;
-            this.pTarih.Name = "pTarih";
             // 
             // calculatedField1
             // 
@@ -679,24 +661,6 @@
             this.groupFooterBand1.HeightF = 157.2935F;
             this.groupFooterBand1.Name = "groupFooterBand1";
             // 
-            // calculatedField4
-            // 
-            this.calculatedField4.DataMember = "Query";
-            this.calculatedField4.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[Ad] , [Ad])";
-            this.calculatedField4.Name = "calculatedField4";
-            // 
-            // calculatedField5
-            // 
-            this.calculatedField5.DataMember = "Query";
-            this.calculatedField5.Expression = "Iif([Aciklama] = \'Alan\',[Sonuc] + \' cm2\' , \' cm2\' )";
-            this.calculatedField5.Name = "calculatedField5";
-            // 
-            // calculatedField6
-            // 
-            this.calculatedField6.DataMember = "Query";
-            this.calculatedField6.Expression = "Iif([Aciklama] = \'Son Hacim\',[Sonuc] + \' ml\' , \' ml\' )";
-            this.calculatedField6.Name = "calculatedField6";
-            // 
             // xrLabel16
             // 
             this.xrLabel16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -883,6 +847,24 @@
             this.xrLabel15.StylePriority.UseFont = false;
             this.xrLabel15.Text = "xrLabel2";
             // 
+            // calculatedField4
+            // 
+            this.calculatedField4.DataMember = "Query";
+            this.calculatedField4.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[Ad] , [Ad])";
+            this.calculatedField4.Name = "calculatedField4";
+            // 
+            // calculatedField5
+            // 
+            this.calculatedField5.DataMember = "Query";
+            this.calculatedField5.Expression = "Iif([Aciklama] = \'Alan\',[Sonuc] + \' cm2\' , \' cm2\' )";
+            this.calculatedField5.Name = "calculatedField5";
+            // 
+            // calculatedField6
+            // 
+            this.calculatedField6.DataMember = "Query";
+            this.calculatedField6.Expression = "Iif([Aciklama] = \'Son Hacim\',[Sonuc] + \' ml\' , \' ml\' )";
+            this.calculatedField6.Name = "calculatedField6";
+            // 
             // pAnalizID
             // 
             this.pAnalizID.Description = "pAnalizID";
@@ -914,12 +896,9 @@
             this.Margins = new System.Drawing.Printing.Margins(20, 28, 0, 0);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pRaporNo,
-            this.pRaprev,
-            this.pRaporID,
-            this.pTarih,
             this.pAnalizID});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.Version = "19.1";
+            this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
@@ -934,9 +913,6 @@
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.Parameters.Parameter pRaporNo;
-        private DevExpress.XtraReports.Parameters.Parameter pRaprev;
-        private DevExpress.XtraReports.Parameters.Parameter pRaporID;
-        private DevExpress.XtraReports.Parameters.Parameter pTarih;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField3;

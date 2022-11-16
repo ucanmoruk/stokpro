@@ -483,6 +483,12 @@
     <Compile Include="Raporlar\Yeni\TSOP11.designer.cs">
       <DependentUpon>TSOP11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Yeni\tReport3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Yeni\tReport3.designer.cs">
+      <DependentUpon>tReport3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Yeni\Yeni3.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1095,6 +1101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\TSOP11.resx">
       <DependentUpon>TSOP11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Yeni\tReport3.resx">
+      <DependentUpon>tReport3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\Yeni3.resx">
       <DependentUpon>Yeni3.cs</DependentUpon>

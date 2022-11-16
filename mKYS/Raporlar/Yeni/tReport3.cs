@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace mKYS.Raporlar.Yeni
 {
-    public partial class YeniRapor3 : DevExpress.XtraReports.UI.XtraReport
+    public partial class tReport3 : DevExpress.XtraReports.UI.XtraReport
     {
-        public YeniRapor3()
+        public tReport3()
         {
             InitializeComponent();
         }
@@ -20,6 +20,7 @@ namespace mKYS.Raporlar.Yeni
         string revno, tarih;
         int ID;
         public static string raporno, miktar, birim, mail, telefon, akr;
+
         public void bilgi()
         {
 

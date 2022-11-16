@@ -628,7 +628,7 @@ namespace mKYS
                 nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
                 Raporlar.Yeni.tReport.raporno = nkrno;
                 Raporlar.Yeni.tReport2.raporno = nkrno;
-                Raporlar.Yeni.YeniRapor3.raporno = nkrno;
+                Raporlar.Yeni.tReport3.raporno = nkrno;
 
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = nkrno + " - " + name;
@@ -640,7 +640,7 @@ namespace mKYS
                 Raporlar.Yeni.tReport2 report2 = new Raporlar.Yeni.tReport2();
                 report2.bilgi();
                 report2.CreateDocument();
-                Raporlar.Yeni.YeniRapor3 report3 = new Raporlar.Yeni.YeniRapor3();
+                Raporlar.Yeni.tReport3 report3 = new Raporlar.Yeni.tReport3();
                 report3.bilgi();
                 report3.CreateDocument();
                 report1.Pages.AddRange(report2.Pages);

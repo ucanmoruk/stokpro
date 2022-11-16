@@ -30,7 +30,7 @@ namespace mKYS.Raporlar.Yeni
             while (dr.Read())
             {
                 revno = dr["RevNo"].ToString();
-                pRaprev.Value = raporno + " / " + revno;
+                //pRaprev.Value = raporno + " / " + revno;
                 akr = dr["Akreditasyon"].ToString();
 
               
