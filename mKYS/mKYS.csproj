@@ -471,6 +471,12 @@
     <Compile Include="Raporlar\Yeni\tReport.Designer.cs">
       <DependentUpon>tReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Yeni\sonuc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Yeni\sonuc.Designer.cs">
+      <DependentUpon>sonuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Yeni\tReport2.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1095,6 +1101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\tReport.resx">
       <DependentUpon>tReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Yeni\sonuc.resx">
+      <DependentUpon>sonuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\tReport2.resx">
       <DependentUpon>tReport2.cs</DependentUpon>
