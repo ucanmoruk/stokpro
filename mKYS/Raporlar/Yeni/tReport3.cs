@@ -45,6 +45,7 @@ namespace mKYS.Raporlar.Yeni
             }
             bgl.baglanti().Close();
 
+            Nikel.Visible = false;
 
         }
     }
