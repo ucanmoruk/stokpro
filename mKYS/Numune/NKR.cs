@@ -626,21 +626,21 @@ namespace mKYS
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
                 nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                Raporlar.Yeni.tReport.raporno = nkrno;
-                Raporlar.Yeni.tReport2.raporno = nkrno;
-                Raporlar.Yeni.tReport3.raporno = nkrno;
+                Raporlar.Yeni.entReport.raporno = nkrno;
+                Raporlar.Yeni.entReport2.raporno = nkrno;
+                Raporlar.Yeni.entReport3.raporno = nkrno;
 
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = nkrno + " - " + name;
 
-                Raporlar.Yeni.tReport report1 = new Raporlar.Yeni.tReport();
+                Raporlar.Yeni.entReport report1 = new Raporlar.Yeni.entReport();
                 report1.bilgi();
                 report1.Name = nkrno + " - " + name;
                 report1.CreateDocument();
-                Raporlar.Yeni.tReport2 report2 = new Raporlar.Yeni.tReport2();
+                Raporlar.Yeni.entReport2 report2 = new Raporlar.Yeni.entReport2();
                 report2.bilgi();
                 report2.CreateDocument();
-                Raporlar.Yeni.tReport3 report3 = new Raporlar.Yeni.tReport3();
+                Raporlar.Yeni.entReport3 report3 = new Raporlar.Yeni.entReport3();
                 report3.bilgi();
                 report3.CreateDocument();
                 report1.Pages.AddRange(report2.Pages);
@@ -744,6 +744,53 @@ namespace mKYS
             }
 
            
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //ingilizce tekstil
+
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                Raporlar.English.Textile.entReport.raporno = nkrno;
+                Raporlar.English.Textile.entReport2.raporno = nkrno;
+                Raporlar.English.Textile.entReport3.raporno = nkrno;
+
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = nkrno + " - " + name;
+
+                Raporlar.English.Textile.entReport report1 = new Raporlar.English.Textile.entReport();
+                report1.bilgi();
+                report1.Name = nkrno + " - " + name;
+                report1.CreateDocument();
+                Raporlar.English.Textile.entReport2 report2 = new Raporlar.English.Textile.entReport2();
+                report2.bilgi();
+                report2.CreateDocument();
+                Raporlar.English.Textile.entReport3 report3 = new Raporlar.English.Textile.entReport3();
+                report3.bilgi();
+                report3.CreateDocument();
+                report1.Pages.AddRange(report2.Pages);
+                report1.Pages.AddRange(report3.Pages);
+                report1.PrintingSystem.ContinuousPageNumbering = true;
+                report1.ShowPreviewDialog();
+
+                //Raporlar.Yeni.tReport.raporno = nkrno;
+                ////Raporlar.Yeni.YeniRapor2.raporno = raporNo;
+                ////Raporlar.Yeni.YeniRapor3.raporno = raporNo;
+                //using (frmPrint frm = new frmPrint())
+                //{
+                //    frm.RaporYeni();
+                //    frm.ShowDialog();
+                //}
+            }
         }
 
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

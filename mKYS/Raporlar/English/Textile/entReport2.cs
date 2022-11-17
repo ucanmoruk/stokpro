@@ -10,7 +10,7 @@ using DevExpress.XtraPrinting.Drawing;
 using System.Net;
 using System.IO;
 
-namespace mKYS.Raporlar.Yeni
+namespace mKYS.Raporlar.English.Textile
 {
     public partial class entReport2 : DevExpress.XtraReports.UI.XtraReport
     {

@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -381,6 +381,24 @@
     <Compile Include="Raporlar\English\Cosmetic\ReportCosmetic3.designer.cs">
       <DependentUpon>ReportCosmetic3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport.Designer.cs">
+      <DependentUpon>entReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport2.Designer.cs">
+      <DependentUpon>entReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Textile\entReport3.designer.cs">
+      <DependentUpon>entReport3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Hamveri.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -494,6 +512,12 @@
     </Compile>
     <Compile Include="Raporlar\Yeni\Yeni3.designer.cs">
       <DependentUpon>Yeni3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\SKTGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\SKTGuncelle.Designer.cs">
+      <DependentUpon>SKTGuncelle.cs</DependentUpon>
     </Compile>
     <Compile Include="Talep\TedarikKabul.cs">
       <SubType>Form</SubType>
@@ -1050,6 +1074,15 @@
     <EmbeddedResource Include="Raporlar\English\Cosmetic\ReportCosmetic3.resx">
       <DependentUpon>ReportCosmetic3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\English\Textile\entReport.resx">
+      <DependentUpon>entReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\English\Textile\entReport2.resx">
+      <DependentUpon>entReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\English\Textile\entReport3.resx">
+      <DependentUpon>entReport3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Hamveri.resx">
       <DependentUpon>Hamveri.cs</DependentUpon>
     </EmbeddedResource>
@@ -1107,6 +1140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Yeni\Yeni3.resx">
       <DependentUpon>Yeni3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\SKTGuncelle.resx">
+      <DependentUpon>SKTGuncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Talep\TedarikKabul.resx">
       <DependentUpon>TedarikKabul.cs</DependentUpon>
@@ -1355,7 +1391,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Egitim\" />
-    <Folder Include="Raporlar\English\New\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AcroPDFLib">

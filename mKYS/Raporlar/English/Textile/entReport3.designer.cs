@@ -1,4 +1,4 @@
-﻿namespace mKYS.Raporlar.Yeni
+﻿namespace mKYS.Raporlar.English.Textile
 {
     partial class entReport3
     {
@@ -418,7 +418,7 @@
             this.xrLabel3.SizeF = new System.Drawing.SizeF(444.7917F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "DENEY RAPORU";
+            this.xrLabel3.Text = "TEST REPORT";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -605,7 +605,7 @@
             this.xrLabel26.SizeF = new System.Drawing.SizeF(490F, 23F);
             this.xrLabel26.StylePriority.UseFont = false;
             this.xrLabel26.StylePriority.UseTextAlignment = false;
-            this.xrLabel26.Text = "Ek-1.PR.20  Yayın Tarihi: 08.05.2018   Revizyon No-Tarih: 04 - 10.10.2022";
+            this.xrLabel26.Text = "Annex-1.PR.20  Release Date: 08.05.2018   Revision No-Date: 04 - 10.10.2022";
             this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel6
@@ -649,8 +649,8 @@
             this.xrLabel17.SizeF = new System.Drawing.SizeF(780.0001F, 23F);
             this.xrLabel17.StylePriority.UseFont = false;
             this.xrLabel17.StylePriority.UseTextAlignment = false;
-            this.xrLabel17.Text = "Karar Kuralı : Müşteri, \"Ölçüm belirsizliği dahil edilmeden\" uygunluk beyanı veri" +
-    "lmesini istediğini belirtmiştir.";
+            this.xrLabel17.Text = "Decision Rule: The customer requested that the decision rule be applied positivel" +
+    "y.";
             this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel8
@@ -663,7 +663,7 @@
             this.xrLabel8.SizeF = new System.Drawing.SizeF(780.0001F, 23F);
             this.xrLabel8.StylePriority.UseFont = false;
             this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Müşteri talebi doğrultusunda aşağıdaki analizler yapılmıştır.";
+            this.xrLabel8.Text = "The following analyzes have been made in line with the customer request.";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel13
@@ -676,7 +676,7 @@
             this.xrLabel13.SizeF = new System.Drawing.SizeF(205.5267F, 23F);
             this.xrLabel13.StylePriority.UseFont = false;
             this.xrLabel13.StylePriority.UseTextAlignment = false;
-            this.xrLabel13.Text = "TEST SONUÇLARI";
+            this.xrLabel13.Text = "TEST RESULTS";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // pRaporNo
@@ -709,7 +709,7 @@
             this.xrLabel9.SizeF = new System.Drawing.SizeF(798.9997F, 23F);
             this.xrLabel9.StylePriority.UseFont = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "* Rapor Sonu *";
+            this.xrLabel9.Text = "* End of Report *";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // calculatedField1
@@ -735,7 +735,7 @@
             // calculatedField4
             // 
             this.calculatedField4.DataMember = "Query";
-            this.calculatedField4.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[Ad] , [Ad])";
+            this.calculatedField4.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[AdEn] , [AdEn])";
             this.calculatedField4.Name = "calculatedField4";
             // 
             // calculatedField5
@@ -758,7 +758,6 @@
             this.groupFooterBand2});
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
-            this.DetailReport1.Expanded = false;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Query].[Method] = \'BS EN 1811:2011+A1:2015\', false , true )")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
@@ -775,7 +774,7 @@
             this.xrLabel21});
             this.Detail2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Aciklama]=\'Toplam\',true ,false )")});
-            this.Detail2.HeightF = 23.77466F;
+            this.Detail2.HeightF = 23F;
             this.Detail2.KeepTogether = true;
             this.Detail2.Name = "Detail2";
             this.Detail2.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
@@ -801,7 +800,7 @@
             // 
             this.xrLabel16.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Degerlendirme]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Degerlendirme]=\'Geçer\',\'PASS\', Iif([Degerlendirme]=\'Kalır\',\'FAIL\', \'N.A\'))\n")});
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(577.0832F, 0F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
@@ -874,9 +873,10 @@
             this.xrLabel27,
             this.xrLabel28,
             this.xrLabel29});
+            this.groupHeaderBand2.Expanded = false;
             this.groupHeaderBand2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("Method", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.groupHeaderBand2.HeightF = 102.7576F;
+            this.groupHeaderBand2.HeightF = 102.0001F;
             this.groupHeaderBand2.Name = "groupHeaderBand2";
             this.groupHeaderBand2.RepeatEveryPage = true;
             // 
@@ -892,7 +892,7 @@
             this.xrLabel30.StylePriority.UseBorders = false;
             this.xrLabel30.StylePriority.UseFont = false;
             this.xrLabel30.StylePriority.UseTextAlignment = false;
-            this.xrLabel30.Text = "Değerlendirme";
+            this.xrLabel30.Text = "Evaluation";
             this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel31
@@ -922,7 +922,7 @@
             this.xrLabel32.StylePriority.UseBorders = false;
             this.xrLabel32.StylePriority.UseFont = false;
             this.xrLabel32.StylePriority.UseTextAlignment = false;
-            this.xrLabel32.Text = "Sonuç";
+            this.xrLabel32.Text = "Result";
             this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel46
@@ -937,7 +937,7 @@
             this.xrLabel46.StylePriority.UseBorders = false;
             this.xrLabel46.StylePriority.UseFont = false;
             this.xrLabel46.StylePriority.UseTextAlignment = false;
-            this.xrLabel46.Text = "Birim";
+            this.xrLabel46.Text = "Unit";
             this.xrLabel46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel47
@@ -953,7 +953,7 @@
             this.xrLabel47.StylePriority.UseBorders = false;
             this.xrLabel47.StylePriority.UseFont = false;
             this.xrLabel47.StylePriority.UseTextAlignment = false;
-            this.xrLabel47.Text = "Test Kısımları";
+            this.xrLabel47.Text = "Test Parts";
             this.xrLabel47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel22
@@ -983,7 +983,7 @@
             this.xrLabel23.StylePriority.UseBorders = false;
             this.xrLabel23.StylePriority.UseFont = false;
             this.xrLabel23.StylePriority.UsePadding = false;
-            this.xrLabel23.Text = "Test Bitiş Tarihi:";
+            this.xrLabel23.Text = "Test Finish Date :   ";
             // 
             // xrLabel24
             // 
@@ -1013,13 +1013,13 @@
             this.xrLabel25.StylePriority.UseBorders = false;
             this.xrLabel25.StylePriority.UseFont = false;
             this.xrLabel25.StylePriority.UsePadding = false;
-            this.xrLabel25.Text = "Test Başlangıç Tarihi:";
+            this.xrLabel25.Text = "Test Start Date :   ";
             // 
             // xrLabel27
             // 
             this.xrLabel27.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Method]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MethodEn]")});
             this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(189.582F, 33.00006F);
             this.xrLabel27.Multiline = true;
             this.xrLabel27.Name = "xrLabel27";
@@ -1042,7 +1042,7 @@
             this.xrLabel28.StylePriority.UseBorders = false;
             this.xrLabel28.StylePriority.UseFont = false;
             this.xrLabel28.StylePriority.UsePadding = false;
-            this.xrLabel28.Text = "Test Metodu";
+            this.xrLabel28.Text = "Method:";
             // 
             // xrLabel29
             // 
@@ -1084,7 +1084,7 @@
             // xrLabel48
             // 
             this.xrLabel48.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NumDipnot]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NumDipnotEn]")});
             this.xrLabel48.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0.00215188F, 10.00003F);
             this.xrLabel48.Multiline = true;
@@ -1132,7 +1132,7 @@
             this.xrLabel41.StylePriority.UseBorders = false;
             this.xrLabel41.StylePriority.UseFont = false;
             this.xrLabel41.StylePriority.UseTextAlignment = false;
-            this.xrLabel41.Text = "Test Kısımları:";
+            this.xrLabel41.Text = "Test Part:";
             this.xrLabel41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel10
@@ -1149,7 +1149,7 @@
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UsePadding = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Değerlendirme:";
+            this.xrLabel10.Text = "Evaluation:";
             this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel42
@@ -1175,7 +1175,7 @@
             this.xrLabel45.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel45.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Degerlendirme]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Degerlendirme]=\'Geçer\',\'PASS\', Iif([Degerlendirme]=\'Kalır\',\'FAIL\', \'N.A\'))")});
             this.xrLabel45.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(639.5832F, 7.956051F);
             this.xrLabel45.Multiline = true;
@@ -1200,7 +1200,7 @@
             this.xrLabel43.StylePriority.UseBorders = false;
             this.xrLabel43.StylePriority.UseFont = false;
             this.xrLabel43.StylePriority.UseTextAlignment = false;
-            this.xrLabel43.Text = "3. Paralel";
+            this.xrLabel43.Text = "3. Parallel";
             this.xrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel18
@@ -1215,7 +1215,7 @@
             this.xrLabel18.StylePriority.UseBorders = false;
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "2. Paralel";
+            this.xrLabel18.Text = "2. Parallel";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel14
@@ -1230,7 +1230,7 @@
             this.xrLabel14.StylePriority.UseBorders = false;
             this.xrLabel14.StylePriority.UseFont = false;
             this.xrLabel14.StylePriority.UseTextAlignment = false;
-            this.xrLabel14.Text = "1. Paralel";
+            this.xrLabel14.Text = "1. Parallel";
             this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel12
@@ -1245,7 +1245,7 @@
             this.xrLabel12.StylePriority.UseBorders = false;
             this.xrLabel12.StylePriority.UseFont = false;
             this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "Son Hacim";
+            this.xrLabel12.Text = "Final Volume";
             this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel2
@@ -1261,7 +1261,7 @@
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Alan";
+            this.xrLabel2.Text = "Area";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Nikel
@@ -1353,13 +1353,13 @@
             this.xrLabel34.StylePriority.UseBorders = false;
             this.xrLabel34.StylePriority.UseFont = false;
             this.xrLabel34.StylePriority.UsePadding = false;
-            this.xrLabel34.Text = "Test Metodu";
+            this.xrLabel34.Text = "Method:";
             // 
             // xrLabel35
             // 
             this.xrLabel35.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel35.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Method]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MethodEn]")});
             this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(160.0011F, 31.48671F);
             this.xrLabel35.Multiline = true;
             this.xrLabel35.Name = "xrLabel35";
@@ -1382,7 +1382,7 @@
             this.xrLabel36.StylePriority.UseBorders = false;
             this.xrLabel36.StylePriority.UseFont = false;
             this.xrLabel36.StylePriority.UsePadding = false;
-            this.xrLabel36.Text = "Test Başlangıç Tarihi:";
+            this.xrLabel36.Text = "Test Start Date:   ";
             // 
             // xrLabel37
             // 
@@ -1411,7 +1411,7 @@
             this.xrLabel39.StylePriority.UseBorders = false;
             this.xrLabel39.StylePriority.UseFont = false;
             this.xrLabel39.StylePriority.UsePadding = false;
-            this.xrLabel39.Text = "Test Bitiş Tarihi:";
+            this.xrLabel39.Text = "Test Finish Date:   ";
             // 
             // xrLabel40
             // 
@@ -1446,8 +1446,8 @@
             this.xrLabel51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel51.SizeF = new System.Drawing.SizeF(798.9989F, 23F);
             this.xrLabel51.StylePriority.UseFont = false;
-            this.xrLabel51.Text = "EN 1811:2011 + A1:2015 Metodu Ek A Bölümüne Göre Değerlendirme Kriterleri aşağıda" +
-    "ki gibidir:  ";
+            this.xrLabel51.Text = "Evaluation Criteria according to EN 1811:2011 + A1:2015 Method Annex A Part are a" +
+    "s follows:";
             // 
             // xrTable4
             // 
@@ -1480,7 +1480,7 @@
             this.xrTableCell18.StylePriority.UseBorders = false;
             this.xrTableCell18.StylePriority.UseFont = false;
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
-            this.xrTableCell18.Text = "Numune Türü ";
+            this.xrTableCell18.Text = "Sample Type";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell18.Weight = 2.3708203125000002D;
             // 
@@ -1494,7 +1494,7 @@
             this.xrTableCell19.StylePriority.UseBorders = false;
             this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
-            this.xrTableCell19.Text = "Nikel Salınım (µg/cm2/hafta) \r\nGEÇER ";
+            this.xrTableCell19.Text = "Nickel Release (µg/cm2/week) \r\nPASS";
             this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell19.Weight = 2.4895829772949218D;
             // 
@@ -1508,7 +1508,7 @@
             this.xrTableCell32.StylePriority.UseBorders = false;
             this.xrTableCell32.StylePriority.UseFont = false;
             this.xrTableCell32.StylePriority.UseTextAlignment = false;
-            this.xrTableCell32.Text = "Nikel Salınım (µg/cm2/hafta) \r\nKALIR ";
+            this.xrTableCell32.Text = "Nickel Release (µg/cm2/week) \r\nFAIL";
             this.xrTableCell32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell32.Weight = 3.1295791625976563D;
             // 
@@ -1531,7 +1531,7 @@
             this.xrTableCell33.StylePriority.UseBorders = false;
             this.xrTableCell33.StylePriority.UseFont = false;
             this.xrTableCell33.StylePriority.UseTextAlignment = false;
-            this.xrTableCell33.Text = "Tenle temas eden ürünler \r\n(0.5 µg/cm2/hafta) ";
+            this.xrTableCell33.Text = "Skin contact products\r\n(0.5 µg/cm2/week) ";
             this.xrTableCell33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell33.Weight = 2.3708203125000002D;
             // 
@@ -1580,7 +1580,7 @@
             this.xrTableCell36.StylePriority.UseBorders = false;
             this.xrTableCell36.StylePriority.UseFont = false;
             this.xrTableCell36.StylePriority.UseTextAlignment = false;
-            this.xrTableCell36.Text = "Teni delen ürünler \r\n(0.2 µg/cm2/hafta) ";
+            this.xrTableCell36.Text = "Penetrating products\r\n(0.2 µg/cm2/week) ";
             this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell36.Weight = 2.3708203125000002D;
             // 
@@ -1613,7 +1613,7 @@
             // xrLabel50
             // 
             this.xrLabel50.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NumDipnot]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NumDipnotEn]")});
             this.xrLabel50.Font = new System.Drawing.Font("Tahoma", 8F);
             this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(0.00107594F, 143.2819F);
             this.xrLabel50.Multiline = true;
@@ -1626,7 +1626,7 @@
             // Sonucc
             // 
             this.Sonucc.DataMember = "Query_1";
-            this.Sonucc.Expression = "[Sonuc] + \' \' +[Birim]";
+            this.Sonucc.Expression = "[Sonuc] + \' \' +Iif([Birim]=\'μg/cm2/hafta\',\'μg/cm2/week\' ,[Birim] )";
             this.Sonucc.Name = "Sonucc";
             // 
             // Detail
@@ -1638,10 +1638,10 @@
             // calculatedField7
             // 
             this.calculatedField7.DataMember = "Query_1";
-            this.calculatedField7.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[Ad] , [Ad])\n";
+            this.calculatedField7.Expression = "Iif([Akreditasyon]==\'Var\', \'* \'+[AdEn] , [AdEn])\n";
             this.calculatedField7.Name = "calculatedField7";
             // 
-            // tReport3
+            // entReport3
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,

@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace mKYS.Raporlar.Yeni
 {
-    public partial class tReport3 : DevExpress.XtraReports.UI.XtraReport
+    public partial class entReport3 : DevExpress.XtraReports.UI.XtraReport
     {
-        public tReport3()
+        public entReport3()
         {
             InitializeComponent();
         }

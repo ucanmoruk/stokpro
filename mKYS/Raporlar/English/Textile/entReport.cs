@@ -6,7 +6,7 @@ using DevExpress.XtraReports.UI;
 using mKYS.Raporlar;
 using System.Data.SqlClient;
 
-namespace mKYS.Raporlar.Yeni
+namespace mKYS.Raporlar.English.Textile
 {
     public partial class entReport : DevExpress.XtraReports.UI.XtraReport
     {
@@ -125,7 +125,7 @@ namespace mKYS.Raporlar.Yeni
             }
             bgl.baglanti().Close();
 
-            string raciklama = "Bu rapordaki test değerlendirmeleri, “Kimyasalların Kaydı, Değerlendirilmesi, İzni ve Kısıtlanması Hakkında Yönetmelik” ve standartlar ile yürürlükte olan diğer ilgili mevzuata göre yapılmıştır.";
+            string raciklama = "The test evaluations in this report have been made according to customer limits.";
             pAciklama.Value = raciklama;
             if (degisim != null)
             {

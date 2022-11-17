@@ -379,7 +379,7 @@ namespace mKYS.Raporlar
         public void RaporYeni()
         {
 
-            Yeni.tReport rapor = new Yeni.tReport();
+            Yeni.entReport rapor = new Yeni.entReport();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
             {
                 p.Visible = false;
@@ -387,7 +387,7 @@ namespace mKYS.Raporlar
                 //  documentViewer1.DocumentSource = rapor;
                 rapor.CreateDocument();
 
-                Yeni.tReport2 rapor2 = new Yeni.tReport2();
+                Yeni.entReport2 rapor2 = new Yeni.entReport2();
                 foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
                 {
                     p2.Visible = false;
@@ -396,7 +396,7 @@ namespace mKYS.Raporlar
                     rapor2.CreateDocument();
                 }
 
-                Yeni.YeniRapor3 rapor3 = new Yeni.YeniRapor3();
+                Yeni.entReport3 rapor3 = new Yeni.entReport3();
                 foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
                 {
                     p3.Visible = false;
