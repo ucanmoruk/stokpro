@@ -18,7 +18,7 @@ namespace mKYS.Raporlar.Yeni
         sqlbaglanti bgl = new sqlbaglanti();
 
         string revno, tarih;
-        int ID;
+        int ID, nikelID;
         public static string raporno, miktar, birim, mail, telefon, akr;
 
         public void bilgi()
@@ -45,7 +45,25 @@ namespace mKYS.Raporlar.Yeni
             }
             bgl.baglanti().Close();
 
-            Nikel.Visible = false;
+            //1206 nikel alt parametre ID
+            SqlCommand komut2 = new SqlCommand("select Count(ID) from Numunex5 where AltAnalizID = 1206 and x2ID in (select ID from NumuneX2 where RaporID in (select ID from NKR where RaporNo = '" + pRaporNo.Value+"'))", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                nikelID = Convert.ToInt32(dr2[0].ToString());
+
+                if (nikelID == 0)
+                {
+                    Nikel.Visible = false;
+                }
+                else
+                {
+                    Nikel.Visible = true;
+                }
+            }
+            bgl.baglanti().Close();
+
+            
 
         }
     }
