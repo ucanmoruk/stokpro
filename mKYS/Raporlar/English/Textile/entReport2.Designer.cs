@@ -618,7 +618,6 @@
             this.ReportHeader});
             this.DetailReport.DataMember = "NKR";
             this.DetailReport.DataSource = this.sqlDataSource1;
-            this.DetailReport.Expanded = false;
             this.DetailReport.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
@@ -627,7 +626,7 @@
             // 
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable5});
-            this.Detail1.HeightF = 25F;
+            this.Detail1.HeightF = 20F;
             this.Detail1.Name = "Detail1";
             // 
             // xrTable5
@@ -637,7 +636,7 @@
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow7});
-            this.xrTable5.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable5.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow7
             // 
@@ -720,7 +719,7 @@
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow6});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow6
             // 
@@ -797,7 +796,7 @@
             // 
             this.Detail3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable4});
-            this.Detail3.HeightF = 25F;
+            this.Detail3.HeightF = 20.37487F;
             this.Detail3.KeepTogether = true;
             this.Detail3.Name = "Detail3";
             this.Detail3.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
@@ -952,7 +951,6 @@
             this.GroupFooter1});
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
-            this.DetailReport1.Expanded = false;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([Query].[Ad]),false,true)")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
@@ -963,7 +961,7 @@
             // 
             this.Detail2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable6});
-            this.Detail2.HeightF = 25.33493F;
+            this.Detail2.HeightF = 20F;
             this.Detail2.Name = "Detail2";
             // 
             // xrTable6
@@ -973,7 +971,7 @@
             this.xrTable6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable6.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow8});
-            this.xrTable6.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable6.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow8
             // 
