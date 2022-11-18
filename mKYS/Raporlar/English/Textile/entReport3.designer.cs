@@ -538,7 +538,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(354.5834F, 23F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Sayfa:";
+            this.xrLabel5.Text = "Page:";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLine1
@@ -560,7 +560,7 @@
             this.xrLabel4.SizeF = new System.Drawing.SizeF(179.5833F, 23F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "Rapor No / Revizyon No:";
+            this.xrLabel4.Text = "Report No / Revision No:";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // BottomMargin
@@ -1274,6 +1274,7 @@
             this.ReportFooter1});
             this.Nikel.DataMember = "Query_1";
             this.Nikel.DataSource = this.sqlDataSource1;
+            this.Nikel.Expanded = false;
             this.Nikel.FilterString = "[RaporNo] = ?pRaporNo";
             this.Nikel.Level = 1;
             this.Nikel.Name = "Nikel";
