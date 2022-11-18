@@ -232,7 +232,7 @@ namespace mKYS.Numune
                                         loq2 = "N.D.";
                                     else
                                         loq2 = "<" + loq;
-                                    degerlendirme = "Geçer";
+                                    degerlendirme = "GEÇER";
 
                                     SqlCommand add = new SqlCommand("insert into NumuneX5(x2ID, AltAnalizID, Limit, Birim, Sonuc, Degerlendirme, Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o7)", bgl.baglanti());
                                     add.Parameters.AddWithValue("@o1", x2ID);
