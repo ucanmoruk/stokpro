@@ -396,7 +396,7 @@
             this.xrTable5});
             this.SubBand1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Tur]=\'Toplam\',true ,false )")});
-            this.SubBand1.HeightF = 25.50503F;
+            this.SubBand1.HeightF = 25F;
             this.SubBand1.Name = "SubBand1";
             // 
             // xrTable5
@@ -535,7 +535,7 @@
             this.xrTable4});
             this.SubBand2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Tur]=\'Alt Etken\',true ,false )")});
-            this.SubBand2.HeightF = 25.50507F;
+            this.SubBand2.HeightF = 25F;
             this.SubBand2.Name = "SubBand2";
             // 
             // xrTable4
@@ -664,7 +664,7 @@
             this.xrTableCell25.StylePriority.UseTextAlignment = false;
             this.xrTableCell25.Text = "xrTableCell16";
             this.xrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell25.Weight = 1.1122749998862918D;
+            this.xrTableCell25.Weight = 1.1122749998862917D;
             // 
             // xrTableCell26
             // 
@@ -694,12 +694,12 @@
             this.xrTable2.BorderColor = System.Drawing.Color.Black;
             this.xrTable2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrTable2.ForeColor = System.Drawing.Color.White;
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(2.000475F, 74.91706F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(1.907349E-06F, 74.91706F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow4});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(800.9996F, 25F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(800.9999F, 25F);
             this.xrTable2.StylePriority.UseBackColor = false;
             this.xrTable2.StylePriority.UseBorderColor = false;
             this.xrTable2.StylePriority.UseFont = false;
@@ -730,7 +730,7 @@
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.Text = "Analiz";
-            this.xrTableCell4.Weight = 2.2211762473214955D;
+            this.xrTableCell4.Weight = 2.2211802522693014D;
             // 
             // xrTableCell5
             // 
@@ -740,7 +740,7 @@
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBorders = false;
             this.xrTableCell5.Text = "Birim";
-            this.xrTableCell5.Weight = 0.74436812680839215D;
+            this.xrTableCell5.Weight = 0.74436846051940275D;
             // 
             // xrTableCell6
             // 
@@ -750,7 +750,7 @@
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "Sonuç";
-            this.xrTableCell6.Weight = 1.0155771024864646D;
+            this.xrTableCell6.Weight = 1.01557601792568D;
             // 
             // xrTableCell7
             // 
@@ -760,7 +760,7 @@
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
             this.xrTableCell7.Text = "LOQ";
-            this.xrTableCell7.Weight = 0.77246821881923444D;
+            this.xrTableCell7.Weight = 0.77246888624125565D;
             // 
             // xrTableCell11
             // 
@@ -770,7 +770,7 @@
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseBorders = false;
             this.xrTableCell11.Text = "Ö.B.";
-            this.xrTableCell11.Weight = 0.63577785030203526D;
+            this.xrTableCell11.Weight = 0.63577822572692222D;
             // 
             // xrTableCell8
             // 
@@ -780,7 +780,7 @@
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.Text = "Metot";
-            this.xrTableCell8.Weight = 1.3640795047405581D;
+            this.xrTableCell8.Weight = 1.3640794630266817D;
             // 
             // xrTableCell9
             // 
@@ -790,7 +790,7 @@
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.Text = "Limit";
-            this.xrTableCell9.Weight = 0.99217360820060729D;
+            this.xrTableCell9.Weight = 0.9921751933279076D;
             // 
             // xrTableCell10
             // 
@@ -800,7 +800,7 @@
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorders = false;
             this.xrTableCell10.Text = "Değerlendirme";
-            this.xrTableCell10.Weight = 1.0133437945353345D;
+            this.xrTableCell10.Weight = 1.0133417922692709D;
             // 
             // xrLabel9
             // 
@@ -959,7 +959,7 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pRaporID});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.Version = "19.1";
+            this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
