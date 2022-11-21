@@ -548,8 +548,14 @@ namespace mKYS
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Numune.NumuneDurum.gelis = raporNo;
-            Numune.NumuneDurum nd = new Numune.NumuneDurum();
+            //Numune.NumuneDurum.gelis = raporNo;
+            //Numune.NumuneDurum nd = new Numune.NumuneDurum();
+            //nd.Show();
+
+            //denetim
+
+            Numune.NumDurum.raporno = raporNo;
+            Numune.NumDurum nd = new Numune.NumDurum();
             nd.Show();
         }
 
