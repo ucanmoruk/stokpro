@@ -618,7 +618,6 @@
             this.ReportHeader});
             this.DetailReport.DataMember = "NKR";
             this.DetailReport.DataSource = this.sqlDataSource1;
-            this.DetailReport.Expanded = false;
             this.DetailReport.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
@@ -788,7 +787,6 @@
             this.GroupHeader2});
             this.DetailReport2.DataMember = "NKR.NKRTanimlama";
             this.DetailReport2.DataSource = this.sqlDataSource1;
-            this.DetailReport2.Expanded = false;
             this.DetailReport2.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport2.Level = 2;
             this.DetailReport2.Name = "DetailReport2";
@@ -798,7 +796,7 @@
             // 
             this.Detail3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable4});
-            this.Detail3.HeightF = 20F;
+            this.Detail3.HeightF = 20.37487F;
             this.Detail3.KeepTogether = true;
             this.Detail3.Name = "Detail3";
             this.Detail3.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
@@ -1033,13 +1031,13 @@
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel2});
-            this.GroupFooter1.HeightF = 35.19596F;
+            this.GroupFooter1.HeightF = 43.75F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(1F, 6F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.0001F, 9.999974F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1066,7 +1064,7 @@
             this.sqlDataSource1});
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margins = new System.Drawing.Printing.Margins(18, 28, 149, 96);
+            this.Margins = new System.Drawing.Printing.Margins(20, 28, 149, 96);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pRaporNo,
             this.pResimUrl,

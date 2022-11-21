@@ -618,7 +618,6 @@
             this.ReportHeader});
             this.DetailReport.DataMember = "NKR";
             this.DetailReport.DataSource = this.sqlDataSource1;
-            this.DetailReport.Expanded = false;
             this.DetailReport.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
@@ -627,7 +626,7 @@
             // 
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable5});
-            this.Detail1.HeightF = 20.47373F;
+            this.Detail1.HeightF = 20F;
             this.Detail1.Name = "Detail1";
             // 
             // xrTable5
@@ -697,7 +696,6 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 25F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -789,7 +787,6 @@
             this.GroupHeader2});
             this.DetailReport2.DataMember = "NKR.NKRTanimlama";
             this.DetailReport2.DataSource = this.sqlDataSource1;
-            this.DetailReport2.Expanded = false;
             this.DetailReport2.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport2.Level = 2;
             this.DetailReport2.Name = "DetailReport2";
@@ -1034,13 +1031,13 @@
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel2});
-            this.GroupFooter1.HeightF = 34.03863F;
+            this.GroupFooter1.HeightF = 43.75F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(1.000008F, 6F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.0001F, 9.999974F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

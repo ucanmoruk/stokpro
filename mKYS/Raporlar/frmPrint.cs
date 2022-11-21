@@ -91,6 +91,20 @@ namespace mKYS.Raporlar
 
         }
 
+        public void DKD()
+        {
+
+            Raporlar.DokumanDKD etiket = new Raporlar.DokumanDKD();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
         public void StokListesi()
         {
 

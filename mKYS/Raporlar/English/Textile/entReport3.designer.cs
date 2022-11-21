@@ -538,7 +538,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(354.5834F, 23F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Sayfa:";
+            this.xrLabel5.Text = "Page:";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLine1
@@ -560,7 +560,7 @@
             this.xrLabel4.SizeF = new System.Drawing.SizeF(179.5833F, 23F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "Rapor No / Revizyon No:";
+            this.xrLabel4.Text = "Report No / Revision No:";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // BottomMargin
@@ -695,6 +695,7 @@
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel9});
+            this.ReportFooter.Expanded = false;
             this.ReportFooter.HeightF = 23F;
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.PrintAtBottom = true;
@@ -758,6 +759,7 @@
             this.groupFooterBand2});
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
+            this.DetailReport1.Expanded = false;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Query].[Method] = \'BS EN 1811:2011+A1:2015\', false , true )")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
@@ -873,7 +875,6 @@
             this.xrLabel27,
             this.xrLabel28,
             this.xrLabel29});
-            this.groupHeaderBand2.Expanded = false;
             this.groupHeaderBand2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("Method", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.groupHeaderBand2.HeightF = 102.0001F;
@@ -1078,7 +1079,7 @@
             // 
             this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel48});
-            this.SubBand2.HeightF = 41.65535F;
+            this.SubBand2.HeightF = 28F;
             this.SubBand2.Name = "SubBand2";
             // 
             // xrLabel48
@@ -1086,7 +1087,7 @@
             this.xrLabel48.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NumDipnotEn]")});
             this.xrLabel48.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0.00215188F, 10.00003F);
+            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0.002154599F, 5F);
             this.xrLabel48.Multiline = true;
             this.xrLabel48.Name = "xrLabel48";
             this.xrLabel48.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1273,6 +1274,7 @@
             this.ReportFooter1});
             this.Nikel.DataMember = "Query_1";
             this.Nikel.DataSource = this.sqlDataSource1;
+            this.Nikel.Expanded = false;
             this.Nikel.FilterString = "[RaporNo] = ?pRaporNo";
             this.Nikel.Level = 1;
             this.Nikel.Name = "Nikel";
@@ -1434,7 +1436,7 @@
             this.xrLabel51,
             this.xrTable4,
             this.xrLabel50});
-            this.ReportFooter1.HeightF = 174.7986F;
+            this.ReportFooter1.HeightF = 166.3216F;
             this.ReportFooter1.Name = "ReportFooter1";
             // 
             // xrLabel51
