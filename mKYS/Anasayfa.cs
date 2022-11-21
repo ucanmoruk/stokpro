@@ -783,6 +783,16 @@ namespace mKYS
             }
         }
 
+        private void barButtonItem82_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //dış kaynaklı doküman listesi
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.DKD();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

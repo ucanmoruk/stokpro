@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NKR));
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
@@ -74,6 +74,7 @@
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -110,7 +111,7 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).BeginInit();
@@ -218,7 +219,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(539, 21);
+            this.labelControl8.Location = new System.Drawing.Point(731, 18);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(35, 13);
             this.labelControl8.TabIndex = 13;
@@ -228,10 +229,10 @@
             // txt_arama
             // 
             this.txt_arama.EditValue = "";
-            this.txt_arama.Location = new System.Drawing.Point(580, 18);
+            this.txt_arama.Location = new System.Drawing.Point(772, 15);
             this.txt_arama.MenuManager = this.barManager1;
             this.txt_arama.Name = "txt_arama";
-            this.txt_arama.Size = new System.Drawing.Size(154, 20);
+            this.txt_arama.Size = new System.Drawing.Size(37, 20);
             this.txt_arama.TabIndex = 12;
             this.txt_arama.Visible = false;
             this.txt_arama.TextChanged += new System.EventHandler(this.txt_arama_TextChanged);
@@ -277,8 +278,9 @@
             this.barSubItem5,
             this.barButtonItem24,
             this.barButtonItem25,
-            this.barButtonItem26});
-            this.barManager1.MaxItemId = 40;
+            this.barButtonItem26,
+            this.barButtonItem27});
+            this.barManager1.MaxItemId = 41;
             // 
             // barDockControlTop
             // 
@@ -573,6 +575,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem25)});
             this.barSubItem5.Name = "barSubItem5";
             // 
+            // barButtonItem26
+            // 
+            this.barButtonItem26.Caption = "mKYS";
+            this.barButtonItem26.Id = 39;
+            this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
+            this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
+            this.barButtonItem26.Name = "barButtonItem26";
+            this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem26_ItemClick);
+            // 
             // barButtonItem24
             // 
             this.barButtonItem24.Caption = "Cosmetic Report";
@@ -597,11 +608,12 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton3.ImageOptions.ImageToTextIndent = 0;
-            this.simpleButton3.Location = new System.Drawing.Point(96, 18);
+            this.simpleButton3.Location = new System.Drawing.Point(430, 15);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(76, 26);
             this.simpleButton3.TabIndex = 11;
             this.simpleButton3.Text = "Filtresiz";
+            this.simpleButton3.Visible = false;
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
@@ -610,11 +622,12 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton2.ImageOptions.ImageToTextIndent = 0;
-            this.simpleButton2.Location = new System.Drawing.Point(14, 18);
+            this.simpleButton2.Location = new System.Drawing.Point(348, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(76, 26);
             this.simpleButton2.TabIndex = 11;
             this.simpleButton2.Text = "Filtreli";
+            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // date_baslangic
@@ -643,7 +656,7 @@
             // date_bit
             // 
             this.date_bit.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
-            this.date_bit.Location = new System.Drawing.Point(421, 19);
+            this.date_bit.Location = new System.Drawing.Point(247, 19);
             this.date_bit.Name = "date_bit";
             this.date_bit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -657,7 +670,7 @@
             // date_basla
             // 
             this.date_basla.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
-            this.date_basla.Location = new System.Drawing.Point(319, 19);
+            this.date_basla.Location = new System.Drawing.Point(145, 19);
             this.date_basla.MenuManager = this.barManager1;
             this.date_basla.Name = "date_basla";
             this.date_basla.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -679,7 +692,7 @@
             // 
             // filtreler
             // 
-            this.filtreler.Location = new System.Drawing.Point(190, 22);
+            this.filtreler.Location = new System.Drawing.Point(16, 22);
             this.filtreler.Margin = new System.Windows.Forms.Padding(2);
             this.filtreler.Name = "filtreler";
             this.filtreler.Size = new System.Drawing.Size(124, 13);
@@ -720,9 +733,9 @@
             // gridView3
             // 
             this.gridView3.DetailHeight = 284;
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = null;
-            this.gridView3.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.Name = "Format0";
+            gridFormatRule2.Rule = null;
+            this.gridView3.FormatRules.Add(gridFormatRule2);
             this.gridView3.GridControl = this.gridControl1;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.ImmediateUpdateRowPosition = false;
@@ -762,9 +775,9 @@
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
-            buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
+            buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
             this.groupControl1.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControl1.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
@@ -967,6 +980,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
             new DevExpress.XtraBars.LinkPersistInfo(this.buton_kargola),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem27),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17),
@@ -976,14 +990,14 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // barButtonItem26
+            // barButtonItem27
             // 
-            this.barButtonItem26.Caption = "mKYS";
-            this.barButtonItem26.Id = 39;
-            this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
-            this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
-            this.barButtonItem26.Name = "barButtonItem26";
-            this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem26_ItemClick);
+            this.barButtonItem27.Caption = "Numune İmha";
+            this.barButtonItem27.Id = 40;
+            this.barButtonItem27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.Image")));
+            this.barButtonItem27.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.LargeImage")));
+            this.barButtonItem27.Name = "barButtonItem27";
+            this.barButtonItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem27_ItemClick);
             // 
             // NKR
             // 
@@ -1131,5 +1145,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
         private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem27;
     }
 }

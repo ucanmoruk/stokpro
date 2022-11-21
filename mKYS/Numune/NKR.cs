@@ -45,15 +45,28 @@ namespace mKYS
 
             DataTable dt = new DataTable();
 
+            //SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', " +
+            //  "f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur," +
+            //  " n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu', n.ID as 'aID' from NKR n " +
+            //  " join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID " +
+            //  " where n.Tarih >= N'" + date_baslangic.Text + "' " +
+            //  " and n.Durum = 'Aktif' order by RaporNo desc ", bgl.baglanti());
+            //da.Fill(dt);
+            //gridControl1.DataSource = dt;
+            //gridView3.Columns["aID"].Visible = false;
+
+            //denetimiçin
+
             SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', " +
               "f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur," +
               " n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu', n.ID as 'aID' from NKR n " +
               " join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID " +
               " where n.Tarih >= N'" + date_baslangic.Text + "' " +
-              " and n.Durum = 'Aktif' order by RaporNo desc ", bgl.baglanti());
+              " and n.Durum = 'Aktif' and n.Grup <> N'Özel2' order by RaporNo desc ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["aID"].Visible = false;
+
         }
 
         public void listele2()
@@ -791,6 +804,32 @@ namespace mKYS
                 //    frm.ShowDialog();
                 //}
             }
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //imha
+            DateTime bugun = DateTime.Now;
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+
+                SqlCommand add2 = new SqlCommand("insert into NumuneImha (RaporNo, Tarih, pID) values (@o1,@o2,@o3) ", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", nkrno);
+                add2.Parameters.AddWithValue("@o2", bugun);
+                add2.Parameters.AddWithValue("@o3", Anasayfa.kullanici);
+                add2.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+            }
+
+            MessageBox.Show("Başarılı!");
+
+            gridView3.ClearSelection();
+
         }
 
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

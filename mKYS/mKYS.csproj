@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>2.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -362,6 +362,12 @@
     </Compile>
     <Compile Include="Numune\TanimlamaListesi.Designer.cs">
       <DependentUpon>TanimlamaListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanDKD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanDKD.Designer.cs">
+      <DependentUpon>DokumanDKD.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\DokumanStok.cs">
       <SubType>Component</SubType>
@@ -1068,6 +1074,9 @@
       <DependentUpon>TanimlamaListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Raporlar\DokumanDKD.resx">
+      <DependentUpon>DokumanDKD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\DokumanStok.resx">
       <DependentUpon>DokumanStok.cs</DependentUpon>
     </EmbeddedResource>
