@@ -627,7 +627,7 @@
             // 
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable5});
-            this.Detail1.HeightF = 25F;
+            this.Detail1.HeightF = 20.47373F;
             this.Detail1.Name = "Detail1";
             // 
             // xrTable5
@@ -637,7 +637,7 @@
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow7});
-            this.xrTable5.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable5.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow7
             // 
@@ -697,6 +697,7 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
+            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 25F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -720,7 +721,7 @@
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow6});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow6
             // 
@@ -798,7 +799,7 @@
             // 
             this.Detail3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable4});
-            this.Detail3.HeightF = 25F;
+            this.Detail3.HeightF = 20F;
             this.Detail3.KeepTogether = true;
             this.Detail3.Name = "Detail3";
             this.Detail3.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
@@ -953,7 +954,6 @@
             this.GroupFooter1});
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
-            this.DetailReport1.Expanded = false;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([Query].[Ad]),false,true)")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
@@ -964,7 +964,7 @@
             // 
             this.Detail2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable6});
-            this.Detail2.HeightF = 25.33493F;
+            this.Detail2.HeightF = 20F;
             this.Detail2.Name = "Detail2";
             // 
             // xrTable6
@@ -974,7 +974,7 @@
             this.xrTable6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable6.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow8});
-            this.xrTable6.SizeF = new System.Drawing.SizeF(791F, 25F);
+            this.xrTable6.SizeF = new System.Drawing.SizeF(791F, 20F);
             // 
             // xrTableRow8
             // 
@@ -1034,13 +1034,13 @@
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel2});
-            this.GroupFooter1.HeightF = 43.75F;
+            this.GroupFooter1.HeightF = 34.03863F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.0001F, 9.999974F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(1.000008F, 6F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1048,7 +1048,7 @@
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.Text = "* N.A. : Ürün materyalleri uygun olmadığından dolayı test uygulanmamıştır.";
             // 
-            // tReport2
+            // entReport2
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
