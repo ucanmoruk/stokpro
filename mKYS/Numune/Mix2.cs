@@ -171,6 +171,8 @@ namespace mKYS.Numune
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            DateTime tarih = DateTime.Now;
+
             for (int i = 0; i <= gridView3.RowCount - 1; i++)
             {
                 x2ID = gridView3.GetRowCellValue(i, "ID").ToString();
@@ -185,14 +187,14 @@ namespace mKYS.Numune
 
                     if (tekrar == 0)
                     {
-                        DateTime tarih = DateTime.Now;
+                        
 
-                        SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
-                        add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
-                        add2.Parameters.AddWithValue("@a2", tarih);
-                        add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
-                        add2.ExecuteNonQuery();
-                        bgl.baglanti().Close();
+                        //SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
+                        //add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
+                        //add2.Parameters.AddWithValue("@a2", tarih);
+                        //add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
+                        //add2.ExecuteNonQuery();
+                        //bgl.baglanti().Close();
                   
                         SqlCommand komutx = new SqlCommand(@"select x.RaporID, d.ID, l.Kod, l.Ad, l.Method, d.Aciklama, d.LOQ, y.Limit, y.Birim, z.Tur from Numunex1 x
                         left join StokAnalizListesi l on x.AnalizID = l.ID
@@ -261,6 +263,13 @@ namespace mKYS.Numune
 
             }
 
+
+            SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
+            add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
+            add2.Parameters.AddWithValue("@a2", tarih);
+            add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
+            add2.ExecuteNonQuery();
+            bgl.baglanti().Close();
 
             //SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID in (select ID from NumuneX2 where RaporID = '"+raporID+"')", bgl.baglanti());
             //SqlDataReader dr = komut.ExecuteReader();
@@ -349,7 +358,7 @@ namespace mKYS.Numune
 
             //}
 
-           
+
 
             this.Close();
         }

@@ -1477,7 +1477,7 @@
             this.ClientSize = new System.Drawing.Size(758, 468);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ribbonControl1);
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Anasayfa.IconOptions.Icon")));
+   //         this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Anasayfa.IconOptions.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Anasayfa";
             this.Ribbon = this.ribbonControl1;
