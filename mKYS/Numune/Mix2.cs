@@ -182,10 +182,10 @@ namespace mKYS.Numune
                 while (dr.Read())
                 {
                     tekrar = Convert.ToInt32(dr[0].ToString());
-
+                    DateTime tarih = DateTime.Now;
                     if (tekrar == 0)
                     {
-                        DateTime tarih = DateTime.Now;
+                      
 
                         SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
                         add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
@@ -252,7 +252,12 @@ namespace mKYS.Numune
                     }
                     else
                     {
-
+                        SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
+                        add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
+                        add2.Parameters.AddWithValue("@a2", tarih);
+                        add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
+                        add2.ExecuteNonQuery();
+                        bgl.baglanti().Close();
                     }
                 }
                 dr.Close();
