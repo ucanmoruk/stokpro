@@ -417,7 +417,7 @@ namespace mKYS
                     using (var client = new WebClient())
                     {
                         string ftpUsername = "massgrup";
-                        string ftpPassword = "Bg1$4xo2";
+                        string ftpPassword = "!88n2ee5Q";
                         ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mask/Numune/Foto_2021" + "/" + yenisim;
                         yeniyol = "http://" + "www.massgrup.com/mask/Numune/Foto_2021" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);

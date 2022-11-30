@@ -15,7 +15,7 @@ namespace mKYS
         [STAThread]
         static void Main()
         {
-            DevExpress.XtraEditors.WindowsFormsSettings.DefaultSettingsCompatibilityMode = DevExpress.XtraEditors.SettingsCompatibilityMode.v19_1;
+          //  DevExpress.XtraEditors.WindowsFormsSettings.DefaultSettingsCompatibilityMode = DevExpress.XtraEditors.SettingsCompatibilityMode.v19_1;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
