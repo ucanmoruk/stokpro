@@ -52,7 +52,7 @@
             this.btn_giris.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.btn_giris.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_giris.ImageOptions.ImageToTextIndent = 10;
-            this.btn_giris.Location = new System.Drawing.Point(542, 429);
+            this.btn_giris.Location = new System.Drawing.Point(959, 608);
             this.btn_giris.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_giris.Name = "btn_giris";
             this.btn_giris.Size = new System.Drawing.Size(138, 94);
@@ -63,7 +63,7 @@
             // txt_parola
             // 
             this.txt_parola.EditValue = "Parola";
-            this.txt_parola.Location = new System.Drawing.Point(190, 485);
+            this.txt_parola.Location = new System.Drawing.Point(607, 664);
             this.txt_parola.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_parola.Name = "txt_parola";
             this.txt_parola.Properties.PasswordChar = '*';
@@ -74,7 +74,7 @@
             // txt_ad
             // 
             this.txt_ad.EditValue = "Kullanıcı Adı";
-            this.txt_ad.Location = new System.Drawing.Point(190, 431);
+            this.txt_ad.Location = new System.Drawing.Point(607, 610);
             this.txt_ad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_ad.Name = "txt_ad";
             this.txt_ad.Size = new System.Drawing.Size(320, 40);
@@ -83,12 +83,12 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(-10, -21);
+            this.pictureEdit1.Location = new System.Drawing.Point(-31, -4);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(1004, 673);
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit1.Size = new System.Drawing.Size(1327, 767);
             this.pictureEdit1.TabIndex = 4;
             // 
             // labelControl3
@@ -98,7 +98,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl3.Appearance.Options.UseBackColor = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(542, 554);
+            this.labelControl3.Location = new System.Drawing.Point(959, 560);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 25);
@@ -116,7 +116,7 @@
             this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.BottomLeft;
-            this.simpleButton1.Location = new System.Drawing.Point(692, 427);
+            this.simpleButton1.Location = new System.Drawing.Point(1109, 606);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(110, 96);
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 648);
+            this.ClientSize = new System.Drawing.Size(1272, 751);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btn_giris);
