@@ -23,7 +23,7 @@ namespace mKYS
         private void SertifikaGoruntule_Load_1(object sender, EventArgs e)
         {
             path = Path.Combine(Anasayfa.path, yol);
-            axAcroPDF1.LoadFile(path);
+           // axAcroPDF1.LoadFile(path);
 
             if (Text == "" || Text == null)
             { }

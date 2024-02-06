@@ -16,8 +16,8 @@ namespace mKYS.Numune
 
         private void NumKabDokumanGoruntule_Shown(object sender, EventArgs e)
         {
-            path = Path.Combine(Anasayfa.kpath, yol);
-            axAcroPDF1.LoadFile(path);
+            //path = Path.Combine(Anasayfa.kpath, yol);
+            //axAcroPDF1.LoadFile(path);
         }
     }
 }

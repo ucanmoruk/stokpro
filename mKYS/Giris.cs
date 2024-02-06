@@ -32,15 +32,7 @@ namespace mKYS
 
         private void btn_giris_Click(object sender, EventArgs e)
         {
-            if (checkEdit1.Checked == true)
-            {
-                db = "1";
-                sqlTip = 1;
-            }
-            else
-            {
-                sqlTip = 2;
-            }
+            sqlTip = 2;
             giris();
         }
 
