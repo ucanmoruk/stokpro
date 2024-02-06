@@ -47,17 +47,42 @@ namespace mKYS
             gridLookUpEdit1.Properties.ValueMember = "ID";
         }
 
-        public static int EvrakNo, maxevrak, maxrapor;
+        public static int EvrakNo, maxevrak;
         void Evrakmax()
         {
-            SqlCommand komutm = new SqlCommand("select max(evrak_no), MAX(RaporNo) from NKR", bgl.baglanti());
+            SqlCommand komutm = new SqlCommand("select max(evrak_no) from NKR", bgl.baglanti());
             SqlDataReader drm = komutm.ExecuteReader();
             while (drm.Read())
             {
                 maxevrak = Convert.ToInt32(drm[0].ToString());
-                maxrapor = Convert.ToInt32(drm[1].ToString());
             }
             bgl.baglanti().Close();
+        }
+
+        public static int maxrapor;
+        void RaporNoMax()
+        {
+            if (combo_grup.Text == "Özel2")
+            {
+                SqlCommand komutm = new SqlCommand("select TOP 1 RaporNo from NKR where Grup = 'Özel2' order by ID desc ", bgl.baglanti());
+                SqlDataReader drm = komutm.ExecuteReader();
+                while (drm.Read())
+                {
+                    maxrapor = Convert.ToInt32(drm[0].ToString());
+                }
+                bgl.baglanti().Close();
+            }
+            else
+            {
+                SqlCommand komutm = new SqlCommand("select MAX(RaporNo) from NKR", bgl.baglanti());
+                SqlDataReader drm = komutm.ExecuteReader();
+                while (drm.Read())
+                {
+                    maxrapor = Convert.ToInt32(drm[0].ToString());
+                }
+                bgl.baglanti().Close();
+            }
+
         }
 
         void EvrakNoo()
@@ -80,6 +105,7 @@ namespace mKYS
 
             Firma();
             Evrakmax();
+            RaporNoMax();
             proje();
             listele();
             txtEvrak.Text = (maxevrak + 1).ToString();
@@ -127,7 +153,6 @@ namespace mKYS
             bgl.baglanti().Close();
         }
 
-
         private void btn_analizekle_Click(object sender, EventArgs e)
         {
             try
@@ -160,6 +185,7 @@ namespace mKYS
                     lbl_rapno.Text = txtRapor.Text;
                     Evrakmax();
                     txtRapor.Text = "";
+                    RaporNoMax();
                     int yenirap = maxrapor + 1;
                     txtRapor.Text = yenirap.ToString();
                     n.listele();
@@ -204,6 +230,9 @@ namespace mKYS
                 combo_tur.Properties.Items.Add(dr["Tur"]);
             }
             bgl.baglanti().Close();
+
+            RaporNoMax();
+            txtRapor.Text = (maxrapor + 1).ToString();
 
             if (combo_grup.Text == "Özel" || combo_grup.Text == "Özel2")
             {

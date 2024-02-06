@@ -27,6 +27,9 @@ namespace mKYS.Musteri
             }
             else
             {
+                // YeniProforma pf = new YeniProforma();
+                TeklifF.nkrevrak = evrakno;
+                TeklifF.nkrfirma = firma; 
                 TeklifF pf = new TeklifF();
                 pf.Show();
                 this.Close();
@@ -70,6 +73,8 @@ namespace mKYS.Musteri
                 }
                 else
                 {
+                    TeklifF.nkrevrak = evrakno;
+                    TeklifF.nkrfirma = firma;
                     TeklifF pf = new TeklifF();
                     pf.Show();
                     this.Close();
@@ -77,6 +82,7 @@ namespace mKYS.Musteri
             }
         }
 
+        public static string evrakno, firma;
         private void TeklifNoSec_Load(object sender, EventArgs e)
         {
 

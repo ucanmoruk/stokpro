@@ -419,7 +419,7 @@
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(57, 13);
             this.labelControl6.TabIndex = 16;
-            this.labelControl6.Text = "KDV (%18):";
+            this.labelControl6.Text = "KDV (%20):";
             // 
             // txt_kdv
             // 

@@ -30,7 +30,7 @@ namespace mKYS.Raporlar.Yeni
             //pResimUrl.Value = @"https://" + "www.massgrup.com/mask/Numune/Foto_2021" + "/" + path;
         }
 
-        public static string raporno, akr, revno, mail, telefon, analizadi, fotoname;
+        public static string raporno, akr, revno, mail, telefon, analizadi, fotoname, pNAm;
         public void bilgi()
         {
             pRaporNo.Value = raporno;
@@ -62,6 +62,18 @@ namespace mKYS.Raporlar.Yeni
                 path = dr2["Path"].ToString();
             }
             bgl.baglanti().Close();
+
+            SqlCommand komut12 = new SqlCommand(@"select n.RaporNo, n.ID, s.Ad, s.Method, s.Akreditasyon from NKR n 
+left join NumuneX1 x on n.ID = x.RaporID
+left join StokAnalizListesi s on x.AnalizID = s.ID where n.RaporNo = N'" + raporno + "' except select n.RaporNo, n.ID, s.Ad, s.Method, s.Akreditasyon from NKR n left join NumuneX2 x on n.ID = x.RaporID left join StokAnalizListesi s on x.AnalizID = s.ID where n.RaporNo = N'" + raporno + "'", bgl.baglanti());
+            SqlDataReader dr12 = komut12.ExecuteReader();
+            while (dr12.Read())
+            {
+                pNAm = dr12["Ad"].ToString();
+            }
+            bgl.baglanti().Close();
+
+            pNA.Value = pNAm;
 
 
             pResimUrl.Value = @"http://" + "www.massgrup.com/mask/Numune/Foto_2021" + "/" + path;

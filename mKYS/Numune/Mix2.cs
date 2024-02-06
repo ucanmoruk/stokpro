@@ -167,35 +167,41 @@ namespace mKYS.Numune
             
         }
 
-        string no1, tanim1, no2, tanim2, agrup2, mix2, kod2, no3, tanim3, agrup3, mix3, kod3, loq, nTur, degerlendirme, altAnalizID;
+        string xlimit, xbirim, no1, tanim1, no2, tanim2, agrup2, mix2, kod2, no3, tanim3, agrup3, mix3, kod3, loq, nTur, degerlendirme, altAnalizID;
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             DateTime tarih = DateTime.Now;
 
-            for (int i = 0; i <= gridView3.RowCount - 1; i++)
+            SqlCommand komutt = new SqlCommand(@"select Tur from NKR where ID = '" + raporID + "' ", bgl.baglanti());
+            SqlDataReader drt = komutt.ExecuteReader();
+            while (drt.Read())
             {
-                x2ID = gridView3.GetRowCellValue(i, "ID").ToString();
-                analizID = gridView3.GetRowCellValue(i, "AnalizID").ToString();
-                x3ID = Convert.ToInt32(gridView3.GetRowCellValue(i, "x3ID").ToString());
+                nTur = drt["Tur"].ToString();
+            }
+            drt.Close();
+            bgl.baglanti().Close();
 
-                SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID = '"+x2ID+"' ", bgl.baglanti());
-                SqlDataReader dr = komut.ExecuteReader();
-                while (dr.Read())
+            if (nTur == "Kozmetik")
+            {
+                for (int i = 0; i <= gridView3.RowCount - 1; i++)
                 {
-                    tekrar = Convert.ToInt32(dr[0].ToString());
+                    x2ID = gridView3.GetRowCellValue(i, "ID").ToString();
+                    analizID = gridView3.GetRowCellValue(i, "AnalizID").ToString();
+                    x3ID = Convert.ToInt32(gridView3.GetRowCellValue(i, "x3ID").ToString());
+
+                    SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID = '" + x2ID + "' ", bgl.baglanti());
+                    SqlDataReader dr = komut.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        tekrar = Convert.ToInt32(dr[0].ToString());
+                    }
+                    dr.Close();
+                    bgl.baglanti().Close();
 
                     if (tekrar == 0)
                     {
-                        
 
-                        //SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
-                        //add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
-                        //add2.Parameters.AddWithValue("@a2", tarih);
-                        //add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
-                        //add2.ExecuteNonQuery();
-                        //bgl.baglanti().Close();
-                  
                         SqlCommand komutx = new SqlCommand(@"select x.RaporID, d.ID, l.Kod, l.Ad, l.Method, d.Aciklama, d.LOQ, y.Limit, y.Birim, z.Tur from Numunex1 x
                         left join StokAnalizListesi l on x.AnalizID = l.ID
                         left join StokAnalizDetay d on l.ID = d.AnalizID
@@ -204,64 +210,111 @@ namespace mKYS.Numune
                         where x.RaporID = '" + raporID + "' and d.Durum = 'Aktif' and y.x3ID = '" + x3ID + "' and x.AnalizID = '" + analizID + "'", bgl.baglanti());
                         SqlDataReader drx = komutx.ExecuteReader();
                         while (drx.Read())
-                            {
-                                loq = drx["LOQ"].ToString();
-                                nTur = drx["Tur"].ToString();
-                                altAnalizID = drx["ID"].ToString();
+                        {
+                            loq = drx["LOQ"].ToString();
+                            nTur = drx["Tur"].ToString();
+                            altAnalizID = drx["ID"].ToString();
+                            xlimit = drx["Limit"].ToString();
+                            xbirim = drx["Birim"].ToString();
 
-                                if (nTur == "Kozmetik")
-                                {
-                                    if (loq == "" || loq == null || loq == "-")
-                                        loq2 = "Tespit Edilmedi";
-                                    else
-                                        loq2 = "<" + loq;
-                                    degerlendirme = "Uygun";
+                            if (loq == "" || loq == null || loq == "-")
+                                loq2 = "Tespit Edilmedi";
+                            else
+                                loq2 = "<" + loq;
+                            degerlendirme = "Uygun";
 
-                                    SqlCommand add = new SqlCommand("insert into NumuneX5(x2ID, AltAnalizID, Limit, Birim, Sonuc, Degerlendirme, Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o7)", bgl.baglanti());
-                                    add.Parameters.AddWithValue("@o1", x2ID);
-                                    add.Parameters.AddWithValue("@o2", altAnalizID);
-                                    add.Parameters.AddWithValue("@o3", drx["Limit"].ToString());
-                                    add.Parameters.AddWithValue("@o4", drx["Birim"].ToString());
-                                    add.Parameters.AddWithValue("@o5", loq2);
-                                    add.Parameters.AddWithValue("@o6", degerlendirme);
-                                    add.Parameters.AddWithValue("@o7", "Analizde");
-                                    add.ExecuteNonQuery();
-                                    bgl.baglanti().Close();
-                                }
-                                else
-                                {
-                                    if (loq == "" || loq == null || loq == "-")
-                                        loq2 = "N.D.";
-                                    else
-                                        loq2 = "<" + loq;
-                                    degerlendirme = "GEÇER";
+                            SqlCommand add = new SqlCommand("insert into NumuneX5(x2ID, AltAnalizID, Limit, Birim, Sonuc, Degerlendirme, Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o7)", bgl.baglanti()) { CommandTimeout = 0 };
+                            add.Parameters.AddWithValue("@o1", x2ID);
+                            add.Parameters.AddWithValue("@o2", altAnalizID);
+                            add.Parameters.AddWithValue("@o3", xlimit);
+                            add.Parameters.AddWithValue("@o4", xbirim);
+                            add.Parameters.AddWithValue("@o5", loq2);
+                            add.Parameters.AddWithValue("@o6", degerlendirme);
+                            add.Parameters.AddWithValue("@o7", "Analizde");
+                            add.ExecuteNonQuery();
+                            bgl.baglanti().Close();
 
-                                    SqlCommand add = new SqlCommand("insert into NumuneX5(x2ID, AltAnalizID, Limit, Birim, Sonuc, Degerlendirme, Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o7)", bgl.baglanti());
-                                    add.Parameters.AddWithValue("@o1", x2ID);
-                                    add.Parameters.AddWithValue("@o2", altAnalizID);
-                                    add.Parameters.AddWithValue("@o3", drx["Limit"].ToString());
-                                    add.Parameters.AddWithValue("@o4", drx["Birim"].ToString());
-                                    add.Parameters.AddWithValue("@o5", loq2);
-                                    add.Parameters.AddWithValue("@o6", degerlendirme);
-                                    add.Parameters.AddWithValue("@o7", "Analizde");
-                                    add.ExecuteNonQuery();
-                                    bgl.baglanti().Close();
-                                }
 
-                            }
+                        }
                         bgl.baglanti().Close();
-                        
+
+
+
                     }
                     else
                     {
 
                     }
                 }
-                dr.Close();
-                bgl.baglanti().Close();
-
-
             }
+            else
+            {
+                for (int i = 0; i <= gridView3.RowCount - 1; i++)
+                {
+                    x2ID = gridView3.GetRowCellValue(i, "ID").ToString();
+                    analizID = gridView3.GetRowCellValue(i, "AnalizID").ToString();
+                    x3ID = Convert.ToInt32(gridView3.GetRowCellValue(i, "x3ID").ToString());
+
+                    SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID = '" + x2ID + "' ", bgl.baglanti());
+                    SqlDataReader dr = komut.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        tekrar = Convert.ToInt32(dr[0].ToString());
+                    }
+                    dr.Close();
+                    bgl.baglanti().Close();
+
+                    if (tekrar == 0)
+                    {
+
+                        SqlCommand komutx = new SqlCommand(@"select x.RaporID, d.ID, l.Kod, l.Ad, l.Method, d.Aciklama, d.LOQ, y.Limit, y.Birim, z.Tur from Numunex1 x
+                        left join StokAnalizListesi l on x.AnalizID = l.ID
+                        left join StokAnalizDetay d on l.ID = d.AnalizID
+                        left join NKR z on x.RaporID = z.ID
+                        inner join Numunex4 y on d.ID = y.AltAnalizID
+                        where x.RaporID = '" + raporID + "' and d.Durum = 'Aktif' and y.x3ID = '" + x3ID + "' and x.AnalizID = '" + analizID + "' and d.Tur <> N'Alt Etken' ", bgl.baglanti());
+                        SqlDataReader drx = komutx.ExecuteReader();
+                        while (drx.Read())
+                        {
+                            loq = drx["LOQ"].ToString();
+                            nTur = drx["Tur"].ToString();
+                            altAnalizID = drx["ID"].ToString();
+                            xlimit = drx["Limit"].ToString();
+                            xbirim = drx["Birim"].ToString();
+
+                            if (loq == "" || loq == null || loq == "-")
+                                loq2 = "N.D.";
+                            else
+                                loq2 = "<" + loq;
+                            degerlendirme = "GEÇER";
+
+                            SqlCommand add = new SqlCommand("insert into NumuneX5(x2ID, AltAnalizID, Limit, Birim, Sonuc, Degerlendirme, Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o7)", bgl.baglanti()) { CommandTimeout = 0 };
+                            add.Parameters.AddWithValue("@o1", x2ID);
+                            add.Parameters.AddWithValue("@o2", altAnalizID);
+                            add.Parameters.AddWithValue("@o3", xlimit);
+                            add.Parameters.AddWithValue("@o4", xbirim);
+                            add.Parameters.AddWithValue("@o5", loq2);
+                            add.Parameters.AddWithValue("@o6", degerlendirme);
+                            add.Parameters.AddWithValue("@o7", "Analizde");
+                            add.ExecuteNonQuery();
+                            bgl.baglanti().Close();
+
+
+                        }
+                        bgl.baglanti().Close();
+
+
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+
+  
 
 
             SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
@@ -269,6 +322,11 @@ namespace mKYS.Numune
             add2.Parameters.AddWithValue("@a2", tarih);
             add2.Parameters.AddWithValue("@a3", Giris.kullaniciID);
             add2.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            SqlCommand add12 = new SqlCommand("update NKR set Rapor_Durumu=@a1 where ID = N'" + raporID + "' ", bgl.baglanti());
+            add12.Parameters.AddWithValue("@a1", "Mixed");
+            add12.ExecuteNonQuery();
             bgl.baglanti().Close();
 
             //SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID in (select ID from NumuneX2 where RaporID = '"+raporID+"')", bgl.baglanti());

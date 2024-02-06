@@ -147,7 +147,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "turhost_massgrup_mass_Connection";
+            this.sqlDataSource1.ConnectionName = "mass_yeni";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "RaporNo";
             table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"362\" />";
@@ -487,10 +487,10 @@
             // 
             this.xrPictureBox3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pResimUrl")});
-            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(215.5267F, 48.79166F);
+            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(236.0002F, 48.79169F);
             this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(427.9192F, 254.5278F);
-            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(394.9457F, 254.5278F);
+            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             // 
             // xrLabel13
             // 

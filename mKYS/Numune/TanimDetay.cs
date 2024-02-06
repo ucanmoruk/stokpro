@@ -29,7 +29,7 @@ namespace mKYS.Numune
             //SqlDataAdapter da = new SqlDataAdapter("select ROW_NUMBER() OVER(ORDER BY RaporID) as No, Grup=@a1, Tanim as 'Tanımlama' where RaporNo = '" + txt_raporno.Text + "'", bgl.baglanti());
             //da.SelectCommand.Parameters.AddWithValue("@a1", "A");
           //  SqlDataAdapter da = new SqlDataAdapter("select No, Grup, Tanim as 'Tanımlama', Ortak as 'Ortak Parça' from Tanimlama where RaporNo = '" + txt_raporno.Text + "' order by No asc", bgl.baglanti());
-            SqlDataAdapter da = new SqlDataAdapter("select No, Grup, Tanim as 'Tanımlama', Ortak as 'Ortak Parça' from Tanimlama where RaporID = '" + raporID + "' order by No asc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select No, Grup, Tanim as 'Tanımlama', Ortak as 'Ortak Parça', EkNot from Tanimlama where RaporID = '" + raporID + "' order by No asc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();
@@ -62,6 +62,7 @@ namespace mKYS.Numune
             this.gridView1.Columns[0].Width = 30;
             this.gridView1.Columns[1].Width = 30;
             this.gridView1.Columns[2].Width = 235;
+            this.gridView1.Columns[4].Width = 50;
 
 
         }
@@ -80,8 +81,8 @@ namespace mKYS.Numune
                     grup2 = grup;
 
                 
-                SqlCommand komutz = new SqlCommand("insert into Tanimlama (Grup, Tanim, RaporNo, No, Ortak, RaporID, Tarih, KID, Durumu) values (@o1,@o2,@o3,@o4,@o5, @o6, @o7, @o8, @o9);" +
-                //"update Rapor_Tanim set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporNo = N'" + txt_raporno.Text + "' ", bgl.baglanti());
+                SqlCommand komutz = new SqlCommand("insert into Tanimlama (Grup, Tanim, RaporNo, No, Ortak, RaporID, Tarih, KID, Durumu, EkNot) values (@o1,@o2,@o3,@o4,@o5, @o6, @o7, @o8, @o9, @o10);" +
+                " update NKR set Rapor_Durumu=@a1 where ID = N'" + raporID + "' ; " +
                 " update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
                 komutz.Parameters.AddWithValue("@o1", grup2.ToUpper());
                 komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "Tanımlama").ToString());
@@ -92,6 +93,7 @@ namespace mKYS.Numune
                 komutz.Parameters.AddWithValue("@o7", tarih);
                 komutz.Parameters.AddWithValue("@o8", Giris.kullaniciID);
                 komutz.Parameters.AddWithValue("@o9", "Aktif");
+                komutz.Parameters.AddWithValue("@o10", gridView1.GetRowCellValue(ik, "EkNot").ToString());
                 komutz.Parameters.AddWithValue("@a1", "Tanımlandı");
                 komutz.Parameters.AddWithValue("@a2", tarih);
                 komutz.Parameters.AddWithValue("@a3", Giris.kullaniciID);

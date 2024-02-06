@@ -63,7 +63,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(491, 73);
+            this.groupControl1.Size = new System.Drawing.Size(563, 73);
             this.groupControl1.TabIndex = 0;
             // 
             // txt_raporno
@@ -93,7 +93,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 448);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(491, 80);
+            this.panelControl1.Size = new System.Drawing.Size(563, 80);
             this.panelControl1.TabIndex = 1;
             // 
             // btn_tanimla
@@ -103,7 +103,7 @@
             this.btn_tanimla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_tanimla.ImageOptions.Image")));
             this.btn_tanimla.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_tanimla.ImageOptions.ImageToTextIndent = 10;
-            this.btn_tanimla.Location = new System.Drawing.Point(320, 15);
+            this.btn_tanimla.Location = new System.Drawing.Point(395, 15);
             this.btn_tanimla.Name = "btn_tanimla";
             this.btn_tanimla.Size = new System.Drawing.Size(147, 53);
             this.btn_tanimla.TabIndex = 0;
@@ -116,7 +116,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 73);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(491, 375);
+            this.gridControl1.Size = new System.Drawing.Size(563, 375);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -169,7 +169,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(491, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(563, 0);
             // 
             // barDockControlBottom
             // 
@@ -177,7 +177,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 528);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(491, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(563, 0);
             // 
             // barDockControlLeft
             // 
@@ -191,7 +191,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(491, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(563, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
             // 
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 528);
+            this.ClientSize = new System.Drawing.Size(563, 528);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.groupControl1);

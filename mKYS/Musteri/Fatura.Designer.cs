@@ -251,7 +251,7 @@
             // 
             // combo_year
             // 
-            this.combo_year.EditValue = "2022";
+            this.combo_year.EditValue = "2023";
             this.combo_year.Location = new System.Drawing.Point(186, 11);
             this.combo_year.MenuManager = this.barManager1;
             this.combo_year.Name = "combo_year";
@@ -261,7 +261,8 @@
             "2022",
             "2021",
             "2020",
-            "2019"});
+            "2019",
+            "2023"});
             this.combo_year.Size = new System.Drawing.Size(100, 20);
             this.combo_year.TabIndex = 1;
             this.combo_year.SelectedIndexChanged += new System.EventHandler(this.combo_year_SelectedIndexChanged);

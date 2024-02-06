@@ -23,6 +23,7 @@ namespace mKYS.Musteri
         sqlbaglanti bgl = new sqlbaglanti();
 
         public static decimal sum = 0;
+        string koz;
         void goster()
         {
             txt_evrak.Text = ProformaListesi.profno.ToString();
@@ -32,6 +33,14 @@ namespace mKYS.Musteri
             while (dr4.Read())
             {
                 txt_firma.Text = dr4["Firma_Adi"].ToString();
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand komut414 = new SqlCommand("select Tur from NKR where Evrak_No = N'" + txt_evrak.Text + "' ", bgl.baglanti());
+            SqlDataReader dr414 = komut414.ExecuteReader();
+            while (dr414.Read())
+            {
+                koz = dr414["Tur"].ToString();
             }
             bgl.baglanti().Close();
 
@@ -212,8 +221,16 @@ namespace mKYS.Musteri
             //{
                 if (txt_tekliftur.Text == "Analiz")
                 {
-                    gridView1.Columns["Ürün Grubu"].Group();
-                    gridView1.ExpandAllGroups();
+                        if (koz == "Kozmetik")
+                        {
+
+                        }
+                        else
+                        {
+                            gridView1.Columns["Ürün Grubu"].Group();
+                            gridView1.ExpandAllGroups();
+                        }
+                    
                 }
                 else
                 {
@@ -250,15 +267,15 @@ namespace mKYS.Musteri
             if (txt_teklifno.Text == "2101000")
             {
                 decimal total = Convert.ToDecimal(txt_genel.Text);
-                decimal sub = Math.Round(total * 100 / 118 ,2);
-                decimal kdv = Math.Round(sub * 18 / 100 , 2);
+                decimal sub = Math.Round(total * 100 / 120 ,2);
+                decimal kdv = Math.Round(sub * 20 / 100 , 2);
                 txt_kdv.Text = kdv.ToString();
                 txt_toplam.Text = sub.ToString();
             }
             else
             {
                 decimal sub = Convert.ToDecimal(txt_toplam.Text);
-                decimal kdv = Math.Round(sub * 18 / 100, 2);
+                decimal kdv = Math.Round(sub * 20 / 100, 2);
                 decimal total = Math.Round(sub + kdv, 2);
                 txt_kdv.Text = kdv.ToString();
                 txt_genel.Text = total.ToString();

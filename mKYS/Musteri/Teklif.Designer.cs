@@ -130,7 +130,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(2, 27);
+            this.splitContainer2.Location = new System.Drawing.Point(2, 29);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -142,8 +142,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gridControl2);
-            this.splitContainer2.Size = new System.Drawing.Size(318, 421);
-            this.splitContainer2.SplitterDistance = 80;
+            this.splitContainer2.Size = new System.Drawing.Size(318, 419);
+            this.splitContainer2.SplitterDistance = 79;
             this.splitContainer2.TabIndex = 5;
             // 
             // simpleButton2
@@ -184,7 +184,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(318, 337);
+            this.gridControl2.Size = new System.Drawing.Size(318, 336);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

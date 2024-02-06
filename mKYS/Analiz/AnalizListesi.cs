@@ -1,13 +1,7 @@
 ﻿using mKYS.Dokuman;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS.Analiz
@@ -23,19 +17,19 @@ namespace mKYS.Analiz
 
         public void listele()
         {
-            //DataTable dt2 = new DataTable();
-            //SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-            //    "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
-            //da2.Fill(dt2);
-            //gridControl1.DataSource = dt2;
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
+                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl1.DataSource = dt2;
 
             //denetim için
 
-            DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' and l.Akreditasyon = 'Var' order by l.Kod ", bgl.baglanti());
-            da2.Fill(dt2);
-            gridControl1.DataSource = dt2;
+            //DataTable dt2 = new DataTable();
+            //SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
+            //    "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' and l.Akreditasyon = 'Var' order by l.Kod ", bgl.baglanti());
+            //da2.Fill(dt2);
+            //gridControl1.DataSource = dt2;
 
 
             gridView1.Columns["ID"].Visible = false;
@@ -91,12 +85,12 @@ namespace mKYS.Analiz
             {
                 DialogResult Secim = new DialogResult();
 
-                Secim = MessageBox.Show( skod + " kodlu analizi silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                Secim = MessageBox.Show(skod + " kodlu analizi silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                 if (Secim == DialogResult.Yes)
                 {
-                    string ykod = "P-"+skod ;
-                   SqlCommand komutSil = new SqlCommand("update StokAnalizListesi set Durumu=@a1 where ID= N'" + aID + "'", bgl.baglanti());
+                    string ykod = "P-" + skod;
+                    SqlCommand komutSil = new SqlCommand("update StokAnalizListesi set Durumu=@a1 where ID= N'" + aID + "'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.Parameters.AddWithValue("@a1", ykod);
                     komutSil.ExecuteNonQuery();
@@ -132,7 +126,7 @@ namespace mKYS.Analiz
 
             if (DokumanGoruntule.yol == "" || DokumanGoruntule.yol == null)
             {
-                MessageBox.Show("Bu analiz talimatı henüz sisteme yüklenmemiştir!", "Oooppss!", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                MessageBox.Show("Bu analiz talimatı henüz sisteme yüklenmemiştir!", "Oooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -182,7 +176,7 @@ namespace mKYS.Analiz
         {
             if (yetki == 0 || yetki.ToString() == null)
             {
-                MessageBox.Show("Bu analiz için henüz reçete oluşturulmamıştır!","Oooppss!!",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Bu analiz için henüz reçete oluşturulmamıştır!", "Oooppss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -199,7 +193,7 @@ namespace mKYS.Analiz
                 }
             }
 
-              
+
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -240,7 +234,7 @@ namespace mKYS.Analiz
 
             if (redurum == 0)
             {
-                reizin();               
+                reizin();
             }
             else
             {

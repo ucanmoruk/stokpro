@@ -24,10 +24,9 @@ namespace mKYS.Musteri
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select c.Tarih, k.Ad + ' ' + k.Soyad as 'Plasiyer', f.Firma_Adi as 'Firma', c.Yetkili, c.Iletisim, c.Tur as 'Görüşme türü',
-	        c.Konu, c.Mesaj, c.ID from CrmMusteri c 
-	        left join Firma f on c.FirmaID = f.ID
-	        left join Kullanici k on c.PlasiyerID = k.ID
+            SqlDataAdapter da = new SqlDataAdapter(@"select c.Tarih, k.Ad + ' ' + k.Soyad as 'Plasiyer', c.Firma, c.FirmaAd as 'Firma Adı', c.Yetkili, c.Iletisim, c.Tur as 'Görüşme türü',
+	        c.Konu, c.Mesaj,c.Durumu, c.ID from CrmMusteri c 
+	        left join  StokKullanici k on c.PlasiyerID = k.ID
 	        order by c.Tarih desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
@@ -36,12 +35,14 @@ namespace mKYS.Musteri
 
             this.gridView3.Columns[0].Width = 70;
             this.gridView3.Columns[1].Width = 70;
-            this.gridView3.Columns[2].Width = 200;
-            this.gridView3.Columns[3].Width = 70;
+            this.gridView3.Columns[2].Width = 50;
+            this.gridView3.Columns[3].Width = 200;
             this.gridView3.Columns[4].Width = 70;
             this.gridView3.Columns[5].Width = 70;
-            this.gridView3.Columns[6].Width = 80;
-            this.gridView3.Columns[7].Width = 200;
+            this.gridView3.Columns[6].Width = 70;
+            this.gridView3.Columns[7].Width = 80;
+            this.gridView3.Columns[8].Width = 200;
+            this.gridView3.Columns[9].Width = 100;
 
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView3.Columns["Mesaj"].ColumnEdit = memo;

@@ -208,7 +208,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "turhost_massgrup_mass_Connection";
+            this.sqlDataSource1.ConnectionName = "mass_yeni";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "RaporNo";
             table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"343\" />";
@@ -695,10 +695,8 @@
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel9});
-            this.ReportFooter.Expanded = false;
             this.ReportFooter.HeightF = 23F;
             this.ReportFooter.Name = "ReportFooter";
-            this.ReportFooter.PrintAtBottom = true;
             // 
             // xrLabel9
             // 
@@ -759,7 +757,6 @@
             this.groupFooterBand2});
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
-            this.DetailReport1.Expanded = false;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Query].[Method] = \'BS EN 1811:2011+A1:2015\', false , true )")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
@@ -876,8 +873,10 @@
             this.xrLabel28,
             this.xrLabel29});
             this.groupHeaderBand2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("Method", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("MethodEn", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.groupHeaderBand2.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.groupHeaderBand2.HeightF = 102.0001F;
+            this.groupHeaderBand2.KeepTogether = true;
             this.groupHeaderBand2.Name = "groupHeaderBand2";
             this.groupHeaderBand2.RepeatEveryPage = true;
             // 

@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS.Dokuman
 {
     public partial class DokumanGoruntule : Form
     {
+        sqlbaglanti bgl = new sqlbaglanti();
+
+        public static string yol, ad, path;
+
         public DokumanGoruntule()
         {
             InitializeComponent();
         }
-
-        sqlbaglanti bgl = new sqlbaglanti();
-
-        public static string yol, ad, path;
 
         private void DokumanGoruntule_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -34,7 +27,8 @@ namespace mKYS.Dokuman
             axAcroPDF1.LoadFile(path);
 
             if(Text == "" || Text == null)
-            { }
+            {
+            }
             else
             {
                 Text = ad;

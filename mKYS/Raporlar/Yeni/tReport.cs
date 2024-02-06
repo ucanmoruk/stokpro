@@ -5,6 +5,8 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using mKYS.Raporlar;
 using System.Data.SqlClient;
+using DevExpress.XtraPrinting.BarCode;
+using QRCoder;
 
 namespace mKYS.Raporlar.Yeni
 {
@@ -57,7 +59,7 @@ namespace mKYS.Raporlar.Yeni
         }
 
         int raporID, firmaID;
-        public static string raporno, miktar, birim, mail, telefon, imza;
+        public static string raporno, miktar, birim, mail, telefon, imza, onay, fname;
 
         public void bilgi()
         {
@@ -153,6 +155,23 @@ namespace mKYS.Raporlar.Yeni
 
             analizbul();
 
+            if (onay=="yes")
+            {
+                xrTableCell4.Text = "Doğrulama";
+                xrLabel10.Visible = true;
+                xrLabel6.Visible = true;
+                xrPictureBox4.Visible = true;
+                xrPictureBox5.Visible = true; 
+                string str = "https://" + "www.massgrup.com/Raporlar/2023" + "/" + fname + ".pdf";
+                QRCoder.QRCodeGenerator qrGenerator = new QRCoder.QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(str, QRCoder.QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(20);
+                xrPictureBox3.Image = qrCodeImage;
+            }
+
         }
+
+
     }
 }

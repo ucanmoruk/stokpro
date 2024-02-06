@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS.Analiz
@@ -23,8 +17,8 @@ namespace mKYS.Analiz
         public void listele()
         {
             DataTable dt2 = new DataTable();
-          //  SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'" + skod + "' order by r.StokKod", bgl.baglanti());
-         //   SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
+            //  SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'" + skod + "' order by r.StokKod", bgl.baglanti());
+            //   SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
             SqlDataAdapter da2 = new SqlDataAdapter("select l.Kod, l.Ad, l.Miktar as 'Stok Miktarı', r.Miktar as 'Kullanılan Miktar', l.Birim, l.Limit as 'Kritik Limit' " +
              " from StokListesi l left join StokRecete r on l.ID = r.StokID where r.AnalizID = '" + aID + "'", bgl.baglanti());
 
@@ -38,7 +32,7 @@ namespace mKYS.Analiz
             this.gridView2.Columns[5].Width = 40;
 
             DataTable dt7 = new DataTable();
-            SqlDataAdapter da7 = new SqlDataAdapter(" select Kod, Ad from CihazListesi where ID in (select CihazID from CihazAnaliz where AnalizID = '"+aID+"')", bgl.baglanti());
+            SqlDataAdapter da7 = new SqlDataAdapter(" select Kod, Ad from CihazListesi where ID in (select CihazID from CihazAnaliz where AnalizID = '" + aID + "')", bgl.baglanti());
             da7.Fill(dt7);
             gridControl1.DataSource = dt7;
             this.gridView1.Columns[0].Width = 35;
@@ -88,7 +82,7 @@ namespace mKYS.Analiz
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand komut11 = new SqlCommand(" select * from StokFirmaBirim where ID = '"+bID+"' ", bgl.baglanti());
+                SqlCommand komut11 = new SqlCommand(" select * from StokFirmaBirim where ID = '" + bID + "' ", bgl.baglanti());
                 SqlDataReader dr11 = komut11.ExecuteReader();
                 while (dr11.Read())
                 {

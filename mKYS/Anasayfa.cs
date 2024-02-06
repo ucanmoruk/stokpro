@@ -207,6 +207,22 @@ namespace mKYS
 
         }
 
+        void lab()
+        {
+            if (gorev == "Laboratuvar Sorumlusu")
+            {
+                musteripage.Visible = false;
+                firmapage.Visible = false;
+                numunepage.Visible = false;
+            }
+            else
+            {
+                musteripage.Visible = true;
+                firmapage.Visible = true;
+                numunepage.Visible = true;
+            }
+        }
+
         DuyuruListe kl;
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
@@ -214,7 +230,7 @@ namespace mKYS
             kullanicibul();
             firmabul();
             yetkibul();
-
+            lab();
             UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.Dragonfly);
 
 
@@ -791,6 +807,91 @@ namespace mKYS
                 frm.DKD();
                 frm.ShowDialog();
             }
+        }
+
+        NKR2 n2;
+        private void barButtonItem83_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (n2 == null || n2.Disposing)
+            {
+                n2 = new NKR2();
+                n2.MdiParent = this;
+                n2.Show();
+
+            }
+        }
+
+        Numune.LabTermin lt;
+        private void barButtonItem84_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            lt = new Numune.LabTermin();
+            lt.MdiParent = this;
+            lt.Show();
+
+
+            if (lt == null || lt.Disposing)
+            {
+                
+
+            }
+        }
+
+        RaporTermin rt;
+        private void barButtonItem85_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rt = new RaporTermin();
+            rt.MdiParent = this;
+            rt.Show();
+
+            if (rt == null || rt.Disposing)
+            {
+            
+            }
+        }
+
+
+        MusteriTakip mt;
+        private void barButtonItem86_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mt = new MusteriTakip();
+            mt.MdiParent = this;
+            mt.Show();
+
+            if (mt == null || mt.Disposing)
+            {
+
+
+            }
+        }
+
+
+        private void barButtonItem88_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            NumKabv2 v2 = new NumKabv2();
+            v2.Show();
+        }
+
+        private void barButtonItem89_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FirmaYeni fy = new FirmaYeni();
+            fy.Show();
+        }
+
+        Tanimlama2 tan2;
+        private void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tan2 == null || tan2.IsDisposed)
+            {
+                tan2 = new Tanimlama2();
+                tan2.MdiParent = this;
+                tan2.Show();
+            }
+        }
+       
+        private void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Numune.ResimEkle re = new Numune.ResimEkle();
+            re.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

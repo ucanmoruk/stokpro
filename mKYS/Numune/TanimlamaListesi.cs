@@ -37,39 +37,12 @@ namespace mKYS
             left join Termin t on n.ID = t.RaporID
             left join StokKullanici k on k.ID = r.TanimlayanID 
             left join NumuneDetay d on d.RaporID = n.ID 
-            where year(r.Tarih) = N'" + combo_year.Text + "' and month(r.Tarih) = N'" + ayi + "' order by n.RaporNo desc  ", bgl.baglanti());
+            where year(r.Tarih) = N'" + combo_year.Text + "' and month(r.Tarih) = N'" + ayi + "' order by n.ID desc  ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();
 
             gridView1.Columns["RaporID"].Visible = false;
-        }
-        public static string raporno;
-
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-                raporno = dr["Rapor Numarası"].ToString();
-                raporID = dr["RaporID"].ToString();
-                Numune.TanimDetay.raporID = raporID;
-                Numune.TanimDetay td = new Numune.TanimDetay();
-                td.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hata 5: "+ex);
-            }
- 
-
-        }
-
-        int ayi;
-        private void Tanimlama_Load(object sender, EventArgs e)
-        {
-            listele();
 
             combo_ay.Text = DateTime.Now.ToString("MMMM");
             if (combo_ay.Text == "Ocak")
@@ -99,7 +72,7 @@ namespace mKYS
             else if (combo_ay.Text == "Aralık")
                 ayi = 12;
 
-          
+
             this.gridView1.Columns[0].Width = 75;
             this.gridView1.Columns[1].Width = 75;
             this.gridView1.Columns[2].Width = 180;
@@ -109,6 +82,44 @@ namespace mKYS
             this.gridView1.Columns[6].Width = 75;
             this.gridView1.Columns[7].Width = 75;
             this.gridView1.Columns[8].Width = 75;
+
+            //özel3
+            //DataTable dt = new DataTable();
+            //SqlDataAdapter da = new SqlDataAdapter(@"select d.RaporID, n.RaporNo as 'Rapor Numarası', n.Numune_Adi as 'Numune Adı', n.Tur as 'Numune Türü', d.Model, 
+            //n.Aciklama as 'Özel Not' from NKR n
+            //left join NumuneDetay d on d.RaporID = n.ID 
+            //where n.Grup='Özel3' order by n.RaporNo desc  ", bgl.baglanti());
+            //da.Fill(dt);
+            //gridControl1.DataSource = dt;
+            //bgl.baglanti().Close();
+
+        }
+        public static string raporno;
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                raporno = dr["Rapor Numarası"].ToString();
+                raporID = dr["RaporID"].ToString();
+                Numune.TanimDetay.raporID = raporID;
+                Numune.TanimDetay td = new Numune.TanimDetay();
+                td.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata 5: "+ex);
+            }
+ 
+
+        }
+
+        int ayi;
+        private void Tanimlama_Load(object sender, EventArgs e)
+        {
+            listele();
 
 
         }
@@ -246,15 +257,15 @@ namespace mKYS
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // Hamveri rapor şablonu hazır olduğunda burayı aktifleştir.
-            //
-            //
-            //Raporlar.Hamveri.raporno = raporno;
-            //using (mNiS.Raporlar.frmPrint frm = new mNiS.Raporlar.frmPrint())
-            //{
-            //    frm.Hamveri();
-            //    frm.ShowDialog();
-            //}
+           // Hamveri rapor şablonu hazır olduğunda burayı aktifleştir.
+
+
+           Raporlar.Hamveri.raporno = raporno;
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.Hamveri();
+                frm.ShowDialog();
+            }
         }
 
         int tanimsayi;
@@ -274,9 +285,9 @@ namespace mKYS
             }
             else
             {
-                //Numune.TanimKopyaHedef.gelenrapor = raporno;
-                //Numune.TanimKopyaHedef hf = new Numune.TanimKopyaHedef();
-                //hf.Show();
+                Numune.TanimKopyaHedef.gelenrapor = raporno;
+                Numune.TanimKopyaHedef hf = new Numune.TanimKopyaHedef();
+                hf.Show();
             }
 
         }
@@ -343,13 +354,20 @@ namespace mKYS
             //}
         }
 
-
+        Numune.SonucListesi sl;
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Sonuç girme 
-            //Numune.Sonuc.raporno = raporno;
-            //Numune.Sonuc s = new Numune.Sonuc();
-            //s.Show();
+           //raporID
+            Numune.SonucListesi.raporID = raporID;
+            Numune.SonucListesi.raporNo = raporno;
+
+            if (sl == null || sl.IsDisposed)
+            {
+                sl = new Numune.SonucListesi();
+                sl.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
+                sl.Show();
+            }
         }
     }
 }

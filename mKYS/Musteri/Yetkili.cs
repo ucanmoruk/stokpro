@@ -1,36 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace mKYS.Musteri
 {
     public partial class Yetkili : Form
     {
+        sqlbaglanti bgl = new sqlbaglanti();
+        int yetkilid;
+        int YetkiliId;
+        public int firmaID;
+        public string firmaAdi;
+
         public Yetkili()
         {
             InitializeComponent();
         }
-        sqlbaglanti bgl = new sqlbaglanti();
-
-
-        int YetkiliId;
+           
         void listele()
         {
-            lbl_Firma.Text = Firmalar.firmaadi;
+            lbl_Firma.Text = firmaAdi;
             SqlCommand getir = new SqlCommand("Select Firma_ID from Yetkili", bgl.baglanti());
             SqlDataReader dr = getir.ExecuteReader();
             while (dr.Read())
             {
                 YetkiliId = Convert.ToInt32(dr[0].ToString());
-                if (YetkiliId == Convert.ToInt32(Firmalar.firmaID))
+                if (YetkiliId == Convert.ToInt32(firmaID))
                 {
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter("select Yetkili as 'Yetkili Ad Soyad', Gorevi as 'Görevi', Mail, Telefon from Yetkili where Firma_Id = N'" + YetkiliId + "'", bgl.baglanti());
@@ -52,7 +48,6 @@ namespace mKYS.Musteri
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DialogResult Secim = new DialogResult();
-
             Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (Secim == DialogResult.Yes)
@@ -65,10 +60,7 @@ namespace mKYS.Musteri
                 listele();
                 MessageBox.Show("Silme işlemi gerçekleşmiştir.");
             }
-
-
         }
-
 
         private void btn_ekle_Click(object sender, EventArgs e)
         {
@@ -78,7 +70,7 @@ namespace mKYS.Musteri
                 komut.Parameters.AddWithValue("@a1", txt_yetkili.Text);
                 komut.Parameters.AddWithValue("@a2", txt_mail.Text);
                 komut.Parameters.AddWithValue("@a3", txt_telefon.Text);
-                komut.Parameters.AddWithValue("@a4", Firmalar.firmaID);
+                komut.Parameters.AddWithValue("@a4", firmaID);
                 komut.Parameters.AddWithValue("@a5", txt_gorev.Text);
                 komut.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -89,8 +81,7 @@ namespace mKYS.Musteri
             catch (Exception ex)
             {
                 MessageBox.Show("Hata : " + ex.Message);
-            }
-            
+            }           
         }
 
         private void Yetkili_Load(object sender, EventArgs e)
@@ -127,10 +118,9 @@ namespace mKYS.Musteri
             catch (Exception ex)
             {
                 MessageBox.Show("Hata : " + ex.Message);
-            }
-            
+            }          
         }
-        int yetkilid;
+        
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             //SqlCommand getir = new SqlCommand("Select ID from Yetkili where Yetkili ='" + txt_yetkili.Text + "'", bgl.baglanti());
@@ -147,7 +137,7 @@ namespace mKYS.Musteri
             txt_mail.Text = dr["Mail"].ToString();
             txt_telefon.Text = dr["Telefon"].ToString();
             txt_gorev.Text = dr["Görevi"].ToString();
-            SqlCommand getir = new SqlCommand("Select ID from Yetkili where Yetkili = N'" + txt_yetkili.Text + "' and Firma_ID= N'"+ Firmalar.firmaID+"'", bgl.baglanti());
+            SqlCommand getir = new SqlCommand("Select ID from Yetkili where Yetkili = N'" + txt_yetkili.Text + "' and Firma_ID= N'"+ firmaID +"'", bgl.baglanti());
             SqlDataReader dr2 = getir.ExecuteReader();
             while (dr2.Read())
             {

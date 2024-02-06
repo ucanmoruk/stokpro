@@ -139,7 +139,9 @@
             "CRM",
             "Hizmet",
             "Kırtasiye",
-            "Cihaz Sarf"});
+            "Cihaz Sarf",
+            "Besiyeri",
+            "Kültür"});
             this.combo_tur.Size = new System.Drawing.Size(118, 20);
             this.combo_tur.TabIndex = 1;
             // 

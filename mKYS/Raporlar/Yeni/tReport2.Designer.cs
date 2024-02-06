@@ -136,6 +136,7 @@
             this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.pNA = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).BeginInit();
@@ -147,7 +148,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "turhost_massgrup_mass_Connection";
+            this.sqlDataSource1.ConnectionName = "mass_yeni";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "RaporNo";
             table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"362\" />";
@@ -328,10 +329,10 @@
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(456.2916F, 23F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(456.2916F, 42.79167F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "MASS LABORATUVAR ve DANIŞMANLIK HİZMETLERİ A.Ş.";
+            this.xrLabel1.Text = "MASS LABORATUVAR\r\nDANIŞMANLIK HİZMETLERİ A.Ş.";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel3
@@ -487,10 +488,10 @@
             // 
             this.xrPictureBox3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pResimUrl")});
-            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(215.5267F, 48.79166F);
+            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(236.0002F, 48.79166F);
             this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(427.9192F, 254.5278F);
-            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(384.5291F, 254.5278F);
+            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             // 
             // xrLabel13
             // 
@@ -567,7 +568,7 @@
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.Text = "ANALİZ ADI";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell5.Weight = 3.016509781109741D;
+            this.xrTableCell5.Weight = 3.6519265884321839D;
             // 
             // xrTableCell6
             // 
@@ -585,7 +586,7 @@
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
             this.xrTableCell6.Text = "ANALİZ METODU";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell6.Weight = 3.1377748454438779D;
+            this.xrTableCell6.Weight = 2.502358038121435D;
             // 
             // xrTableCell7
             // 
@@ -618,6 +619,7 @@
             this.ReportHeader});
             this.DetailReport.DataMember = "NKR";
             this.DetailReport.DataSource = this.sqlDataSource1;
+            this.DetailReport.Expanded = false;
             this.DetailReport.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
@@ -669,7 +671,7 @@
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
-            this.xrTableCell17.Weight = 3.0053643232522593D;
+            this.xrTableCell17.Weight = 3.6384334746905411D;
             // 
             // xrTableCell18
             // 
@@ -679,7 +681,7 @@
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorders = false;
-            this.xrTableCell18.Weight = 3.1261818751055985D;
+            this.xrTableCell18.Weight = 2.4931127236673167D;
             // 
             // xrTableCell19
             // 
@@ -787,6 +789,7 @@
             this.GroupHeader2});
             this.DetailReport2.DataMember = "NKR.NKRTanimlama";
             this.DetailReport2.DataSource = this.sqlDataSource1;
+            this.DetailReport2.Expanded = false;
             this.DetailReport2.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport2.Level = 2;
             this.DetailReport2.Name = "DetailReport2";
@@ -952,7 +955,7 @@
             this.DetailReport1.DataMember = "Query";
             this.DetailReport1.DataSource = this.sqlDataSource1;
             this.DetailReport1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([Query].[Ad]),false,true)")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty(?pNA),false,true)")});
             this.DetailReport1.FilterString = "[RaporNo] = ?pRaporNo";
             this.DetailReport1.Level = 1;
             this.DetailReport1.Name = "DetailReport1";
@@ -1004,7 +1007,7 @@
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseBorders = false;
-            this.xrTableCell21.Weight = 3.0053643232522593D;
+            this.xrTableCell21.Weight = 3.6384334746905411D;
             // 
             // xrTableCell22
             // 
@@ -1014,7 +1017,7 @@
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
-            this.xrTableCell22.Weight = 3.1261818751055985D;
+            this.xrTableCell22.Weight = 2.4931127236673167D;
             // 
             // xrTableCell23
             // 
@@ -1045,6 +1048,11 @@
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.Text = "* N.A. : Ürün materyalleri uygun olmadığından dolayı test uygulanmamıştır.";
             // 
+            // pNA
+            // 
+            this.pNA.Description = "pNA";
+            this.pNA.Name = "pNA";
+            // 
             // entReport2
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1067,7 +1075,8 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pRaporNo,
             this.pResimUrl,
-            this.pRevNo});
+            this.pRevNo,
+            this.pNA});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -1160,5 +1169,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
+        private DevExpress.XtraReports.Parameters.Parameter pNA;
     }
 }

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS
@@ -21,6 +15,8 @@ namespace mKYS
         sqlbaglanti bgl = new sqlbaglanti();
         public static string kullaniciadi, ad, soyad, gorev;
         public static int kullaniciID;
+
+        public static int sqlTip;
 
         private void Giris_Load(object sender, EventArgs e)
         {
@@ -39,6 +35,11 @@ namespace mKYS
             if (checkEdit1.Checked == true)
             {
                 db = "1";
+                sqlTip = 1;
+            }
+            else
+            {
+                sqlTip = 2;
             }
             giris();
         }
@@ -48,6 +49,11 @@ namespace mKYS
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txt_parola_KeyDown(object sender, KeyEventArgs e)

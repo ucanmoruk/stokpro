@@ -1,13 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS.Analiz
@@ -113,8 +108,8 @@ namespace mKYS.Analiz
             this.Close();
             AnalizAlt fr = new AnalizAlt();
             fr.Show();
-         
-            
+
+
         }
 
         void listele()
@@ -126,7 +121,7 @@ namespace mKYS.Analiz
             {
                 txt_ad.Text = drI["Ad"].ToString();
                 txt_kod.Text = drI["Kod"].ToString();
-                txt_matriks.Text = drI["Matriks"].ToString();               
+                txt_matriks.Text = drI["Matriks"].ToString();
                 combo_akre.Text = drI["Akreditasyon"].ToString();
                 string gbirim = drI["Birim"].ToString();
                 string gmetot = drI["Metot"].ToString();
@@ -147,7 +142,7 @@ namespace mKYS.Analiz
         void guncelle()
         {
             SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 , " +
-                " Method=@a8, AdEn=@a9, MethodEn=@a10, Sure=@a11, Numune=@a12, NumGereklilik=@a13, NumDipnot = @a14, NumDipnotEn = @a15 where ID = '" + aID+"' ", bgl.baglanti());
+                " Method=@a8, AdEn=@a9, MethodEn=@a10, Sure=@a11, Numune=@a12, NumGereklilik=@a13, NumDipnot = @a14, NumDipnotEn = @a15 where ID = '" + aID + "' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             if (String.IsNullOrEmpty(kaynak))
@@ -187,13 +182,13 @@ namespace mKYS.Analiz
         private void AnalizYeni_Load(object sender, EventArgs e)
         {
             if (aID == "" || aID == null)
-            {                
+            {
                 glistele();
             }
             else
             {
                 glistele();
-                listele();               
+                listele();
                 btn_add.Text = "Güncelle";
                 Text = "Analiz Bilgi Güncelle";
             }
@@ -206,14 +201,14 @@ namespace mKYS.Analiz
 
             if (btn_add.Text == "Güncelle")
             {
-                guncelle(); 
-           
+                guncelle();
+
             }
             else
             {
                 if (txt_kod.Text == "")
                 {
-                    MessageBox.Show("Lütfen analiz kodu bölümünü doldurunuz!", "Oooppss!"); 
+                    MessageBox.Show("Lütfen analiz kodu bölümünü doldurunuz!", "Oooppss!");
                 }
                 else
                 {
@@ -244,7 +239,7 @@ namespace mKYS.Analiz
 
                     }
 
-                   
+
 
                 }
 
@@ -260,11 +255,11 @@ namespace mKYS.Analiz
             {
                 m.listele();
             }
-            
+
 
 
         }
-        
+
 
         private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {

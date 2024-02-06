@@ -124,7 +124,8 @@ namespace mKYS
                         }
 
 
-                     //   File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
+                        //   File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
+                        //   File.Copy(name, Path.Combine(@"H:\Drive'ım\Root_Satış", path), true);
                         File.Copy(name, Path.Combine(@Anasayfa.path, path), true);
 
 

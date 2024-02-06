@@ -1,31 +1,28 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS
 {
     public partial class NumuneGuncelle2 : Form
     {
-        NKR n = (NKR)System.Windows.Forms.Application.OpenForms["NKR"];
+        sqlbaglanti bgl = new sqlbaglanti();
 
         public NumuneGuncelle2()
         {
             InitializeComponent();
         }
-        sqlbaglanti bgl = new sqlbaglanti();
+        
 
+        NKR n = (NKR)System.Windows.Forms.Application.OpenForms["NKR"];
+        NKR2 m = (NKR2)System.Windows.Forms.Application.OpenForms["NKR2"];
 
         void analizler()
         {
@@ -218,10 +215,7 @@ namespace mKYS
             catch (Exception)
             {
 
-
             }
-
-
         }
 
         void IDbul()
@@ -344,7 +338,26 @@ namespace mKYS
                 komut.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 MessageBox.Show("Güncelleme İşlemi Başarıyla Gerçekleşmiştir!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                n.listele();
+
+                if (Application.OpenForms["NKR"] == null)
+                {
+
+                }
+                else
+                {
+                    n.listele();
+                }
+
+                if (Application.OpenForms["NKR2"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -692,7 +705,23 @@ namespace mKYS
             try
             {
                 guncelle();
-                n.listele();
+                if (Application.OpenForms["NKR"] == null)
+                {
+
+                }
+                else
+                {
+                    n.listele();
+                }
+
+                if (Application.OpenForms["NKR2"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
             }
             catch (Exception ex)
             {

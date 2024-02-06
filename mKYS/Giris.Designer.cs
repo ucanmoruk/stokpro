@@ -46,7 +46,7 @@
             // btn_giris
             // 
             this.btn_giris.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
-            this.btn_giris.Appearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_giris.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_giris.Appearance.Options.UseBackColor = true;
             this.btn_giris.Appearance.Options.UseFont = true;
             this.btn_giris.Appearance.Options.UseTextOptions = true;
@@ -96,16 +96,17 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl3.Appearance.Options.UseBackColor = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(140, 297);
+            this.labelControl3.Location = new System.Drawing.Point(95, 278);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(228, 13);
+            this.labelControl3.Size = new System.Drawing.Size(47, 13);
             this.labelControl3.TabIndex = 8;
-            this.labelControl3.Text = "Mass Laboratory and Consultancy Services Inc.";
+            this.labelControl3.Text = "#UNIQUE";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseTextOptions = true;

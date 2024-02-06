@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using mKYS;
-using DevExpress.XtraGrid;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace mKYS.Musteri
 {
     public partial class Teklif : Form
     {
+        sqlbaglanti bgl = new sqlbaglanti();
+
         public Teklif()
         {
             InitializeComponent();
         }
-
-        sqlbaglanti bgl = new sqlbaglanti();
-
 
         public void listele()
         {
@@ -62,9 +54,9 @@ namespace mKYS.Musteri
 
         public static string paket, kullanici, girisk, tID;
         public static int teklifno;
+       
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-
             splitContainer1.Panel2Collapsed = false;
 
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
@@ -92,7 +84,6 @@ namespace mKYS.Musteri
                 this.gridView2.Columns[1].Width = 55;
                 this.gridView2.Columns[2].Width = 35;
                 this.gridView2.Columns[3].Width = 55;
-
             }
             else
             {
@@ -111,12 +102,9 @@ namespace mKYS.Musteri
                 this.gridView2.Columns[2].Width = 55;
                 this.gridView2.Columns[3].Width = 35;
                 this.gridView2.Columns[4].Width = 55;
-
             }
-
-
         }
-
+       
         private void btn_update_Click(object sender, EventArgs e)
         {
             listele();
@@ -142,7 +130,6 @@ namespace mKYS.Musteri
                     MessageBox.Show("İstediğin oldu! Teklif iptal edildi.");
 
                     splitContainer1.Panel2Collapsed = true;
-
                 }
                 else
                 {
@@ -152,14 +139,8 @@ namespace mKYS.Musteri
             else
             {
                 
-            }
-
-
-
-
-               
+            }             
         }
-
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -195,15 +176,12 @@ namespace mKYS.Musteri
         {
             Teklifv2 n = new Teklifv2();
             n.Show();
-
-
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
                 if (e.Column.FieldName == "Tarih" || e.Column.FieldName == "Teklif No" )
                     e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-
         }
 
         private void btn_guncelle_Click(object sender, EventArgs e)
@@ -212,7 +190,6 @@ namespace mKYS.Musteri
 
             if (kullanici == girisk)
             {
-
                 Teklifv2.tID = tID;
                 if (fr6 == null || fr6.IsDisposed)
                 {
@@ -220,17 +197,12 @@ namespace mKYS.Musteri
                     fr6.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
                     fr6.Show();
                 }
-
             }
             else
             {
                 MessageBox.Show("Teklifi sadece teklif veren güncelleyebilir!");
             }
-
-
-
-
-
         }
+   
     }
 }

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B9C472-E553-494B-80E7-739C28959DD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AnalizDetayService.cs" />
+    <Compile Include="Services\AnalizlerService.cs" />
+    <Compile Include="Services\FirmaService.cs" />
+    <Compile Include="Services\FotografService.cs" />
+    <Compile Include="Services\GenelService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\NKR2Service.cs" />
+    <Compile Include="Services\NKRService.cs" />
+    <Compile Include="Services\NumuneDetay2Service.cs" />
+    <Compile Include="Services\NumuneDetayService.cs" />
+    <Compile Include="Services\NumuneDurumService.cs" />
+    <Compile Include="Services\OdemeService.cs" />
+    <Compile Include="Services\Rapor_DurumService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\StokAnalizDetayService.cs" />
+    <Compile Include="Services\StokAnalizListesiService.cs" />
+    <Compile Include="Services\TerminService.cs" />
+    <Compile Include="ViewModels\AnalizDetayVM.cs" />
+    <Compile Include="ViewModels\AnalizlerVM.cs" />
+    <Compile Include="ViewModels\FirmaVM.cs" />
+    <Compile Include="ViewModels\FotografVM.cs" />
+    <Compile Include="ViewModels\NKR2VM.cs" />
+    <Compile Include="ViewModels\NKRVM.cs" />
+    <Compile Include="ViewModels\NumuneDetay2VM.cs" />
+    <Compile Include="ViewModels\NumuneDetayVM.cs" />
+    <Compile Include="ViewModels\NumuneDurumVM.cs" />
+    <Compile Include="ViewModels\OdemeVM.cs" />
+    <Compile Include="ViewModels\Rapor_DurumVM.cs" />
+    <Compile Include="ViewModels\StokAnalizDetayVM.cs" />
+    <Compile Include="ViewModels\StokAnalizListesiVM.cs" />
+    <Compile Include="ViewModels\TerminVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{040fc266-f561-4498-9f54-4636e194bc02}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Operations\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

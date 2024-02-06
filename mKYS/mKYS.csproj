@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
-    <ApplicationVersion>2.2.0.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>3.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -58,16 +58,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>47FF0045CA83DAEF07F19988BB90CD8C87188755</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D26A4DC591F341CB03DDB689D4F5FB88F835C07B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>mKYS_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>mKYS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Raindropmemory-Legendora-Art-of-Chemistry.ico</ApplicationIcon>
@@ -75,18 +75,30 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ben.Demystifier.VS, Version=0.1.0.0, Culture=neutral, PublicKeyToken=a6d206e05440431a, processorArchitecture=MSIL">
       <HintPath>..\packages\VsixTesting.Xunit.0.1.75\lib\net452\Ben.Demystifier.VS.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.1.Core">
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -96,10 +108,12 @@
     <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Wizard, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -109,12 +123,19 @@
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\EnvDTE.8.0.0\lib\net10\EnvDTE.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\stdole.7.0.3300\lib\net10\stdole.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -210,6 +231,18 @@
     <Compile Include="Duyuru\DuyuruTarih.Designer.cs">
       <DependentUpon>DuyuruTarih.cs</DependentUpon>
     </Compile>
+    <Compile Include="Duyuru\FaaliyetEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\FaaliyetEkle.Designer.cs">
+      <DependentUpon>FaaliyetEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Muhasebe\OdemeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Muhasebe\OdemeList.Designer.cs">
+      <DependentUpon>OdemeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\Fatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +272,12 @@
     </Compile>
     <Compile Include="Musteri\Firma.designer.cs">
       <DependentUpon>Firma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri\FirmaYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\FirmaYeni.Designer.cs">
+      <DependentUpon>FirmaYeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Musteri\GorusmeEkle.cs">
       <SubType>Form</SubType>
@@ -318,6 +357,96 @@
     <Compile Include="Musteri\YeniFatura.designer.cs">
       <DependentUpon>YeniFatura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numune\LabTermin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\LabTermin.Designer.cs">
+      <DependentUpon>LabTermin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\MusteriTakip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\MusteriTakip.Designer.cs">
+      <DependentUpon>MusteriTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\NumKabDokumanGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\NumKabDokumanGoruntule.Designer.cs">
+      <DependentUpon>NumKabDokumanGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\NumKabResimGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\NumKabResimGoruntule.Designer.cs">
+      <DependentUpon>NumKabResimGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\NumKabv2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\NumKabv2.Designer.cs">
+      <DependentUpon>NumKabv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\RaporTermin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\RaporTermin.Designer.cs">
+      <DependentUpon>RaporTermin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\ResimEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\ResimEkle.Designer.cs">
+      <DependentUpon>ResimEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\SonucListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\SonucListesi.Designer.cs">
+      <DependentUpon>SonucListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\TanimKopyaHedef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\TanimKopyaHedef.designer.cs">
+      <DependentUpon>TanimKopyaHedef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\Tanimlama2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\Tanimlama2.Designer.cs">
+      <DependentUpon>Tanimlama2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\English\Cosmetic\Dermatological.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Cosmetic\Dermatological.Designer.cs">
+      <DependentUpon>Dermatological.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\English\Cosmetic\Stability.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Cosmetic\Stability.designer.cs">
+      <DependentUpon>Stability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Kozmetik\Stabilite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Kozmetik\Stabilite.designer.cs">
+      <DependentUpon>Stabilite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Teklif.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Teklif.Designer.cs">
+      <DependentUpon>Teklif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\YeniProforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\YeniProforma.Designer.cs">
+      <DependentUpon>YeniProforma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\Yetkili.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,11 +477,23 @@
     <Compile Include="Numune\Mix2.Designer.cs">
       <DependentUpon>Mix2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numune\NKR2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\NKR2.Designer.cs">
+      <DependentUpon>NKR2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numune\NumDurum.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Numune\NumDurum.Designer.cs">
       <DependentUpon>NumDurum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\NumuneGuncelle3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\NumuneGuncelle3.Designer.cs">
+      <DependentUpon>NumuneGuncelle3.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\TalepListe.cs">
       <SubType>Form</SubType>
@@ -1019,6 +1160,12 @@
     <EmbeddedResource Include="Duyuru\DuyuruTarih.resx">
       <DependentUpon>DuyuruTarih.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\FaaliyetEkle.resx">
+      <DependentUpon>FaaliyetEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Muhasebe\OdemeList.resx">
+      <DependentUpon>OdemeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri\Fatura.resx">
       <DependentUpon>Fatura.cs</DependentUpon>
     </EmbeddedResource>
@@ -1033,6 +1180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri\Firma.resx">
       <DependentUpon>Firma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\FirmaYeni.resx">
+      <DependentUpon>FirmaYeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri\GorusmeEkle.resx">
       <DependentUpon>GorusmeEkle.cs</DependentUpon>
@@ -1073,6 +1223,52 @@
     <EmbeddedResource Include="Musteri\YeniFatura.resx">
       <DependentUpon>YeniFatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numune\LabTermin.resx">
+      <DependentUpon>LabTermin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\MusteriTakip.resx">
+      <DependentUpon>MusteriTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\NumKabDokumanGoruntule.resx">
+      <DependentUpon>NumKabDokumanGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\NumKabResimGoruntule.resx">
+      <DependentUpon>NumKabResimGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\NumKabv2.resx">
+      <DependentUpon>NumKabv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\RaporTermin.resx">
+      <DependentUpon>RaporTermin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\ResimEkle.resx">
+      <DependentUpon>ResimEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\SonucListesi.resx">
+      <DependentUpon>SonucListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\TanimKopyaHedef.resx">
+      <DependentUpon>TanimKopyaHedef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\Tanimlama2.resx">
+      <DependentUpon>Tanimlama2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Raporlar\English\Cosmetic\Dermatological.resx">
+      <DependentUpon>Dermatological.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\English\Cosmetic\Stability.resx">
+      <DependentUpon>Stability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Kozmetik\Stabilite.resx">
+      <DependentUpon>Stabilite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Teklif.resx">
+      <DependentUpon>Teklif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\YeniProforma.resx">
+      <DependentUpon>YeniProforma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri\Yetkili.resx">
       <DependentUpon>Yetkili.cs</DependentUpon>
     </EmbeddedResource>
@@ -1088,8 +1284,14 @@
     <EmbeddedResource Include="Numune\Mix2.resx">
       <DependentUpon>Mix2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numune\NKR2.resx">
+      <DependentUpon>NKR2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Numune\NumDurum.resx">
       <DependentUpon>NumDurum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\NumuneGuncelle3.resx">
+      <DependentUpon>NumuneGuncelle3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\TalepListe.resx">
       <DependentUpon>TalepListe.cs</DependentUpon>
@@ -1430,11 +1632,6 @@
     <None Include="massgrup_massDataSet.xss">
       <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </None>
-    <None Include="mKYS_1_TemporaryKey.pfx" />
-    <None Include="mKYS_2_TemporaryKey.pfx" />
-    <None Include="mKYS_3_TemporaryKey.pfx" />
-    <None Include="mKYS_4_TemporaryKey.pfx" />
-    <None Include="mKYS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -1446,7 +1643,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="StokTakip_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Egitim\" />
@@ -1483,7 +1679,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\eimzalidir.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\AB-1454-T.ILAC_MRA_T.en.jpg" />
     <Content Include="Resources\Muhur.png" />
+    <None Include="Resources\Root Intern.png" />
+    <None Include="Resources\Root Intern1.png" />
+    <None Include="Resources\PHOTO-2023-11-15-02-25-56.jpg" />
     <Content Include="Resources\Selinimza.png" />
     <None Include="Resources\Tugrulimza.png" />
     <Content Include="Resources\Tunaimza.png" />
@@ -1510,9 +1713,18 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
+      <IncludeHash>False</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{69b9c472-e553-494b-80e7-739c28959dd7}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

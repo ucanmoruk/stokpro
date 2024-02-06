@@ -71,6 +71,8 @@
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression15 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column16 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression16 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column17 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression17 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             DevExpress.DataAccess.Sql.Join join2 = new DevExpress.DataAccess.Sql.Join();
@@ -233,8 +235,6 @@
             this.Detail.HeightF = 0F;
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
-            this.Detail.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("Mix_Kod", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.Detail.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
             this.SubBand1,
             this.SubBand2});
@@ -798,7 +798,7 @@
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
-            this.xrTableCell8.Text = "04/22.11.2021";
+            this.xrTableCell8.Text = "05/11.09.2023";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell8.Weight = 0.80397256198868472D;
             // 
@@ -882,10 +882,11 @@
             // xrPictureBox1
             // 
             this.xrPictureBox1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportLogo, true);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportLogo1, true);
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(21.24999F, 10.00001F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(203.125F, 84.16665F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             this.xrPictureBox1.StylePriority.UseBorders = false;
             // 
             // xrTableCell2
@@ -1473,7 +1474,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "turhost_massgrup_mass_Connection";
+            this.sqlDataSource1.ConnectionName = "mass_yeni";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "ID";
             table1.Name = "Analizler";
@@ -1531,13 +1532,13 @@
             columnExpression12.Table = table2;
             column12.Expression = columnExpression12;
             columnExpression13.ColumnName = "RaporNo";
-            table3.MetaSerializable = "<Meta X=\"340\" Y=\"30\" Width=\"125\" Height=\"343\" />";
+            table3.MetaSerializable = "<Meta X=\"340\" Y=\"30\" Width=\"125\" Height=\"362\" />";
             table3.Name = "NKR";
             columnExpression13.Table = table3;
             column13.Expression = columnExpression13;
             column14.Alias = "masslab.StokAnalizListesi_Kod";
             columnExpression14.ColumnName = "Kod";
-            table4.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"343\" />";
+            table4.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"362\" />";
             table4.Name = "masslab.StokAnalizListesi";
             columnExpression14.Table = table4;
             column14.Expression = columnExpression14;
@@ -1547,6 +1548,9 @@
             columnExpression16.ColumnName = "Metot";
             columnExpression16.Table = table4;
             column16.Expression = columnExpression16;
+            columnExpression17.ColumnName = "Method";
+            columnExpression17.Table = table4;
+            column17.Expression = columnExpression17;
             selectQuery2.Columns.Add(column10);
             selectQuery2.Columns.Add(column11);
             selectQuery2.Columns.Add(column12);
@@ -1554,6 +1558,7 @@
             selectQuery2.Columns.Add(column14);
             selectQuery2.Columns.Add(column15);
             selectQuery2.Columns.Add(column16);
+            selectQuery2.Columns.Add(column17);
             selectQuery2.Name = "Hmm";
             relationColumnInfo1.NestedKeyColumn = "ID";
             relationColumnInfo1.ParentKeyColumn = "AnalizID";
@@ -1709,7 +1714,7 @@
             // calculatedField2
             // 
             this.calculatedField2.DataMember = "Hmm";
-            this.calculatedField2.Expression = "[masslab].[StokAnalizListesi_Kod]+\' - \'+[Ad]+\' - \'+[Metot]";
+            this.calculatedField2.Expression = "[masslab].[StokAnalizListesi_Kod]+\' - \'+[Ad]+\' - \'+[Method]";
             this.calculatedField2.Name = "calculatedField2";
             // 
             // groupHeaderBand2
@@ -1717,7 +1722,7 @@
             this.groupHeaderBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel2});
             this.groupHeaderBand2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("Kod", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("masslab.StokAnalizListesi_Kod", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.groupHeaderBand2.HeightF = 48.1343F;
             this.groupHeaderBand2.Name = "groupHeaderBand2";
             // 

@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace mKYS.Musteri
 {
     public partial class Firmalar : Form
     {
+        sqlbaglanti bgl = new sqlbaglanti();
+        NumuneKabul n = new NumuneKabul();
+        string parola;
+        public int firmaID;
+        public string firmaadi;
+        Yetkili y;
+
         public Firmalar()
         {
             InitializeComponent();
         }
-        sqlbaglanti bgl = new sqlbaglanti();
-
-        NumuneKabul n = new NumuneKabul();
-        string parola;
+        
         public void parolaolustur()
         {
             char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
@@ -99,10 +97,14 @@ namespace mKYS.Musteri
             //SqlDataAdapter da = new SqlDataAdapter("select Firma_Adi,f.Telefon,f.Adres,f.Vergi_Dairesi,f.Vergi_No,y.Yetkili,y.Telefon,y.Mail,p.Plasiyer from Firma f inner join Yetkili y on y.Firma_ID = f.ID inner join Plasiyer p on p.ID = f.Plasiyer_ID ", bgl.baglanti());
             //SqlDataAdapter da = new SqlDataAdapter("select Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,f.Telefon,Plasiyer,f.Mail,Yetkili,y.Mail,y.Telefon from Firma f inner join Yetkili y on y.Firma_ID = f.ID", bgl.baglanti());
             //son hali alttakiydi
-            SqlDataAdapter da = new SqlDataAdapter("select  Firma_Adi as 'Firma Adı' , Adres, Telefon, Mail, Vergi_Dairesi as 'Vergi Dairesi', Vergi_No as 'Vergi No', Sektor, Plasiyer,Hizmet as 'Not', Kod, Parola,Tur as 'Firma Türü' from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select f.ID, f.Firma_Adi as 'Firma Adı' , f.Adres, f.Telefon, f.Mail, f.Vergi_Dairesi as 'Vergi Dairesi',
+                f.Vergi_No as 'Vergi No', f.Sektor, k.Ad + ' '+k.Soyad as 'Plasiyer' ,f.Hizmet as 'Not', f.Kod, f.Parola,f.Tur as 'Firma Türü', f.Odeme as 'Odeme Türü', f.Vade 
+                from Firma f 
+				left join StokKullanici k on f.PlasiyerID = k.ID where f.Durum = 'Aktif'", bgl.baglanti());
             //  SqlDataAdapter da = new SqlDataAdapter("select  Firma_Adi as 'Firma Adı' , Adres, Telefon, Mail, Vergi_Dairesi as 'Vergi Dairesi', Vergi_No as 'Vergi No', Sektor, Plasiyer,Hizmet as 'Not', Tur as 'Firma Türü' from Firma where Durum = 'Aktif'", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
+            gridView3.Columns["ID"].Visible = false;
         }
 
         private void Firmalar_Load(object sender, EventArgs e)
@@ -133,19 +135,10 @@ namespace mKYS.Musteri
 
         //}
 
-        public static int firmaID;
-        public static string firmaadi;
         private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             
-
-           
-
-
-
         }
-
-
 
         private void btn_temizle_Click(object sender, EventArgs e)
         {
@@ -176,14 +169,20 @@ namespace mKYS.Musteri
 
                 MessageBox.Show("Hata : "+ ex.Message);
             }
-
-
         }
-        Yetkili y;
+       
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            y = new Yetkili();
-            y.ShowDialog();
+            if(gridView3.FocusedRowHandle >= 0)
+            {
+                int fID = Convert.ToInt32(gridView3.GetFocusedRowCellValue("ID"));
+                string fAdi = gridView3.GetFocusedRowCellValue("Firma Adı").ToString();
+
+                y = new Yetkili();
+                y.firmaID = fID;
+                y.firmaAdi = fAdi;
+                y.ShowDialog();
+            }
         }
 
         private void gridView3_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -220,8 +219,6 @@ namespace mKYS.Musteri
             {
                 MessageBox.Show("Hata : "+ ex.Message);
             }
-
-
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -231,7 +228,6 @@ namespace mKYS.Musteri
 
         private void gridView3_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-
           
         }
 
@@ -263,7 +259,6 @@ namespace mKYS.Musteri
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Hata : " + ex.Message);
             }
         }
@@ -279,6 +274,20 @@ namespace mKYS.Musteri
             string path = "output.xlsx";
             gridControl1.ExportToXlsx(path);
             Process.Start(path);
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (gridView3.FocusedRowHandle >= 0)
+            {
+                int fID = Convert.ToInt32(gridView3.GetFocusedRowCellValue("ID"));
+
+                FirmaYeni firmaYeni = new FirmaYeni();
+                firmaYeni.isUpdated = true;
+                firmaYeni.firmaUpdateID = fID;
+                firmaYeni.Show();
+            }
+
         }
     }
 };

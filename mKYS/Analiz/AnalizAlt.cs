@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mKYS.Analiz
@@ -23,7 +17,7 @@ namespace mKYS.Analiz
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select Aciklama as 'Açıklama',AciklamaEn as 'Explanation', CasNo as 'Cas No', Loq as 'LOQ', Birim as 'Birim', ID from StokAnalizDetay where AnalizID = '"+AnalizID+"' and Durum = 'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select Aciklama as 'Açıklama',AciklamaEn as 'Explanation', CasNo as 'Cas No', Loq as 'LOQ', Birim as 'Birim', ID from StokAnalizDetay where AnalizID = '" + AnalizID + "' and Durum = 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -80,12 +74,12 @@ namespace mKYS.Analiz
             }
 
 
-           
+
         }
 
         private void combo_tur_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (combo_tur.Text == "Toplam" )
+            if (combo_tur.Text == "Toplam")
             {
                 txt_aciklama.Enabled = false;
                 txt_en.Enabled = false;
@@ -186,22 +180,22 @@ namespace mKYS.Analiz
             add.Parameters.AddWithValue("@a7", "Aktif");
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
-            
+
         }
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand("update StokAnalizDetay set Aciklama=@a2, CasNo=@a3, Loq=@a4, Birim=@a5, Tur=@a6, AciklamaEn=@a8 where ID = '"+detayID+"' ", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update StokAnalizDetay set Aciklama=@a2, CasNo=@a3, Loq=@a4, Birim=@a5, Tur=@a6, AciklamaEn=@a8 where ID = '" + detayID + "' ", bgl.baglanti());
             if (combo_tur.Text == "Toplam")
             {
                 add.Parameters.AddWithValue("@a2", "Toplam");
                 add.Parameters.AddWithValue("@a8", "Total");
-            }              
+            }
             else
             {
                 add.Parameters.AddWithValue("@a2", txt_aciklama.Text);
                 add.Parameters.AddWithValue("@a8", txt_en.Text);
-            }                
+            }
             add.Parameters.AddWithValue("@a3", txt_cas.Text);
             add.Parameters.AddWithValue("@a4", txt_loq.Text);
             add.Parameters.AddWithValue("@a5", txt_birim.Text);

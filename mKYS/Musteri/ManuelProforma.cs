@@ -199,8 +199,8 @@ namespace mKYS.Musteri
                 {
                     decimal birimfiyat = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["BirimFiyat"]).ToString());
                     decimal sonf = Math.Round(adet * birimfiyat, 2);
-                    decimal kdv = Math.Round(sonf * 18/100 , 2);
-                    decimal genel = Math.Round(sonf * 118/100, 2);
+                    decimal kdv = Math.Round(sonf * 20/100 , 2);
+                    decimal genel = Math.Round(sonf * 120/100, 2);
                     view.SetRowCellValue(e.RowHandle, view.Columns["Fiyat"], sonf);
                     view.SetRowCellValue(e.RowHandle, view.Columns["KDV"], kdv);
                     view.SetRowCellValue(e.RowHandle, view.Columns["Toplam"], genel);
