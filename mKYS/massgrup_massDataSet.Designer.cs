@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace mKYS {
+namespace mUnique {
     
     
     /// <summary>
@@ -3727,7 +3727,7 @@ namespace mKYS {
         }
     }
 }
-namespace mKYS.massgrup_massDataSetTableAdapters {
+namespace mUnique.massgrup_massDataSetTableAdapters {
     
     
     /// <summary>
@@ -3879,7 +3879,7 @@ namespace mKYS.massgrup_massDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mKYS.Properties.Settings.Default.massgrup_massConnectionString;
+            this._connection.ConnectionString = global::mUnique.Properties.Settings.Default.massgrup_massConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4163,7 +4163,7 @@ namespace mKYS.massgrup_massDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mKYS.Properties.Settings.Default.massgrup_massConnectionString;
+            this._connection.ConnectionString = global::mUnique.Properties.Settings.Default.massgrup_massConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4461,7 +4461,7 @@ namespace mKYS.massgrup_massDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mKYS.Properties.Settings.Default.massgrup_massConnectionString;
+            this._connection.ConnectionString = global::mUnique.Properties.Settings.Default.massgrup_massConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4770,7 +4770,7 @@ namespace mKYS.massgrup_massDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mKYS.Properties.Settings.Default.massgrup_massConnectionString;
+            this._connection.ConnectionString = global::mUnique.Properties.Settings.Default.massgrup_massConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5071,7 +5071,7 @@ namespace mKYS.massgrup_massDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mKYS.Properties.Settings.Default.massgrup_massConnectionString;
+            this._connection.ConnectionString = global::mUnique.Properties.Settings.Default.massgrup_massConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
