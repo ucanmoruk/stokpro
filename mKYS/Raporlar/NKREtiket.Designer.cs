@@ -383,7 +383,7 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportLogo1, true);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportLogo1, true);
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 2.333339F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(133.9583F, 48.33333F);

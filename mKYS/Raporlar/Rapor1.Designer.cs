@@ -366,7 +366,7 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportLogo1, true);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportLogo1, true);
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 59.25002F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(227.7083F, 79.99998F);
@@ -377,7 +377,7 @@
             this.xrPictureBox2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Akreditasyon]==\'Var\', true, false)")});
             this.xrPictureBox2.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.TopCenter;
-            this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportTurkak, true);
+            this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportTurkak, true);
             this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(713.952F, 10.00001F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.SuppressAndShrink;
@@ -1368,7 +1368,7 @@
             // 
             // xrPictureBox3
             // 
-            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportSeal, true);
+            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportSeal, true);
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(39.17728F, 0F);
             this.xrPictureBox3.Name = "xrPictureBox3";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(121.84F, 108.38F);

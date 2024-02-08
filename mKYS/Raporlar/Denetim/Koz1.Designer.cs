@@ -132,7 +132,7 @@
             // 
             // xrPictureBox5
             // 
-            this.xrPictureBox5.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportLogo1, true);
+            this.xrPictureBox5.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportLogo1, true);
             this.xrPictureBox5.LocationFloat = new DevExpress.Utils.PointFloat(10.00002F, 60F);
             this.xrPictureBox5.Name = "xrPictureBox5";
             this.xrPictureBox5.SizeF = new System.Drawing.SizeF(227.7083F, 79.99998F);
@@ -257,7 +257,7 @@
             // 
             this.xrPictureBox7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Akreditasyon]==\'Var\', true, false)")});
-            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportTurkak, true);
+            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportTurkak, true);
             this.xrPictureBox7.LocationFloat = new DevExpress.Utils.PointFloat(710.293F, 0F);
             this.xrPictureBox7.Name = "xrPictureBox7";
             this.xrPictureBox7.SizeF = new System.Drawing.SizeF(84.38F, 111.54F);
@@ -517,7 +517,7 @@
             // xrPictureBox2
             // 
             this.xrPictureBox2.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
-            this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportSeal, true);
+            this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportSeal, true);
             this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(32.91666F, 10.00006F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(121.8445F, 108.3799F);
@@ -534,7 +534,7 @@
             // 
             // xrPictureBox3
             // 
-            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportTuna, true);
+            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportTuna, true);
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 28.74103F);
             this.xrPictureBox3.Name = "xrPictureBox3";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(194.7917F, 78.67175F);
@@ -557,7 +557,7 @@
             // 
             // xrPictureBox4
             // 
-            this.xrPictureBox4.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mKYS.Properties.Resources.ReportSelin, true);
+            this.xrPictureBox4.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.ReportSelin, true);
             this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(10.00003F, 10.00006F);
             this.xrPictureBox4.Name = "xrPictureBox4";
             this.xrPictureBox4.SizeF = new System.Drawing.SizeF(221.977F, 108.3801F);

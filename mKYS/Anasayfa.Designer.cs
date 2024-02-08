@@ -130,6 +130,7 @@
             this.barButtonItem88 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem89 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem90 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem91 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -183,7 +184,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem87 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem91 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -1178,6 +1178,15 @@
             this.barButtonItem90.Name = "barButtonItem90";
             this.barButtonItem90.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem90_ItemClick);
             // 
+            // barButtonItem91
+            // 
+            this.barButtonItem91.Caption = "Fotoğraf Yükle";
+            this.barButtonItem91.Id = 98;
+            this.barButtonItem91.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.Image")));
+            this.barButtonItem91.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.LargeImage")));
+            this.barButtonItem91.Name = "barButtonItem91";
+            this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1588,15 +1597,6 @@
             this.barButtonItem87.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem87.ImageOptions.LargeImage")));
             this.barButtonItem87.Name = "barButtonItem87";
             // 
-            // barButtonItem91
-            // 
-            this.barButtonItem91.Caption = "Fotoğraf Yükle";
-            this.barButtonItem91.Id = 98;
-            this.barButtonItem91.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.Image")));
-            this.barButtonItem91.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.LargeImage")));
-            this.barButtonItem91.Name = "barButtonItem91";
-            this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
-            // 
             // Anasayfa
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1605,6 +1605,7 @@
             this.ClientSize = new System.Drawing.Size(758, 468);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Anasayfa";
             this.Ribbon = this.ribbonControl1;

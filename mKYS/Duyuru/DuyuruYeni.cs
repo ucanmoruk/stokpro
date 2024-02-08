@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraRichEdit.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,7 +66,7 @@ namespace mKYS.Duyuru
                         bgl.baglanti().Close();
 
                         PopupNotifier popp = new PopupNotifier();
-                        popp.Image = Properties.Resources.information;
+                        popp.Image = mUnique.Properties.Resources.information;
                         popp.TitleText = "Bir yeni duyuru!";
                         popp.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
                         popp.Popup();
@@ -90,7 +91,7 @@ namespace mKYS.Duyuru
                         if (Anasayfa.kullanici == kID.ToString())
                         {
                             PopupNotifier popu = new PopupNotifier();
-                            popu.Image = Properties.Resources.information;
+                            popu.Image = mUnique.Properties.Resources.information;
                             popu.TitleText = "Bir yeni duyuru!";
                             popu.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
                             popu.Popup();
@@ -135,7 +136,7 @@ namespace mKYS.Duyuru
 
 
             PopupNotifier popup = new PopupNotifier();
-            popup.Image = Properties.Resources.information;
+            popup.Image = mUnique.Properties.Resources.information;
             popup.TitleText = "Bir yeni duyuru!";
             popup.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
             popup.Popup();
