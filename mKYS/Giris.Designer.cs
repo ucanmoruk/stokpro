@@ -52,10 +52,9 @@
             this.btn_giris.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.btn_giris.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_giris.ImageOptions.ImageToTextIndent = 10;
-            this.btn_giris.Location = new System.Drawing.Point(959, 608);
-            this.btn_giris.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btn_giris.Location = new System.Drawing.Point(480, 301);
             this.btn_giris.Name = "btn_giris";
-            this.btn_giris.Size = new System.Drawing.Size(138, 94);
+            this.btn_giris.Size = new System.Drawing.Size(69, 49);
             this.btn_giris.TabIndex = 3;
             this.btn_giris.Text = "Giriş";
             this.btn_giris.Click += new System.EventHandler(this.btn_giris_Click);
@@ -63,32 +62,29 @@
             // txt_parola
             // 
             this.txt_parola.EditValue = "Parola";
-            this.txt_parola.Location = new System.Drawing.Point(607, 664);
-            this.txt_parola.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_parola.Location = new System.Drawing.Point(304, 330);
             this.txt_parola.Name = "txt_parola";
             this.txt_parola.Properties.PasswordChar = '*';
-            this.txt_parola.Size = new System.Drawing.Size(320, 40);
+            this.txt_parola.Size = new System.Drawing.Size(160, 20);
             this.txt_parola.TabIndex = 2;
             this.txt_parola.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_parola_KeyDown);
             // 
             // txt_ad
             // 
             this.txt_ad.EditValue = "Kullanıcı Adı";
-            this.txt_ad.Location = new System.Drawing.Point(607, 610);
-            this.txt_ad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_ad.Location = new System.Drawing.Point(304, 302);
             this.txt_ad.Name = "txt_ad";
-            this.txt_ad.Size = new System.Drawing.Size(320, 40);
+            this.txt_ad.Size = new System.Drawing.Size(160, 20);
             this.txt_ad.TabIndex = 1;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(-31, -4);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureEdit1.Location = new System.Drawing.Point(-16, -11);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEdit1.Size = new System.Drawing.Size(1327, 767);
+            this.pictureEdit1.Size = new System.Drawing.Size(664, 399);
             this.pictureEdit1.TabIndex = 4;
             // 
             // labelControl3
@@ -98,10 +94,9 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl3.Appearance.Options.UseBackColor = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(959, 560);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl3.Location = new System.Drawing.Point(12, 22);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(92, 25);
+            this.labelControl3.Size = new System.Drawing.Size(47, 13);
             this.labelControl3.TabIndex = 8;
             this.labelControl3.Text = "#UNIQUE";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
@@ -116,19 +111,18 @@
             this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.BottomLeft;
-            this.simpleButton1.Location = new System.Drawing.Point(1109, 606);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(554, 300);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(110, 96);
+            this.simpleButton1.Size = new System.Drawing.Size(55, 50);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "X";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Giris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 751);
+            this.ClientSize = new System.Drawing.Size(636, 373);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btn_giris);
@@ -136,7 +130,7 @@
             this.Controls.Add(this.txt_ad);
             this.Controls.Add(this.pictureEdit1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoşgeldiniz..";
