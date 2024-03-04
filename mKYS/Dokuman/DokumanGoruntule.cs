@@ -24,7 +24,7 @@ namespace mKYS.Dokuman
         private void DokumanGoruntule_Load(object sender, EventArgs e)
         {
             path = Path.Combine(Anasayfa.kpath, yol);
-          //  axAcroPDF1.LoadFile(path);
+            axAcroPDF1.LoadFile(path);
 
             if(Text == "" || Text == null)
             {

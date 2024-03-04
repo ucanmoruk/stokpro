@@ -18,7 +18,7 @@ namespace mKYS
 {
     public partial class NumuneKabul : Form
     {
-        NKR n = (NKR)System.Windows.Forms.Application.OpenForms["NKR"];
+        NKR2 n = (NKR2)System.Windows.Forms.Application.OpenForms["NKR2"];
 
         public NumuneKabul()
         {
@@ -346,7 +346,7 @@ namespace mKYS
                          "insert into Termin(RaporID,Termin) values(IDENT_CURRENT('NKR'),@b1); " +
                          "insert into Rapor_Durum(RaporNo, Durum, Tarih,TanimlayanID, RaporID) values (@c1,@c2, @c3,@c4,IDENT_CURRENT('NKR')); " +
                          "COMMIT TRANSACTION", bgl.baglanti());
-            //  "insert into NumuneModel(RaporID,Urun_Kodu,Model) values(IDENT_CURRENT('NKR'),@c2,@c3)" 
+            //  "insert into NumuneModel(RaporID,Urun_Kodu,Model) values(IDENT_CURRENT('NKR'),@c2,@c3)"
             komut.Parameters.AddWithValue("@n1", txtEvrak.Text);
             komut.Parameters.AddWithValue("@n2", txtNumune.Text);
             komut.Parameters.AddWithValue("@n4", dateTime.EditValue);
@@ -679,8 +679,8 @@ namespace mKYS
                     {
                         string ftpUsername = "massgrup";
                         string ftpPassword = "!88n2ee5Q";
-                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mask/Numune/Foto_2021" + "/" + yenisim;
-                        yeniyol = "http://" + "www.massgrup.com/mask/Numune/Foto_2021" + "/" + yenisim;
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                        yeniyol = "http://" + "www.massgrup.com/cosmo/Numune" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                         client.UploadFile(ftpfullpath, name);
                     }

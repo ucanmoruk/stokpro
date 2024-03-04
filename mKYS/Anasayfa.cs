@@ -718,12 +718,19 @@ namespace mKYS
         NKR n;
         private void barButtonItem75_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (n == null || n.IsDisposed)
+            //if (n == null || n.IsDisposed)
+            //{
+            //    //n = new NKR();
+            //    //n.MdiParent = this;
+            //    //n.Show();
+            //}
+            if (n2 == null || n2.IsDisposed)
             {
-                n = new NKR();
-                n.MdiParent = this;
-                n.Show();
+                n2 = new NKR2();
+                n2.MdiParent = this;
+                n2.Show();
             }
+            
 
         }
 

@@ -203,12 +203,13 @@ namespace mKYS
             {
                 if (fotoname == null)
                 {
-                    string logo = @"\\WDMyCloud\Numune\2020\Foto\Logo.png";
-                    pictureEdit1.Image = new Bitmap(logo);
+                    string logo = @"http://www.massgrup.com/cosmo/Numune/Logo.jpg";
+                  //  pictureEdit1.Image = new Bitmap(logo);
+                    pictureEdit1.LoadAsync(logo);
                 }
                 else
                 {
-                    string yol = @"http://www.massgrup.com/mask/Numune/Foto_2021/" + fotoname;
+                    string yol = @"http://www.massgrup.com/cosmo/Numune/" + fotoname;
                     //   pictureEdit1.Image = new Bitmap(yol);
 
                     var request = WebRequest.Create(yol);
@@ -256,7 +257,7 @@ namespace mKYS
         public void projebul()
         {
 
-            SqlCommand detay = new SqlCommand("select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = N'" + txtRapor.Text + "')", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("select ProjeID from NumuneDetay where RaporID = '"+nID+"' ", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
             while (drd.Read())
             {
@@ -439,8 +440,8 @@ namespace mKYS
                     {
                         string ftpUsername = "massgrup";
                         string ftpPassword = "!88n2ee5Q";
-                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mask/Numune/Foto_2021" + "/" + yenisim;
-                        yeniyol = "http://" + "www.massgrup.com/mask/Numune/Foto_2021" + "/" + yenisim;
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                        yeniyol = "http://" + "www.massgrup.com/cosmo/Numune" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                         // client.UploadFile(ftpfullpath, WebRequestMethods.Ftp.UploadFile, name);
                         client.UploadFile(ftpfullpath, name);

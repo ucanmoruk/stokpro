@@ -57,12 +57,16 @@ namespace mKYS
 
             //denetimiçin
 
-            SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', " +
-              "f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur," +
-              " n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu', n.ID as 'aID' from NKR n " +
-              " join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID " +
-              " where n.Tarih >= N'" + date_baslangic.Text + "' " +
-              " and n.Durum = 'Aktif'  and n.Grup = 'Özel2' order by n.Evrak_No desc ", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, 
+            t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
+            f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
+            n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu', 
+            o.Odeme_Durumu as 'Fatura Durumu',
+            n.ID as 'aID' from NKR n 
+            join Firma f on f.ID = n.Firma_ID 
+            join Odeme o on o.Evrak_No = n.Evrak_No 
+            left join Termin t on t.RaporID = n.ID 
+            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.Evrak_No desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["aID"].Visible = false;
@@ -76,9 +80,15 @@ namespace mKYS
             date_baslangic.Properties.Mask.EditMask = "yyyy-MM-dd";
             date_baslangic.Properties.Mask.UseMaskAsDisplayFormat = true;
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur, n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu' , n.ID as 'aID' " +
-            "from NKR n join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID" +
-            " where n.Tarih >= N'" + date_baslangic.Text + "'  and n.Durum = 'Aktif' and not ( n.Rapor_Durumu = 'Raporlandı' and o.Odeme_Durumu = 'Ödendi') order by RaporNo desc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
+            f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', 
+            n.Grup, n.Tur, n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  
+            o.Odeme_Durumu as 'Fatura Durumu' , n.ID as 'aID' 
+            from NKR n 
+            join Firma f on f.ID = n.Firma_ID 
+            join Odeme o on o.Evrak_No = n.Evrak_No 
+            left join Termin t on t.RaporID = n.ID
+            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' and not(n.Rapor_Durumu = 'Raporlandı' and o.Odeme_Durumu = 'Ödendi') order by RaporNo desc", bgl.baglanti());
 
             da.Fill(dt);
             gridControl1.DataSource = dt;

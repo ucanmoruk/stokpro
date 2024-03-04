@@ -104,7 +104,7 @@ namespace mKYS
                 fotoname = dre["Logo"].ToString();
             }
 
-            string yol = @"http://www.massgrup.com/mKYS/Logo/" + fotoname;
+            string yol = @"http://www.massgrup.com/cosmo/Numune/" + fotoname;
             pictureEdit1.LoadAsync(yol);
 
         }
@@ -197,9 +197,9 @@ namespace mKYS
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "Bg1$4xo2";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mKYS/Logo" + "/" + yenisim;
-                    yeniyol = "http://" + "www.massgrup.com/mKYS/Logo" + "/" + yenisim;
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                    yeniyol = "http://" + "www.massgrup.com/cosmo/Numune" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }

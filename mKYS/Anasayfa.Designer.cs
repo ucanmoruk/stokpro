@@ -1025,7 +1025,6 @@
             this.barButtonItem77.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem77.ImageOptions.Image")));
             this.barButtonItem77.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem77.ImageOptions.LargeImage")));
             this.barButtonItem77.Name = "barButtonItem77";
-            this.barButtonItem77.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem77.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem77_ItemClick);
             // 
             // barStaticItem1
@@ -1158,6 +1157,7 @@
             this.barButtonItem88.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem88.ImageOptions.Image")));
             this.barButtonItem88.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem88.ImageOptions.LargeImage")));
             this.barButtonItem88.Name = "barButtonItem88";
+            this.barButtonItem88.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem88.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem88_ItemClick);
             // 
             // barButtonItem89
@@ -1185,6 +1185,7 @@
             this.barButtonItem91.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.Image")));
             this.barButtonItem91.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem91.ImageOptions.LargeImage")));
             this.barButtonItem91.Name = "barButtonItem91";
+            this.barButtonItem91.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
             // 
             // ribbonPage8
@@ -1240,7 +1241,6 @@
             // ribbonPageGroup32
             // 
             this.ribbonPageGroup32.ItemLinks.Add(this.barButtonItem76);
-            this.ribbonPageGroup32.ItemLinks.Add(this.barButtonItem85);
             this.ribbonPageGroup32.Name = "ribbonPageGroup32";
             this.ribbonPageGroup32.Text = "Tanımlama";
             // 
@@ -1252,9 +1252,11 @@
             // 
             // ribbonPageGroup35
             // 
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem85);
             this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem84);
             this.ribbonPageGroup35.Name = "ribbonPageGroup35";
             this.ribbonPageGroup35.Text = "ribbonPageGroup35";
+            this.ribbonPageGroup35.Visible = false;
             // 
             // musteripage
             // 
@@ -1271,6 +1273,7 @@
             this.ribbonPageGroup36.ItemLinks.Add(this.barButtonItem86);
             this.ribbonPageGroup36.Name = "ribbonPageGroup36";
             this.ribbonPageGroup36.Text = "ribbonPageGroup36";
+            this.ribbonPageGroup36.Visible = false;
             // 
             // ribbonPageGroup28
             // 

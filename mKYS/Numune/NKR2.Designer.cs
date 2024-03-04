@@ -181,7 +181,6 @@
             // 
             this.gridView1.GridControl = this.gridSplitContainer1Grid;
             this.gridView1.Name = "gridView1";
-            //this.gridView1.OptionsFind.FindPanelLocation = DevExpress.XtraGrid.Views.Grid.GridFindPanelLocation.Panel;
             // 
             // gridSplitContainer1View
             // 
@@ -762,7 +761,6 @@
             this.gridView3.OptionsBehavior.KeepFocusedRowOnUpdate = false;
             this.gridView3.OptionsFind.AlwaysVisible = true;
             this.gridView3.OptionsFind.FindNullPrompt = "Arama yapabilirsiniz..";
-            ////this.gridView3.OptionsFind.FindPanelLocation = DevExpress.XtraGrid.Views.Grid.GridFindPanelLocation.GroupPanel;
             this.gridView3.OptionsFind.ShowClearButton = false;
             this.gridView3.OptionsFind.ShowCloseButton = false;
             this.gridView3.OptionsFind.ShowFindButton = false;
@@ -1025,7 +1023,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NKR2";
-            this.Text = "Özel2";
+            this.Text = "Numune Takip Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NKR2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NKR2_KeyDown);
