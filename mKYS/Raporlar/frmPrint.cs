@@ -176,7 +176,7 @@ namespace mKYS.Raporlar
                 rapor.Name = name;
                 rapor.CreateDocument();
 
-                Kozmetik.Stabilite rapor2 = new Kozmetik.Stabilite();
+                Kozmetik.Stabilitev2 rapor2 = new Kozmetik.Stabilitev2();
                 foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
                 {
                     p2.Visible = false;
@@ -201,7 +201,7 @@ namespace mKYS.Raporlar
                 rapor.Name = name;
                 rapor.CreateDocument();
 
-                English.Cosmetic.Stability rapor2 = new English.Cosmetic.Stability();
+                English.Cosmetic.Stabilityv2 rapor2 = new English.Cosmetic.Stabilityv2();
                 foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
                 {
                     p2.Visible = false;

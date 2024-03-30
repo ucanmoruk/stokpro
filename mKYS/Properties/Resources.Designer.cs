@@ -93,6 +93,26 @@ namespace mUnique.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap alea {
+            get {
+                object obj = ResourceManager.GetObject("alea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap can {
+            get {
+                object obj = ResourceManager.GetObject("can", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap eimzalidir {
             get {
                 object obj = ResourceManager.GetObject("eimzalidir", resourceCulture);
@@ -226,6 +246,46 @@ namespace mUnique.Properties {
         public static System.Drawing.Bitmap Tugrulimza {
             get {
                 object obj = ResourceManager.GetObject("Tugrulimza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap uniqmühür {
+            get {
+                object obj = ResourceManager.GetObject("uniqmühür", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap UNİQUE_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("UNİQUE LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap unique_mühür {
+            get {
+                object obj = ResourceManager.GetObject("unique mühür", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap unique_mühür1 {
+            get {
+                object obj = ResourceManager.GetObject("unique mühür1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

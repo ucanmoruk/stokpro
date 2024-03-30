@@ -3,6 +3,9 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using mKYS.Musteri;
+using System.Data.SqlClient;
+using DevExpress.XtraEditors;
 
 namespace mKYS.Musteri
 {
@@ -13,37 +16,61 @@ namespace mKYS.Musteri
         FirmaService firmaService = new FirmaService(Giris.sqlTip);
         FirmaVM firmaVMEski;
         FirmaVM firmaVMYeni;
-       
+
+        Firmalar f = (Firmalar)System.Windows.Forms.Application.OpenForms["Firmalar"];
+        sqlbaglanti bgl = new sqlbaglanti();
+
         public FirmaYeni()
         {
             InitializeComponent();
         }
 
+        void detaybul()
+        {
+            
+
+            SqlCommand komutID = new SqlCommand("Select * From Firma where ID= N'" + fID + "'", bgl.baglanti());
+            SqlDataReader dr = komutID.ExecuteReader();
+            while (dr.Read())
+            {                
+                txt_firmaad.Text = dr["Firma_Adi"].ToString();
+                txt_adres.Text = dr["Adres"].ToString();
+                txt_telefon.Text = dr["Telefon"].ToString();
+                txt_vergid.Text = dr["Vergi_Dairesi"].ToString();
+                txt_vergino.Text = dr["Vergi_No"].ToString();
+                txt_Mail.Text = dr["Mail"].ToString();
+                txt_sektor.Text = dr["Sektor"].ToString();
+                txt_not.Text = dr["Hizmet"].ToString();
+                gridLookUpEdit1.EditValue = dr["PlasiyerID"].ToString();
+                combo_tur.Text = dr["Tur"].ToString();
+                txt_vade.Text = dr["Vade"].ToString(); ;
+                combo_odeme.Text = dr["Odeme"].ToString(); ;
+            }
+            bgl.baglanti().Close();
+        }
+
+        public static string fID;
         private void FirmaYeni_Load(object sender, EventArgs e)
         {
-            DataTable dt = firmaService.SelectText("select ID, Kadi, Ad, Soyad from StokKullanici");
-            gridLookUpEdit1.Properties.DataSource = dt;
-            gridLookUpEdit1.Properties.DisplayMember = "Kadi";
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select Ad, Soyad, ID from StokKullanici where Durum= 'Aktif'", bgl.baglanti());
+            da2.Fill(dt2);
+
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Ad";
             gridLookUpEdit1.Properties.ValueMember = "ID";
 
-            firmaVMEski = firmaService.Get("ID = @param1", firmaUpdateID);
-            firmaVMYeni = firmaService.Get("ID = @param1", firmaUpdateID);
-
-            if (isUpdated)
+            if (fID == null ||fID =="")
             {
-                combo_tur.SelectedItem = firmaVMYeni.Tur;
-                txt_sektor.Text = firmaVMYeni.Sektor;
-                txt_firmaad.Text = firmaVMYeni.Firma_Adi;
-                txt_adres.Text = firmaVMYeni.Adres;
-                txt_vergid.Text = firmaVMYeni.Vergi_Dairesi;
-                txt_vergino.Text = firmaVMYeni.Vergi_No;
-                txt_telefon.Text = firmaVMYeni.Telefon;
-                txt_Mail.Text = firmaVMYeni.Mail;
-                txt_not.Text = firmaVMYeni.Hizmet;
-                txt_vade.Text = firmaVMYeni.Vade;
-                gridLookUpEdit1.EditValue = firmaVMYeni.PlasiyerID;
-                combo_odeme.SelectedItem = firmaVMYeni.Odeme;
+
             }
+            else
+            {
+                detaybul();
+                button_ekle.Text = "Güncelle";
+            }
+
+           
         }
 
         private void button_ekle_Click(object sender, EventArgs e)
@@ -62,147 +89,32 @@ namespace mKYS.Musteri
             }
             else
             {
-                firmaVMYeni.Firma_Adi = txt_firmaad.Text.Trim();
-                firmaVMYeni.Plasiyer = gridLookUpEdit1.Text.Trim();
-                firmaVMYeni.PlasiyerID = Convert.ToInt32(gridLookUpEdit1.EditValue);
-                firmaVMYeni.Odeme = combo_odeme.Text.Trim();
-
-                if (combo_tur.SelectedIndex < 0)
+                if (button_ekle.Text == "Güncelle")
                 {
-                    firmaVMYeni.Tur = "";
+                    guncelle();
                 }
                 else
                 {
-                    firmaVMYeni.Tur = combo_tur.Text;
+                    kaydet();
                 }
 
-                if (string.IsNullOrEmpty(txt_sektor.Text) || string.IsNullOrWhiteSpace(txt_sektor.Text))
-                {
-                    firmaVMYeni.Sektor = "";
-                }
-                else
-                {
-                    firmaVMYeni.Sektor = txt_sektor.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(txt_adres.Text) || string.IsNullOrWhiteSpace(txt_adres.Text))
-                {
-                    firmaVMYeni.Adres = "";
-                }
-                else
-                {
-                    firmaVMYeni.Adres = txt_adres.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(txt_vergid.Text) || string.IsNullOrWhiteSpace(txt_vergid.Text))
-                {
-                    firmaVMYeni.Vergi_Dairesi = "";
-                }
-                else
-                {
-                    firmaVMYeni.Vergi_Dairesi = txt_vergid.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(txt_vergino.Text) || string.IsNullOrWhiteSpace(txt_vergino.Text))
-                {
-                    firmaVMYeni.Vergi_No = "";
-                }
-                else
-                {
-                    firmaVMYeni.Vergi_No = txt_vergino.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(txt_telefon.Text) || string.IsNullOrWhiteSpace(txt_telefon.Text))
-                {
-                    firmaVMYeni.Telefon = "";
-                }
-                else
-                {
-                    firmaVMYeni.Telefon = txt_telefon.Text.Trim();
-                }
-                
-                if (string.IsNullOrEmpty(txt_Mail.Text) || string.IsNullOrWhiteSpace(txt_Mail.Text))
-                {
-                    firmaVMYeni.Mail = "";
-                }
-                else
-                {
-                    firmaVMYeni.Mail = txt_Mail.Text.Trim();
-                }
-               
-                if (string.IsNullOrEmpty(txt_not.Text) || string.IsNullOrWhiteSpace(txt_not.Text))
-                {
-                    firmaVMYeni.Hizmet = "";
-                }
-                else
-                {
-                    firmaVMYeni.Hizmet = txt_not.Text.Trim();
-                }
-                
-                if (string.IsNullOrEmpty(txt_vade.Text) || string.IsNullOrWhiteSpace(txt_vade.Text))
-                {
-                    firmaVMYeni.Vade = "";
-                }
-                else
-                {
-                    firmaVMYeni.Vade = txt_vade.Text.Trim();
-                }             
-
-
-                if (isUpdated)
-                {
-                    if(Convert.ToInt32( firmaService.SelectText("select count(*) from Firma where Firma_Adi = @param1 and ID <> @param2", firmaVMYeni.Firma_Adi, firmaVMYeni.ID).Rows[0][0]) > 0)
-                    {
-                        MessageBox.Show("Bu Firma Adı Zaten Kayıtlı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        if (firmaService.Update(firmaVMYeni))
-                        {
-                            MessageBox.Show("Firma Bilgileri Başarıyla Güncellendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız!\n Bilgileri Kontrol Edip Tekrar Deneyiniz.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                else
-                {
-                    firmaVMYeni.Yetkili = "";
-                    firmaVMYeni.Parola = parolaolustur();
-                    firmaVMYeni.Durum = "Aktif";
-                    firmaVMYeni.Kod = "MS" + firmaService.SelectText("select max(ID) from Firma").Rows[0][0].ToString();
-
-                    if (Convert.ToInt32(firmaService.SelectText("select count(*) from Firma where Firma_Adi = @param1", firmaVMYeni.Firma_Adi).Rows[0][0]) > 0)
-                    {
-                        MessageBox.Show("Bu Firma Adı Zaten Kayıtlı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        int firmaID = firmaService.Insert(firmaVMYeni);
-                        if (firmaID > 0)
-                        {
-                            MessageBox.Show("Firma Bilgileri Başarıyla Kaydedildi", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Yetkili yetkili = new Yetkili();
-                            yetkili.firmaID = firmaID;
-                            yetkili.firmaAdi = firmaVMYeni.Firma_Adi;
-                            yetkili.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız!\n Bilgileri Kontrol Edip Tekrar Deneyiniz.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    
-                }
+           
             }
-            
+
+            if (Application.OpenForms["Firmalar"] == null)
+            {
+
+            }
+            else
+            {
+                f.listele();
+            }
+
         }
 
+        string parola;
         public string parolaolustur()
-        {
-            string parola = "";
+        {            
             char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
             string result = string.Empty;
             Random r = new Random();
@@ -214,6 +126,75 @@ namespace mKYS.Musteri
             return parola;
         }
 
+        void kaydet()
+        {
+            parolaolustur();
 
+            //  SqlCommand komut = new SqlCommand("insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,Plasiyer,mail) values (@f1,@f2,@f3,@f4,@f5,@f6,@f7) ; insert into Yetkili (Yetkili,Mail,Telefon,Firma_ID) values (@y1,@y2,@y3,IDENT_CURRENT('Firma'))", bgl.baglanti());
+            SqlCommand komut = new SqlCommand(@"insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,PlasiyerID,Mail,Durum,Sektor,Hizmet,Kod,Parola,Tur,Vade,Odeme ) 
+            values (@f1,@f2,@f3,@f4,@f5,@f6,@f7,@f8,@f9,@f10,Concat('MS',IDENT_CURRENT('Firma')),@f12,@f13,@f14,@f15) ", bgl.baglanti());
+            komut.Parameters.AddWithValue("@f1", txt_firmaad.Text);
+            komut.Parameters.AddWithValue("@f2", txt_adres.Text);
+            komut.Parameters.AddWithValue("@f3", txt_vergid.Text);
+            komut.Parameters.AddWithValue("@f4", txt_vergino.Text);
+            komut.Parameters.AddWithValue("@f5", txt_telefon.Text);
+            komut.Parameters.AddWithValue("@f6", gridLookUpEdit1.EditValue);
+            komut.Parameters.AddWithValue("@f7", txt_Mail.Text);
+            komut.Parameters.AddWithValue("@f8", "Aktif");
+            komut.Parameters.AddWithValue("@f9", txt_sektor.Text);
+            komut.Parameters.AddWithValue("@f10", txt_not.Text);
+            komut.Parameters.AddWithValue("@f12", parola);
+            komut.Parameters.AddWithValue("@f13", combo_tur.Text);
+            komut.Parameters.AddWithValue("@f14", combo_odeme.Text);
+            komut.Parameters.AddWithValue("@f15", txt_vade.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            temizle();
+            MessageBox.Show("Kaydetme işlemi başarılı!", "Oopppss!");
+
+            this.Close();
+        }
+
+        void guncelle()
+        {
+            SqlCommand komut = new SqlCommand(@"Update Firma Set Firma_Adi = N'" + txt_firmaad.Text + "', Hizmet = N'" + txt_not.Text + "', Adres = N'" + txt_adres.Text + "', Telefon = N'" + txt_telefon.Text + "',  Mail = N'" + txt_Mail.Text + "', Vergi_Dairesi = N'" + txt_vergid.Text + "', Vergi_No = N'" + txt_vergino.Text + "', Sektor = N'" + txt_sektor.Text + "',PlasiyerID = N'" + gridLookUpEdit1.EditValue + "', " +
+                "Tur= N'" + combo_tur.Text + "' , Vade = N'" + txt_vade.Text + "', Odeme = N'" + combo_odeme.Text + "' where ID = N'" + fID + "' ", bgl.baglanti());
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            MessageBox.Show("Güncelleme işlemi başarılı!", "Oopppss!");
+        }
+
+        public void temizle()
+        {
+            txt_adres.Text = "";
+            txt_firmaad.Text = "";
+            txt_Mail.Text = "";
+            txt_telefon.Text = "";
+            txt_vergino.Text = "";
+            txt_vergid.Text = "";
+            gridLookUpEdit1.EditValue = "";
+            txt_sektor.Text = "";
+            txt_not.Text = "";
+            combo_odeme.Text = "";
+            txt_vade.Text = "";
+        }
+
+        private void FirmaYeni_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fID = null;
+        }
+
+        private void gridLookUpEdit1_QueryCloseUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void gridLookUpEdit1_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
     }
 }

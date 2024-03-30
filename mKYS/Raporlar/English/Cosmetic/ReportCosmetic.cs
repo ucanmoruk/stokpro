@@ -18,7 +18,7 @@ namespace mKYS.Raporlar.English.Cosmetic
         sqlbaglanti bgl = new sqlbaglanti();
 
 
-        public static string raporID, numune, miktar;
+        public static string raporID, numune, miktar, tNu;
         public void bilgi()
         {
             pRaporID.Value = raporID;

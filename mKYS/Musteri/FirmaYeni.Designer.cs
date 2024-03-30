@@ -274,6 +274,8 @@ namespace mKYS.Musteri
             this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEdit1.Size = new System.Drawing.Size(373, 20);
             this.gridLookUpEdit1.TabIndex = 10;
+            this.gridLookUpEdit1.QueryCloseUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryCloseUp);
+            this.gridLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
             // 
             // gridLookUpEdit1View
             // 
@@ -369,6 +371,7 @@ namespace mKYS.Musteri
             this.Name = "FirmaYeni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firma Detayları";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FirmaYeni_FormClosed);
             this.Load += new System.EventHandler(this.FirmaYeni_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_vergino.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_vergid.Properties)).EndInit();

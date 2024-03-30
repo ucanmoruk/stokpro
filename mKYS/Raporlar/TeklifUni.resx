@@ -120,26 +120,24 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
-    <value>select "StokAnalizListesi"."ID",
-       "StokAnalizListesi"."Kod",
-       "StokAnalizListesi"."Ad",
-       "StokAnalizListesi"."Metot",
-       "StokAnalizListesi"."Matriks",
-       "StokAnalizListesi"."Akreditasyon",
-       "StokAnalizListesi"."Birim",
-       "StokAnalizListesi"."Durumu",
-       "StokAnalizListesi"."Method",
-       "StokAnalizListesi"."AdEn",
-       "StokAnalizListesi"."MethodEn",
-       "StokAnalizListesi"."Sure",
-       "StokAnalizListesi"."Numune",
-       "StokAnalizListesi"."NumGereklilik",
-       "StokAnalizListesi"."NumDipnot"
-  from "StokAnalizListesi" "StokAnalizListesi"
-</value>
-  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5LUiI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRmlybWFfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJFdnJha19ObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik51bXVuZV9BZGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRldCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdydXAiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQW5hbGl6IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJhcG9yX0R1cnVtdSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2lrbGFtYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQWtyZWRpdGFzeW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJldm5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRHVydW0iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0ibWFzc2xhYl9OdW11bmVYMSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmFwb3JJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkFuYWxpeklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0ieDNJRCIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjxWaWV3IE5hbWU9Im1hc3NsYWJfU3Rva0FuYWxpekxpc3Rlc2kiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IktvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNZXRvdCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik1hdHJpa3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWtyZWRpdGFzeW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRHVydW11IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1ldGhvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZEVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1ldGhvZEVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN1cmUiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJOdW11bmUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTnVtR2VyZWtsaWxpayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOdW1EaXBub3QiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFJlbGF0aW9uIE1hc3Rlcj0iTktSIiBEZXRhaWw9Im1hc3NsYWJfTnVtdW5lWDEiPjxLZXlDb2x1bW4gTWFzdGVyPSJJRCIgRGV0YWlsPSJSYXBvcklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0ibWFzc2xhYl9OdW11bmVYMSIgRGV0YWlsPSJtYXNzbGFiX1N0b2tBbmFsaXpMaXN0ZXNpIj48S2V5Q29sdW1uIE1hc3Rlcj0iQW5hbGl6SUQiIERldGFpbD0iSUQiIC8+PC9SZWxhdGlvbj48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlRla2xpZkxpc3RlIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUZWtsaWZObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRla2xpZlR1cnUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGxhc2l5ZXJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iRmlybWFJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkR1cnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFjaWtsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2plSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJc2tvbnRvIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUGFyYUJpcmltaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJCaXJpbUZpeWF0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJGaXlhdEJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRla2xpZkRldGF5X0FjaWtsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkZXQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUb3BsYW0iIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRla2xpZkRldGF5X0lEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGVrbGlmRGV0YXlfVGVrbGlmTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJQYWtldElEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQW5hbGl6SUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJGaXJtYV9BZGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRyZXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmVyZ2lfRGFpcmVzaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWZXJnaV9ObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZWxlZm9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWWV0a2lsaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTb3lhZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3Rva0FuYWxpekxpc3Rlc2lfQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWV0b3QiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <data name="xrLabel1.Text" xml:space="preserve">
+    <value>Notlar:
+   1. * işaretli analizler laboratuvarımızın TS EN ISO/IEC 17025 standardı akreditasyon kapsamında yer almaktadır.
+   2. Fiyat teklifimiz 30 gün geçerlidir.
+   3. 500 g/mlnumune gereklidir.
+   4. Fiyat teklifimizi ıslak imzalı olarak, mail üzerinden veya numune gönderimi sağlayarak onayladığınızı beyan edebilirsiniz.
+   5. Yapılacak analizlere ve hizmetlere ait ücretler, müşteri tarafından peşin olarak ödenir. Rapor, ödeme yapıldıktan sonra müşteriye gönderilir.       Ödemenin yapılmaması halinde, UNIQUE ödeme yapılıncaya kadar analiz hizmetlerine başlamama veya analiz raporunu müşteriye iletmeme hakkına sahiptir.
+   6. İkinci dilde rapor ve/veya eksik bilgi sebebi ile revize rapor ücreti 10,00 $ + KDV şeklindedir.</value>
+  </data>
+  <data name="xrLabel4.Text" xml:space="preserve">
+    <value>Talep ettiğimiz analizlerin, tarafımızdan doldurulan, işbu Fiyat Teklif Formu’nda belirtilen bilgiler doğrultusunda, UNIQUE ANALİZ BELGELENDİRME VE GÖZETİM HİZMETLERİ LTD.ŞTİ tarafından verilecek olan hizmetlerin, bu formun bütün sayfalarında yer alan şartlara uygun olarak gerçekleştirilmesini ve bu hizmetler karşılığında uygulanacak fiyat ve ödeme koşullarını gayri kabili rücu olarak kabul ettiğimizi beyaz ve taahhüt ederiz. </value>
+  </data>
+  <data name="xrLabel2.Text" xml:space="preserve">
+    <value>UNIQUE ANALİZ BELGELENDİRME VE GÖZETİM HİZMETLERİ LTD.ŞTİ
+ Atatürk Mah. Hadımköy Yolu Cad. No:10 İç Kapı No:7 Esenyurt / İstanbul
+Tel:  0(212) 886 16 27    Web: www.uniquelab.com.tr    E-posta:info@uniquelab.com.tr</value>
   </data>
 </root>

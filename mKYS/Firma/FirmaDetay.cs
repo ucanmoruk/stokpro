@@ -104,7 +104,8 @@ namespace mKYS
                 fotoname = dre["Logo"].ToString();
             }
 
-            string yol = @"http://www.massgrup.com/cosmo/Numune/" + fotoname;
+            //string yol = @"http://www.massgrup.com/cosmo/Numune/" + fotoname;
+            string yol = Anasayfa.link + fotoname;
             pictureEdit1.LoadAsync(yol);
 
         }

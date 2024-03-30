@@ -121,28 +121,14 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select n.ID, l.Kod, n.RaporNo, n.Revno, n.Akreditasyon, l.Ad, l.AdEn, l.Method, l.MethodEn,
-l.Akreditasyon as 'AnalizAkreditasyon', d.Aciklama, d.AciklamaEn, d.Tur, d.Loq,
-v.Bel, s.Birim, s.Limit, s.Sonuc, s.Degerlendirme  from NumuneX5 s
+    <value>select n.ID, n.RaporNo, n.Revno, n.Akreditasyon, l.Ad, l.Method, l.Akreditasyon as 'AnalizAkreditasyon', d.Aciklama, d.Tur, d.Loq, s.Birim, s.Limit, s.Sonuc, s.Degerlendirme  from NumuneX5 s
 left join NumuneX2 a on s.x2ID = a.ID
 left join StokAnalizListesi l on a.AnalizID = l.ID
 left join StokAnalizDetay d on s.AltAnalizID = d.ID
-left join NKR n on a.RaporID = n.ID
-left join ValidasyonVeri v on l.ID = v.AnalizID</value>
-  </data>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
-    <value>select n.ID, n.RaporNo, n.Revno, n.Akreditasyon, l.Ad, l.Method, 
-l.Akreditasyon as 'AnalizAkreditasyon', d.Aciklama, d.Tur, d.Loq, 
-v.Bel, s.Birim, s.Limit, s.Sonuc, s.Degerlendirme  from NumuneX5 s
-left join NumuneX2 a on s.x2ID = a.ID
-left join StokAnalizListesi l on a.AnalizID = l.ID
-left join StokAnalizDetay d on s.AltAnalizID = d.ID
-left join NKR n on a.RaporID = n.ID
-left join ValidasyonVeri v on l.ID = v.AnalizID
-where d.Tur = 'Toplam'</value>
+left join NKR n on a.RaporID = n.ID</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlJldm5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQWtyZWRpdGFzeW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkRW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWV0aG9kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1ldGhvZEVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFuYWxpekFrcmVkaXRhc3lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2lrbGFtYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2lrbGFtYUVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlR1ciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJMb3EiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQmVsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkxpbWl0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNvbnVjIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRlZ2VybGVuZGlybWUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfMSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJSZXZubyIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQWtyZWRpdGFzeW9uIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iTWV0aG9kIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJBbmFsaXpBa3JlZGl0YXN5b24iIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkFjaWtsYW1hIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJUdXIiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkxvcSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQmVsIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJCaXJpbSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iTGltaXQiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IlNvbnVjIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJEZWdlcmxlbmRpcm1lIiBUeXBlPSJVbmtub3duIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmV2bm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWV0aG9kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFuYWxpekFrcmVkaXRhc3lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2lrbGFtYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUdXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTG9xIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkxpbWl0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNvbnVjIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRlZ2VybGVuZGlybWUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <data name="xrLabel25.Text" xml:space="preserve">
     <value>UNIQUE ANALİZ BELGELENDİRME VE GÖZETİM HİZMETLERİ LTD.ŞTİ. ♦ Atatürk Mah. Hadımköy Yolu Cad. No:10 İç Kapı No:7 Esenyurt / İstanbul

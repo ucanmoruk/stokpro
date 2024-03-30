@@ -131,6 +131,7 @@
             this.barButtonItem89 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem90 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem91 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -298,9 +299,10 @@
             this.barButtonItem88,
             this.barButtonItem89,
             this.barButtonItem90,
-            this.barButtonItem91});
+            this.barButtonItem91,
+            this.barButtonItem92});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 99;
+            this.ribbonControl1.MaxItemId = 100;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage8,
@@ -1152,7 +1154,7 @@
             // 
             // barButtonItem88
             // 
-            this.barButtonItem88.Caption = "Yeni Numune";
+            this.barButtonItem88.Caption = "Yeni Numune, never";
             this.barButtonItem88.Id = 95;
             this.barButtonItem88.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem88.ImageOptions.Image")));
             this.barButtonItem88.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem88.ImageOptions.LargeImage")));
@@ -1187,6 +1189,15 @@
             this.barButtonItem91.Name = "barButtonItem91";
             this.barButtonItem91.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
+            // 
+            // barButtonItem92
+            // 
+            this.barButtonItem92.Caption = "Analiz Listesi";
+            this.barButtonItem92.Id = 99;
+            this.barButtonItem92.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem92.ImageOptions.Image")));
+            this.barButtonItem92.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem92.ImageOptions.LargeImage")));
+            this.barButtonItem92.Name = "barButtonItem92";
+            this.barButtonItem92.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem92_ItemClick);
             // 
             // ribbonPage8
             // 
@@ -1288,6 +1299,7 @@
             // ribbonPageGroup29
             // 
             this.ribbonPageGroup29.AllowTextClipping = false;
+            this.ribbonPageGroup29.ItemLinks.Add(this.barButtonItem92);
             this.ribbonPageGroup29.ItemLinks.Add(this.barButtonItem69);
             this.ribbonPageGroup29.ItemLinks.Add(this.barButtonItem71);
             this.ribbonPageGroup29.ItemLinks.Add(this.barButtonItem72);
@@ -1787,6 +1799,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem90;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup37;
         private DevExpress.XtraBars.BarButtonItem barButtonItem91;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem92;
     }
 }
 

@@ -28,8 +28,8 @@ namespace mKYS.Musteri
         string teklifnum;
         void proforma()
         {
-            txtRaporNo.Text = NKR.evrakNo;
-            combo_raporfirma.Text = NKR.ffirma;
+            txtRaporNo.Text = NKR2.evrakNo;
+            combo_raporfirma.Text = NKR2.ffirma;
 
 
             SqlCommand detayd = new SqlCommand("Select Firma_Adi from Firma where ID in (select FaturaFirmaID from FaturaDetay where ProformaNo = '"+ txtRaporNo.Text + "')", bgl.baglanti());
@@ -124,7 +124,7 @@ namespace mKYS.Musteri
         public void projebul()
         {
 
-            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR.raporNo + "'))", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
             while (drd.Read())
             {

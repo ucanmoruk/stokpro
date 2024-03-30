@@ -224,7 +224,7 @@ namespace mKYS
         }
 
         DuyuruListe kl;
-        public static string kullanici;
+        public static string kullanici, link;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
             kullanicibul();
@@ -238,6 +238,8 @@ namespace mKYS
             //{
             //    tanitim();
             //}
+
+            link = "http://www.cosmoliz.com/cosmo/Numune/";
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;
@@ -899,6 +901,17 @@ namespace mKYS
         {
             Numune.ResimEkle re = new Numune.ResimEkle();
             re.Show();
+        }
+
+        Musteri.AnalizListesi mal;
+        private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (mal == null || mal.IsDisposed)
+            {
+                mal = new Musteri.AnalizListesi();
+                mal.MdiParent = this;
+                mal.Show();
+            }
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

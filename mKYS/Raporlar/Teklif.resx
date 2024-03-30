@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="xrLabel4.Text" xml:space="preserve">
-    <value>Talep ettiğimiz analizlerin, tarafımızdan doldurulan, işbu Fiyat Teklif Formu’nda belirtilen bilgiler doğrultusunda, Mass Laboratuvar ve Danışmanlık Hizmetleri A.Ş. tarafından verilecek olan hizmetlerin, bu formun bütün sayfalarında yer alan şartlara uygun olarak gerçekleştirilmesini ve bu hizmetler karşılığında uygulanacak fiyat ve ödeme koşullarını gayri kabili rücu olarak kabul ettiğimizi beyaz ve taahhüt ederiz. </value>
+    <value>Talep ettiğimiz analizlerin, tarafımızdan doldurulan, işbu Fiyat Teklif Formu’nda belirtilen bilgiler doğrultusunda, UNIQUE ANALİZ BELGELENDİRME VE GÖZETİM HİZMETLERİ LTD.ŞTİ tarafından verilecek olan hizmetlerin, bu formun bütün sayfalarında yer alan şartlara uygun olarak gerçekleştirilmesini ve bu hizmetler karşılığında uygulanacak fiyat ve ödeme koşullarını gayri kabili rücu olarak kabul ettiğimizi beyaz ve taahhüt ederiz. </value>
   </data>
   <data name="xrLabel1.Text" xml:space="preserve">
     <value>Notlar:
@@ -126,7 +126,15 @@
    2. Fiyat teklifimiz 30 gün geçerlidir.
    3. 500 g/mlnumune gereklidir.
    4. Fiyat teklifimizi ıslak imzalı olarak, mail üzerinden veya numune gönderimi sağlayarak onayladığınızı beyan edebilirsiniz.
-   5. Yapılacak analizlere ve hizmetlere ait ücretler, müşteri tarafından peşin olarak ödenir. Rapor, ödeme yapıldıktan sonra müşteriye gönderilir.       Ödemenin yapılmaması halinde, MASS ödeme yapılıncaya kadar analiz hizmetlerine başlamama veya analiz raporunu müşteriye iletmeme       hakkına sahiptir.
+   5. Yapılacak analizlere ve hizmetlere ait ücretler, müşteri tarafından peşin olarak ödenir. Rapor, ödeme yapıldıktan sonra müşteriye gönderilir.       Ödemenin yapılmaması halinde, UNIQUE ödeme yapılıncaya kadar analiz hizmetlerine başlamama veya analiz raporunu müşteriye iletmeme hakkına sahiptir.
    6. İkinci dilde rapor ve/veya eksik bilgi sebebi ile revize rapor ücreti 10,00 $ + KDV şeklindedir.</value>
   </data>
+  <data name="xrLabel2.Text" xml:space="preserve">
+    <value>UNIQUE ANALİZ BELGELENDİRME VE GÖZETİM HİZMETLERİ LTD.ŞTİ
+ Atatürk Mah. Hadımköy Yolu Cad. No:10 İç Kapı No:7 Esenyurt / İstanbul
+Tel:  0(212) 886 16 27    Web: www.uniquelab.com.tr    E-posta:info@uniquelab.com.tr</value>
+  </data>
+  <metadata name="xpPageSelector1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

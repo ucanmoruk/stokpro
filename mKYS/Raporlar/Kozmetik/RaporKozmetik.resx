@@ -126,20 +126,23 @@
        "NKR"."RaporNo", "NumuneDetay"."Miktar", "NumuneDetay"."Birim",
        "NumuneDetay"."SeriNo", "NumuneDetay"."UretimTarihi",
        "NumuneDetay"."SKT", "Firma"."Firma_Adi", "Firma"."Adres",
-       "Firma"."Mail", "Yetkili"."Yetkili"
+       "Firma"."Mail", "Yetkili"."Yetkili" , "Termin"."Termin" 
   from ((("dbo"."NKR" "NKR"
   left join "dbo"."NumuneDetay" "NumuneDetay"
        on ("NumuneDetay"."RaporID" = "NKR"."ID"))
   left join "dbo"."Firma" "Firma"
        on ("Firma"."ID" = "NKR"."Firma_ID"))
   left join "dbo"."Yetkili" "Yetkili"
-       on ("Yetkili"."Firma_ID" = "Firma"."ID"))</value>
+       on ("Yetkili"."Firma_ID" = "Firma"."ID"))
+  left join "dbo"."Termin" "Termin"
+       on ("NKR"."ID" = "Termin"."RaporID")
+</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5ldyI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRmlybWFfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJOdW11bmVfQWRpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUmV2bm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlcmlObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcmV0aW1UYXJpaGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpcm1hX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5ldyI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRmlybWFfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJOdW11bmVfQWRpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUmV2bm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlcmlObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcmV0aW1UYXJpaGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpcm1hX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVybWluIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <data name="xrLabel25.Text" xml:space="preserve">
-    <value>Deney laboratuvarı olarak faaliyet gösteren Mass Laboratuvar ve Danışmanlık A.Ş. TÜRKAK’tan AB-1454-T dosya numarası ile TS EN ISO/IEC 17025 standardına göre akredite edilmiştir. Türk Akreditasyon Kurumu (TÜRKAK) deney raporlarının tanınırlığı konusunda Avrupa Akreditasyon Birliği (EA) ile çok taraflı Anlaşma ve Uluslararası Laboratuvar Akreditasyon Birliği (ILAC) ile karşılıklı olarak tanıma anlaşması imzalamıştır.
-Analiz sonuçları, metotları ve numune ile ilgili diğer bilgiler, müşteri tarafından "Analiz Talep Çizelgesi (Ç.01.PR.03)"nda belirtilen bilgiler doğrultusunda bu raporun ilgili sayfalarında verilmiştir. Testlerden arta kalan numuneler, rapor tarihinden itibaren 15 gün süre ile uygun koşullarda saklanır. Buna rağmen fiziksel, kimyasal, mikrobiyolojik olarak bozunan örnekler saklama süresine bakılmaksızın imha edilirler. Bu konuda müşteri hiçbir hak talep edemez. Bu raporda yer alan analiz sonuçları veya bu sonuçlara göre "Uygun/Uygun Değil (Pass/Fail)" değerlendirilmesi “Karar Kuralının Uygulanması Talimatı (PR.20/T.01)”na göre yapılmaktadır. </value>
+    <value>Deney laboratuvarı olarak faaliyet gösteren Unique Analiz Belgelendirme ve Gözetim Hizmetleri LTD.ŞTİ. TÜRKAK’tan TS EN ISO/IEC 17025 standardına göre akredite edilmiştir. Türk Akreditasyon Kurumu (TÜRKAK) deney raporlarının tanınırlığı konusunda Avrupa Akreditasyon Birliği (EA) ile çok taraflı Anlaşma ve Uluslararası Laboratuvar Akreditasyon Birliği (ILAC) ile karşılıklı olarak tanıma anlaşması imzalamıştır.
+Analiz sonuçları, metotları ve numune ile ilgili diğer bilgiler, müşteri tarafından "Analiz Talep Formu (F.02.PR.03)"nda belirtilen bilgiler doğrultusunda bu raporun ilgili sayfalarında verilmiştir. Testlerden arta kalan numuneler, rapor tarihinden itibaren 15 gün süre ile uygun koşullarda saklanır. Buna rağmen fiziksel, kimyasal, mikrobiyolojik olarak bozunan örnekler saklama süresine bakılmaksızın imha edilirler. Bu konuda müşteri hiçbir hak talep edemez. Bu raporda yer alan analiz sonuçları veya bu sonuçlara göre "Uygun/Uygun Değil (Pass/Fail)" değerlendirilmesi “Karar Kuralının Uygulanması Talimatı (PR.20/T.01)”na göre yapılmaktadır. </value>
   </data>
 </root>

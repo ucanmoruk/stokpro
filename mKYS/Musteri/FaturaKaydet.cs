@@ -32,14 +32,14 @@ namespace mKYS.Musteri
 
         void goster()
         {
-            txtRaporNo.Text = NKR.evrakNo;
-            combo_raporfirma.Text = NKR.ffirma;
-            combo_faturafirma.Text = NKR.ffirma;
+            txtRaporNo.Text = NKR2.evrakNo;
+            combo_raporfirma.Text = NKR2.ffirma;
+            combo_faturafirma.Text = NKR2.ffirma;
          //   dateEdit1.Text = NKR.ftarih;
             combo_proje.Text = NumuneGuncelle.projeadi;
         }
         Faturax f = new Faturax();
-        NKR n = (NKR)Application.OpenForms["NKR"];
+        NKR2 n = (NKR2)Application.OpenForms["Numune Takip Listesi"];
         string odemeDurumu = "Ödeme Bekliyor";
         int odemeID,faturafirma,raporfirma,projeID, faturasayi;
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace mKYS.Musteri
         public void projebul()
         {
 
-            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR.raporNo + "'))", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
             while (drd.Read())
             {

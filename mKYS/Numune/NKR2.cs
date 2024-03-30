@@ -291,7 +291,7 @@ namespace mKYS
                         // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
                         SqlCommand komutSil = new SqlCommand("update NKR set Durum=@a1, RaporNo=@a2 where ID = @p1", bgl.baglanti());
                         komutSil.Parameters.AddWithValue("@p1", nkrno);
-                        komutSil.Parameters.AddWithValue("@a2", "20-000");
+                        komutSil.Parameters.AddWithValue("@a2", "20000");
                         komutSil.Parameters.AddWithValue("@a1", "Pasif");
                         komutSil.ExecuteNonQuery();
                         bgl.baglanti().Close();
@@ -355,41 +355,59 @@ namespace mKYS
         int projeid, rapornos;
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            splitContainer2.Panel2Collapsed = false;
-            txtAdet.Text = NKR.fadet;
-            combo_birim.Text = NKR.fbirim;
-            txt_basvuru.Text = NKR.basvuru;
-            txt_model.Text = NKR.model;
-            txt_marka.Text = NKR.marka;
-            txt_akr.Text = nakr;
-            txt_tur.Text = ntur;
-            txt_rev.Text = nrev;
-
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select Kod, Ad, Method from StokAnalizListesi where ID in (select AnalizID from NumuneX1 where RaporID = N'" + nkrID + "')  ", bgl.baglanti());
-            da.Fill(dt);
-            gridControl2.DataSource = dt;
-
-            DataRow dr = gridView3.GetDataRow(gridView3.FocusedRowHandle);
-            rapornos = Convert.ToInt32(dr["Rapor No"].ToString());
-
-            SqlCommand detay = new SqlCommand("select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = N'" + rapornos + "')", bgl.baglanti());
-            SqlDataReader drd = detay.ExecuteReader();
-            while (drd.Read())
+            try
             {
-                projeid = Convert.ToInt32(drd["ProjeID"]);
-            }
-            bgl.baglanti().Close();
+                splitContainer2.Panel2Collapsed = false;
 
-            SqlCommand detayd = new SqlCommand("Select Firma_Adi from Firma where ID = N'" + projeid + "'", bgl.baglanti());
-            SqlDataReader drde = detayd.ExecuteReader();
-            while (drde.Read())
+                DataTable dt12 = new DataTable();
+                SqlDataAdapter da12 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, l.ID as 'aID' from NumuneX1 x
+                    left join StokAnalizListesi l on x.AnalizID = l.ID
+                    where x.RaporID = '" + nkrID + "' order by l.Kod", bgl.baglanti());
+                da12.Fill(dt12);
+                gridControl2.DataSource = dt12;
+                gridView4.Columns["aID"].Visible = false;
+            }
+            catch (Exception ex)
             {
-                txt_proje.Text = drde["Firma_Adi"].ToString();
+                MessageBox.Show("Analiz eklenmemiş!");
             }
-            bgl.baglanti().Close();
 
+            
+            //txtAdet.Text = NKR.fadet;
+            //combo_birim.Text = NKR.fbirim;
+            //txt_basvuru.Text = NKR.basvuru;
+            //txt_model.Text = NKR.model;
+            //txt_marka.Text = NKR.marka;
+            //txt_akr.Text = nakr;
+            //txt_tur.Text = ntur;
+            //txt_rev.Text = nrev;
+
+
+            //DataTable dt = new DataTable();
+            //SqlDataAdapter da = new SqlDataAdapter("select Kod, Ad, Method from StokAnalizListesi where ID in (select AnalizID from NumuneX1 where RaporID = N'" + nkrID + "')  ", bgl.baglanti());
+            //da.Fill(dt);
+            //gridControl2.DataSource = dt;
+
+            //DataRow dr = gridView3.GetDataRow(gridView3.FocusedRowHandle);
+            //rapornos = Convert.ToInt32(dr["Rapor No"].ToString());
+
+            //SqlCommand detay = new SqlCommand("select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = N'" + rapornos + "')", bgl.baglanti());
+            //SqlDataReader drd = detay.ExecuteReader();
+            //while (drd.Read())
+            //{
+            //    projeid = Convert.ToInt32(drd["ProjeID"]);
+            //}
+            //bgl.baglanti().Close();
+
+            //SqlCommand detayd = new SqlCommand("Select Firma_Adi from Firma where ID = N'" + projeid + "'", bgl.baglanti());
+            //SqlDataReader drde = detayd.ExecuteReader();
+            //while (drde.Read())
+            //{
+            //    txt_proje.Text = drde["Firma_Adi"].ToString();
+            //}
+            //bgl.baglanti().Close();
+
+            
 
         }
 
@@ -863,10 +881,47 @@ namespace mKYS
                 frmPrint.name = nkrno + " - " + name;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
-                mKYS.Raporlar.Kozmetik.Stabilite.raporID = nkrno;
+                mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
                 using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
                 {
                     frm.StabiliteRapor();
+                    frm.ShowDialog();
+                }
+
+            }
+        }
+
+        private void NKR2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void NKR2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //closing
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //stabiliy
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = nkrno + " - " + name;
+                //mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
+                //mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
+                //mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
+
+                Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
+                Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-2";
+                Raporlar.English.Cosmetic.Stabilityv2.raporID = nkrno;
+
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.Stability();
                     frm.ShowDialog();
                 }
 

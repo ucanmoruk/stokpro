@@ -17,7 +17,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>ftp://massgrup.com/httpdocs/cosmo/</PublishUrl>
+    <PublishUrl>ftp://cosmoliz.com/httpdocs/cosmo/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -27,13 +27,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://massgrup.com/cosmo/</InstallUrl>
+    <InstallUrl>https://cosmoliz.com/cosmo/</InstallUrl>
     <ProductName>mUnique</ProductName>
     <PublisherName>Oğuzhan Eker</PublisherName>
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -248,6 +248,12 @@
     <Compile Include="Muhasebe\OdemeList.Designer.cs">
       <DependentUpon>OdemeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri\AnalizListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\AnalizListesi.Designer.cs">
+      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\Fatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,22 +380,40 @@
     <Compile Include="Numune\MusteriTakip.Designer.cs">
       <DependentUpon>MusteriTakip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NumKabDokumanGoruntule.cs">
+    <Compile Include="Raporlar\English\Cosmetic\Stabilityv2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\English\Cosmetic\Stabilityv2.designer.cs">
+      <DependentUpon>Stabilityv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Kozmetik\Stabilitev2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Kozmetik\Stabilitev2.designer.cs">
+      <DependentUpon>Stabilitev2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\TeklifUni.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\TeklifUni.Designer.cs">
+      <DependentUpon>TeklifUni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\NumKabDokumanGoruntule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NumKabDokumanGoruntule.Designer.cs">
+    <Compile Include="ÇöpKutusu\NumKabDokumanGoruntule.Designer.cs">
       <DependentUpon>NumKabDokumanGoruntule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NumKabResimGoruntule.cs">
+    <Compile Include="ÇöpKutusu\NumKabResimGoruntule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NumKabResimGoruntule.Designer.cs">
+    <Compile Include="ÇöpKutusu\NumKabResimGoruntule.Designer.cs">
       <DependentUpon>NumKabResimGoruntule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NumKabv2.cs">
+    <Compile Include="ÇöpKutusu\NumKabv2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NumKabv2.Designer.cs">
+    <Compile Include="ÇöpKutusu\NumKabv2.Designer.cs">
       <DependentUpon>NumKabv2.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\RaporTermin.cs">
@@ -506,10 +530,10 @@
     <Compile Include="Numune\TalepListe.Designer.cs">
       <DependentUpon>TalepListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NKR.cs">
+    <Compile Include="ÇöpKutusu\NKR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NKR.Designer.cs">
+    <Compile Include="ÇöpKutusu\NKR.Designer.cs">
       <DependentUpon>NKR.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\NumuneDurum.cs">
@@ -518,16 +542,16 @@
     <Compile Include="Numune\NumuneDurum.designer.cs">
       <DependentUpon>NumuneDurum.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NumuneGuncelle.cs">
+    <Compile Include="ÇöpKutusu\NumuneGuncelle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NumuneGuncelle.Designer.cs">
+    <Compile Include="ÇöpKutusu\NumuneGuncelle.Designer.cs">
       <DependentUpon>NumuneGuncelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\NumuneGuncelle2.cs">
+    <Compile Include="ÇöpKutusu\NumuneGuncelle2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\NumuneGuncelle2.Designer.cs">
+    <Compile Include="ÇöpKutusu\NumuneGuncelle2.Designer.cs">
       <DependentUpon>NumuneGuncelle2.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\NumuneKabul.cs">
@@ -1171,6 +1195,9 @@
     <EmbeddedResource Include="Muhasebe\OdemeList.resx">
       <DependentUpon>OdemeList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\AnalizListesi.resx">
+      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri\Fatura.resx">
       <DependentUpon>Fatura.cs</DependentUpon>
     </EmbeddedResource>
@@ -1234,13 +1261,22 @@
     <EmbeddedResource Include="Numune\MusteriTakip.resx">
       <DependentUpon>MusteriTakip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NumKabDokumanGoruntule.resx">
+    <EmbeddedResource Include="Raporlar\English\Cosmetic\Stabilityv2.resx">
+      <DependentUpon>Stabilityv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Kozmetik\Stabilitev2.resx">
+      <DependentUpon>Stabilitev2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\TeklifUni.resx">
+      <DependentUpon>TeklifUni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\NumKabDokumanGoruntule.resx">
       <DependentUpon>NumKabDokumanGoruntule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NumKabResimGoruntule.resx">
+    <EmbeddedResource Include="ÇöpKutusu\NumKabResimGoruntule.resx">
       <DependentUpon>NumKabResimGoruntule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NumKabv2.resx">
+    <EmbeddedResource Include="ÇöpKutusu\NumKabv2.resx">
       <DependentUpon>NumKabv2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\RaporTermin.resx">
@@ -1301,16 +1337,16 @@
     <EmbeddedResource Include="Numune\TalepListe.resx">
       <DependentUpon>TalepListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NKR.resx">
+    <EmbeddedResource Include="ÇöpKutusu\NKR.resx">
       <DependentUpon>NKR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\NumuneDurum.resx">
       <DependentUpon>NumuneDurum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NumuneGuncelle.resx">
+    <EmbeddedResource Include="ÇöpKutusu\NumuneGuncelle.resx">
       <DependentUpon>NumuneGuncelle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\NumuneGuncelle2.resx">
+    <EmbeddedResource Include="ÇöpKutusu\NumuneGuncelle2.resx">
       <DependentUpon>NumuneGuncelle2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\NumuneKabul.resx">
@@ -1684,11 +1720,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\uniqmühür.png" />
+    <None Include="Resources\unique mühür1.png" />
+    <None Include="Resources\unique mühür.png" />
+    <None Include="Resources\UNİQUE LOGO.jpg" />
     <None Include="Resources\eimzalidir.png" />
     <None Include="Resources\7.png" />
     <None Include="Resources\8.png" />
     <None Include="Resources\AB-1454-T.ILAC_MRA_T.en.jpg" />
     <Content Include="Panda.ico" />
+    <None Include="Resources\can.jpg" />
+    <None Include="Resources\alea.jpg" />
     <Content Include="Resources\Muhur.png" />
     <None Include="Resources\Root Intern.png" />
     <None Include="Resources\Root Intern1.png" />

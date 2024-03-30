@@ -203,13 +203,13 @@ namespace mKYS
             {
                 if (fotoname == null)
                 {
-                    string logo = @"http://www.massgrup.com/cosmo/Numune/Logo.jpg";
+                    string logo = @"http://www.cosmoliz.com/cosmo/Numune/Logo.jpg";
                   //  pictureEdit1.Image = new Bitmap(logo);
                     pictureEdit1.LoadAsync(logo);
                 }
                 else
                 {
-                    string yol = @"http://www.massgrup.com/cosmo/Numune/" + fotoname;
+                    string yol = @"http://www.cosmoliz.com/cosmo/Numune/" + fotoname;
                     //   pictureEdit1.Image = new Bitmap(yol);
 
                     var request = WebRequest.Create(yol);
@@ -440,8 +440,8 @@ namespace mKYS
                     {
                         string ftpUsername = "massgrup";
                         string ftpPassword = "!88n2ee5Q";
-                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/cosmo/Numune" + "/" + yenisim;
-                        yeniyol = "http://" + "www.massgrup.com/cosmo/Numune" + "/" + yenisim;
+                        ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                        yeniyol = "http://" + "www.cosmoliz.com/cosmo/Numune" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                         // client.UploadFile(ftpfullpath, WebRequestMethods.Ftp.UploadFile, name);
                         client.UploadFile(ftpfullpath, name);
@@ -649,62 +649,62 @@ namespace mKYS
             }
             bgl.baglanti().Close();
 
-            if (combo_grup.Text == "Özel")
-            {
-                //txt_basvuru.Enabled = false;
-                //txt_marka.Enabled = false;
-                //txt_model.Enabled = false;
-                //combo_tur.Enabled = false;
-                txt_lot.Enabled = true;
-                txt_skt.Enabled = true;
-                txt_uretim.Enabled = true;
-                labelControl5.Text = "Alıcı / Üretici Firma:";
-                combo_denetci.Visible = false;
-                txt_alicifirma.Visible = true;
-                combo_bakanlik.Visible = false;
-            }
-            else if (combo_grup.Text == "Bakanlık")
-            {
-                txt_lot.Enabled = false;
-                txt_skt.Enabled = false;
-                txt_uretim.Enabled = false;
-                combo_tur.Enabled = true;
-                txt_basvuru.Enabled = true;
-                txt_marka.Enabled = true;
-                txt_model.Enabled = true;
-                txt_alicifirma.Visible = false;
-                combo_bakanlik.Visible = true;
-                combo_denetci.Visible = true;
-                labelControl5.Text = "Bakanlık / Denetçi:";
-            }
-            else if (combo_grup.Text == "Tareks")
-            {
-                txt_lot.Enabled = false;
-                txt_skt.Enabled = false;
-                txt_uretim.Enabled = false;
-                combo_tur.Enabled = true;
-                txt_basvuru.Enabled = true;
-                txt_marka.Enabled = true;
-                txt_model.Enabled = true;
-                labelControl5.Text = "Alıcı / Üretici Firma:";
-                combo_denetci.Visible = false;
-                txt_alicifirma.Visible = true;
-                combo_bakanlik.Visible = false;
-            }
-            else
-            {
-                txt_lot.Enabled = true;
-                txt_skt.Enabled = true;
-                txt_uretim.Enabled = true;
-                combo_tur.Enabled = true;
-                txt_basvuru.Enabled = true;
-                txt_marka.Enabled = true;
-                txt_model.Enabled = true;
-                labelControl5.Text = "Alıcı / Üretici Firma:";
-                combo_denetci.Visible = false;
-                txt_alicifirma.Visible = true;
-                combo_bakanlik.Visible = false;
-            }
+            //if (combo_grup.Text == "Özel")
+            //{
+            //    //txt_basvuru.Enabled = false;
+            //    //txt_marka.Enabled = false;
+            //    //txt_model.Enabled = false;
+            //    //combo_tur.Enabled = false;
+            //    txt_lot.Enabled = true;
+            //    txt_skt.Enabled = true;
+            //    txt_uretim.Enabled = true;
+            //    labelControl5.Text = "Alıcı / Üretici Firma:";
+            //    combo_denetci.Visible = false;
+            //    txt_alicifirma.Visible = true;
+            //    combo_bakanlik.Visible = false;
+            //}
+            //else if (combo_grup.Text == "Bakanlık")
+            //{
+            //    txt_lot.Enabled = false;
+            //    txt_skt.Enabled = false;
+            //    txt_uretim.Enabled = false;
+            //    combo_tur.Enabled = true;
+            //    txt_basvuru.Enabled = true;
+            //    txt_marka.Enabled = true;
+            //    txt_model.Enabled = true;
+            //    txt_alicifirma.Visible = false;
+            //    combo_bakanlik.Visible = true;
+            //    combo_denetci.Visible = true;
+            //    labelControl5.Text = "Bakanlık / Denetçi:";
+            //}
+            //else if (combo_grup.Text == "Tareks")
+            //{
+            //    txt_lot.Enabled = false;
+            //    txt_skt.Enabled = false;
+            //    txt_uretim.Enabled = false;
+            //    combo_tur.Enabled = true;
+            //    txt_basvuru.Enabled = true;
+            //    txt_marka.Enabled = true;
+            //    txt_model.Enabled = true;
+            //    labelControl5.Text = "Alıcı / Üretici Firma:";
+            //    combo_denetci.Visible = false;
+            //    txt_alicifirma.Visible = true;
+            //    combo_bakanlik.Visible = false;
+            //}
+            //else
+            //{
+            //    txt_lot.Enabled = true;
+            //    txt_skt.Enabled = true;
+            //    txt_uretim.Enabled = true;
+            //    combo_tur.Enabled = true;
+            //    txt_basvuru.Enabled = true;
+            //    txt_marka.Enabled = true;
+            //    txt_model.Enabled = true;
+            //    labelControl5.Text = "Alıcı / Üretici Firma:";
+            //    combo_denetci.Visible = false;
+            //    txt_alicifirma.Visible = true;
+            //    combo_bakanlik.Visible = false;
+            //}
 
         }
 

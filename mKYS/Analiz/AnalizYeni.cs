@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using mKYS.Musteri;
 
 namespace mKYS.Analiz
 {
@@ -66,7 +67,7 @@ namespace mKYS.Analiz
 
         void ekleme()
         {
-            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim, Method, AdEn, MethodEn, Sure, Numune, NumGereklilik, NumDipnot, NumDipnotEn) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14,@a15) " +
+            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim, Method, AdEn, MethodEn, Sure, Numune, NumGereklilik, NumDipnot, NumDipnotEn, Laboratuvar,Cihaz, Fiyat,Dip,ParaBirimi) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14,@a15,@a16,@a17,@a18,@a19,@a20) " +
                 " SET @ID=SCOPE_IDENTITY();", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
@@ -97,6 +98,17 @@ namespace mKYS.Analiz
             add.Parameters.AddWithValue("@a13", txt_gerek.Text);
             add.Parameters.AddWithValue("@a14", memoEdit2.Text);
             add.Parameters.AddWithValue("@a15", memoEdit3.Text);
+            add.Parameters.AddWithValue("@a16", txt_laboratuvar.Text);
+            add.Parameters.AddWithValue("@a17", txt_cihaz.Text);
+            if(txt_fiyat.Text == "" || txt_fiyat.Text == null)
+                add.Parameters.AddWithValue("@a18", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a18", Convert.ToDecimal(txt_fiyat.Text));
+            if (txt_dip.Text == "" || txt_dip.Text == null)
+                add.Parameters.AddWithValue("@a19", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a19", Convert.ToDecimal(txt_dip.Text));
+            add.Parameters.AddWithValue("@a20", combo_para.Text);
             add.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
             add.ExecuteNonQuery();
             string AnalizID = add.Parameters["@ID"].Value.ToString();
@@ -135,6 +147,12 @@ namespace mKYS.Analiz
                 memoEdit1.Text = drI["Numune"].ToString();
                 memoEdit2.Text = drI["NumDipnot"].ToString();
                 memoEdit3.Text = drI["NumDipnotEn"].ToString();
+                txt_laboratuvar.Text = drI["Laboratuvar"].ToString();
+                txt_cihaz.Text = drI["Cihaz"].ToString();
+                txt_fiyat.Text = drI["Fiyat"].ToString();
+                txt_dip.Text = drI["Dip"].ToString();
+                combo_para.Text = drI["ParaBirimi"].ToString();
+
             }
             bgl.baglanti().Close();
         }
@@ -142,7 +160,8 @@ namespace mKYS.Analiz
         void guncelle()
         {
             SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 , " +
-                " Method=@a8, AdEn=@a9, MethodEn=@a10, Sure=@a11, Numune=@a12, NumGereklilik=@a13, NumDipnot = @a14, NumDipnotEn = @a15 where ID = '" + aID + "' ", bgl.baglanti());
+                " Method=@a8, AdEn=@a9, MethodEn=@a10, Sure=@a11, Numune=@a12, NumGereklilik=@a13, NumDipnot = @a14, NumDipnotEn = @a15, " +
+                " Laboratuvar = @a16, Cihaz = @a17, Fiyat = @a18, Dip = @a19, ParaBirimi = @a20  where ID = '" + aID + "' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             if (String.IsNullOrEmpty(kaynak))
@@ -171,6 +190,17 @@ namespace mKYS.Analiz
             add.Parameters.AddWithValue("@a13", txt_gerek.Text);
             add.Parameters.AddWithValue("@a14", memoEdit2.Text);
             add.Parameters.AddWithValue("@a15", memoEdit3.Text);
+            add.Parameters.AddWithValue("@a16", txt_laboratuvar.Text);
+            add.Parameters.AddWithValue("@a17", txt_cihaz.Text);
+            if (txt_fiyat.Text == "" || txt_fiyat.Text == null)
+                add.Parameters.AddWithValue("@a18", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a18", Convert.ToDecimal(txt_fiyat.Text));
+            if (txt_dip.Text == "" || txt_dip.Text == null)
+                add.Parameters.AddWithValue("@a19", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a19", Convert.ToDecimal(txt_dip.Text));
+            add.Parameters.AddWithValue("@a20", combo_para.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -194,7 +224,8 @@ namespace mKYS.Analiz
             }
         }
 
-        AnalizListesi m = (AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
+       // AnalizListesi m = (AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
+        Musteri.AnalizListesi n = (Musteri.AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -236,6 +267,11 @@ namespace mKYS.Analiz
                         memoEdit1.Text = "";
                         memoEdit2.Text = "";
                         memoEdit3.Text = "";
+                        txt_cihaz.Text = "";
+                        txt_dip.Text = "";
+                        txt_laboratuvar.Text = "";
+                        txt_fiyat.Text = "";
+                       
 
                     }
 
@@ -247,16 +283,23 @@ namespace mKYS.Analiz
 
             }
 
+            //if (Application.OpenForms["AnalizListesi"] == null)
+            //{
+
+            //}
+            //else
+            //{
+            //    m.listele();
+            //}
+
             if (Application.OpenForms["AnalizListesi"] == null)
             {
 
             }
             else
             {
-                m.listele();
+                n.listele();
             }
-
-
 
         }
 

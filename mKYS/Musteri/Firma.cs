@@ -46,7 +46,8 @@ namespace mKYS.Musteri
                     parolaolustur();
 
                     //  SqlCommand komut = new SqlCommand("insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,Plasiyer,mail) values (@f1,@f2,@f3,@f4,@f5,@f6,@f7) ; insert into Yetkili (Yetkili,Mail,Telefon,Firma_ID) values (@y1,@y2,@y3,IDENT_CURRENT('Firma'))", bgl.baglanti());
-                    SqlCommand komut = new SqlCommand("insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,Plasiyer,mail,durum,Sektor,Hizmet,Kod,Parola,Tur) values (@f1,@f2,@f3,@f4,@f5,@f6,@f7,@f8,@f9,@f10,Concat('MS',IDENT_CURRENT('Firma')),@f12,@f13) ", bgl.baglanti());
+                    SqlCommand komut = new SqlCommand(@"insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,PlasiyerID,Yetkili,Mail,Durum,Sektor,Hizmet,Kod,Parola,Tur, Vade, Odeme ) 
+                   values (@f1,@f2,@f3,@f4,@f5,@f6,@f7,@f8,@f9,@f10,Concat('MS',IDENT_CURRENT('Firma')),@f12,@f13) ", bgl.baglanti());
                     komut.Parameters.AddWithValue("@f1", txt_firmaad.Text);
                     komut.Parameters.AddWithValue("@f2", txt_adres.Text);
                     komut.Parameters.AddWithValue("@f3", txt_vergid.Text);
@@ -198,22 +199,32 @@ namespace mKYS.Musteri
         {
             try
             {
-                DialogResult Secim = new DialogResult();
 
-                Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-                if (Secim == DialogResult.Yes)
+                if (gridView3.FocusedRowHandle >= 0)
                 {
-                   // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update Firma set Durum=@a1 , Firma_Adi=@a2 where ID = @p1", bgl.baglanti());
-                    komutSil.Parameters.AddWithValue("@p1", firmaID);
-                    komutSil.Parameters.AddWithValue("@a2", "[Silindi] " + firmaadi);
-                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
-                    komutSil.ExecuteNonQuery();
-                    bgl.baglanti().Close();
-                    listele();
-                    MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                    int fID = Convert.ToInt32(gridView3.GetFocusedRowCellValue("ID"));
+                    string fAdi = gridView3.GetFocusedRowCellValue("Firma Adı").ToString();
+                    DialogResult Secim = new DialogResult();
+
+                    Secim = MessageBox.Show(fAdi + " - Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                    if (Secim == DialogResult.Yes)
+                    {
+                       // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                        SqlCommand komutSil = new SqlCommand("update Firma set Durum=@a1 , Firma_Adi=@a2 where ID = @p1", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@p1", fID);
+                        komutSil.Parameters.AddWithValue("@a2", "[Silindix2] " + firmaadi);
+                        komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        listele();
+                        MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                    }
+                 
                 }
+
+
+               
             }
             catch (Exception ex)
             {
@@ -233,34 +244,7 @@ namespace mKYS.Musteri
 
         private void gridView3_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                DataRow dr = gridView3.GetDataRow(gridView3.FocusedRowHandle);
-                txt_firmaad.Text = dr["Firma Adı"].ToString();
-                firmaadi = dr["Firma Adı"].ToString();
-                txt_adres.Text = dr["Adres"].ToString();
-                txt_telefon.Text = dr["Telefon"].ToString();
-                txt_vergid.Text = dr["Vergi Dairesi"].ToString();
-                txt_vergino.Text = dr["Vergi No"].ToString();
-                txt_Mail.Text = dr["Mail"].ToString();
-                txt_sektor.Text = dr["Sektor"].ToString();
-                txt_not.Text = dr["Not"].ToString();
-                combo_plasiyer.Text = dr["Plasiyer"].ToString();
-                combo_tur.Text = dr["Firma Türü"].ToString();
 
-                SqlCommand komutID = new SqlCommand("Select ID From Firma where Firma_Adi= N'" + txt_firmaad.Text + "'", bgl.baglanti());
-                SqlDataReader drI = komutID.ExecuteReader();
-                while (drI.Read())
-                {
-                    firmaID = Convert.ToInt32(drI[0].ToString());
-                    lbl_ID.Text = firmaID.ToString();
-                }
-                bgl.baglanti().Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hata : " + ex.Message);
-            }
         }
 
         private void gridView3_RowCellStyle_1(object sender, RowCellStyleEventArgs e)
@@ -282,10 +266,14 @@ namespace mKYS.Musteri
             {
                 int fID = Convert.ToInt32(gridView3.GetFocusedRowCellValue("ID"));
 
+                FirmaYeni.fID = Convert.ToString(fID);
                 FirmaYeni firmaYeni = new FirmaYeni();
-                firmaYeni.isUpdated = true;
-                firmaYeni.firmaUpdateID = fID;
                 firmaYeni.Show();
+
+                //FirmaYeni firmaYeni = new FirmaYeni();
+                //firmaYeni.isUpdated = true;
+                //firmaYeni.firmaUpdateID = fID;
+                //firmaYeni.Show();
             }
 
         }

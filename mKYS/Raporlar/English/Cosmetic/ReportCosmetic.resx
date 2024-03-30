@@ -126,19 +126,22 @@
        "NKR"."RaporNo", "NumuneDetay"."Miktar", "NumuneDetay"."Birim",
        "NumuneDetay"."SeriNo", "NumuneDetay"."UretimTarihi",
        "NumuneDetay"."SKT", "Firma"."Firma_Adi", "Firma"."Adres",
-       "Firma"."Mail", "Yetkili"."Yetkili"
+       "Firma"."Mail", "Yetkili"."Yetkili" , "Termin"."Termin"
   from ((("dbo"."NKR" "NKR"
   left join "dbo"."NumuneDetay" "NumuneDetay"
        on ("NumuneDetay"."RaporID" = "NKR"."ID"))
   left join "dbo"."Firma" "Firma"
        on ("Firma"."ID" = "NKR"."Firma_ID"))
   left join "dbo"."Yetkili" "Yetkili"
-       on ("Yetkili"."Firma_ID" = "Firma"."ID"))</value>
+       on ("Yetkili"."Firma_ID" = "Firma"."ID"))
+  left join "dbo"."Termin" "Termin"
+       on ("NKR"."ID" = "Termin"."RaporID")
+</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5ldyI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRmlybWFfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJOdW11bmVfQWRpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUmV2bm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlcmlObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcmV0aW1UYXJpaGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpcm1hX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5ldyI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRmlybWFfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJOdW11bmVfQWRpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUmV2bm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkJpcmltIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlcmlObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcmV0aW1UYXJpaGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpcm1hX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVybWluIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <data name="xrLabel25.Text" xml:space="preserve">
-    <value>Mass Laboratuvar ve Danışmanlık A.Ş., which operates as an experimental laboratory. It has been accredited by TURKAK with file number AB-1454-T in accordance with TS EN ISO / IEC 17025 standard. The Turkish Accreditation Agency (TÜRKAK) signed a multilateral Agreement with the European Accreditation Association (EA) and a mutual recognition agreement with the International Laboratory Accreditation Association (ILAC) for the recognition of test reports. Analysis results, methods and other information about the sample are given in the relevant pages of this report in line with the information specified in the "Analysis Request Chart (Ç.01.PR.03)" by the customer. The test results are valid for the sample specified above. It may not represent the lot to which the sample belongs. This report does not replace the "Product Certificate". </value>
+    <value> Unique Analiz Belgelendirme ve Gözetim Hizmetleri LTD.ŞTİ. which operates as an experimental laboratory. It has been accredited by TURKAK in accordance with TS EN ISO / IEC 17025 standard. The Turkish Accreditation Agency (TÜRKAK) signed a multilateral Agreement with the European Accreditation Association (EA) and a mutual recognition agreement with the International Laboratory Accreditation Association (ILAC) for the recognition of test reports. Analysis results, methods and other information about the sample are given in the relevant pages of this report in line with the information specified in the "Analysis Request Form (F.02.PR.03)" by the customer. The test results are valid for the sample specified above. It may not represent the lot to which the sample belongs. This report does not replace the "Product Certificate". </value>
   </data>
 </root>
