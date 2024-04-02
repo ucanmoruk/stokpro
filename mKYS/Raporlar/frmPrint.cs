@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
+using mUnique.Raporlar;
 
 namespace mKYS.Raporlar
 {
@@ -32,6 +33,18 @@ namespace mKYS.Raporlar
                 hamveri.bilgi();
                 documentViewer1.DocumentSource = hamveri;
                 hamveri.CreateDocument();
+            }
+        }
+
+        public void Teklif()
+        {
+            TeklifUni teklif = new TeklifUni();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in teklif.Parameters)
+            {
+                p.Visible = false;
+                teklif.bilgi();
+                documentViewer1.DocumentSource = teklif;
+                teklif.CreateDocument();
             }
         }
 

@@ -150,6 +150,14 @@ namespace mKYS.Musteri
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //print
+
+            mUnique.Raporlar.TeklifUni.teklifID = teklifID ;
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.Teklif();
+                frm.ShowDialog();
+            }
+
         }
 
         Teklifv2 fr6;
@@ -169,6 +177,21 @@ namespace mKYS.Musteri
             {
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
+            }
+        }
+
+        string teklifID;
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            try
+            {
+                DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                teklifID = dr["ID"].ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
