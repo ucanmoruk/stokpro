@@ -224,8 +224,8 @@ namespace mKYS.Analiz
             }
         }
 
-       // AnalizListesi m = (AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
-        Musteri.AnalizListesi n = (Musteri.AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
+        AnalizListesi m = (AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
+       // Musteri.AnalizListesi n = (Musteri.AnalizListesi)System.Windows.Forms.Application.OpenForms["AnalizListesi"];
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -283,23 +283,23 @@ namespace mKYS.Analiz
 
             }
 
-            //if (Application.OpenForms["AnalizListesi"] == null)
-            //{
-
-            //}
-            //else
-            //{
-            //    m.listele();
-            //}
-
             if (Application.OpenForms["AnalizListesi"] == null)
             {
 
             }
             else
             {
-                n.listele();
+                m.listele();
             }
+
+            //if (Application.OpenForms["AnalizListesi"] == null)
+            //{
+
+            //}
+            //else
+            //{
+            //    n.listele();
+            //}
 
         }
 

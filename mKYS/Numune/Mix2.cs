@@ -201,21 +201,20 @@ namespace mKYS.Numune
 
                     if (tekrar == 0)
                     {
-
-                        SqlCommand komutx = new SqlCommand(@"select x.RaporID, d.ID, l.Kod, l.Ad, l.Method, d.Aciklama, d.LOQ, y.Limit, y.Birim, z.Tur from Numunex1 x
+                        SqlCommand komut1x = new SqlCommand(@"select x.RaporID, d.ID, l.Kod, l.Ad, l.Method, d.Aciklama, d.LOQ, y.Limit, y.Birim, z.Tur from Numunex1 x
                         left join StokAnalizListesi l on x.AnalizID = l.ID
                         left join StokAnalizDetay d on l.ID = d.AnalizID
                         left join NKR z on x.RaporID = z.ID
                         inner join Numunex4 y on d.ID = y.AltAnalizID
                         where x.RaporID = '" + raporID + "' and d.Durum = 'Aktif' and y.x3ID = '" + x3ID + "' and x.AnalizID = '" + analizID + "'", bgl.baglanti());
-                        SqlDataReader drx = komutx.ExecuteReader();
-                        while (drx.Read())
+                        SqlDataReader dr2x = komut1x.ExecuteReader();
+                        while (dr2x.Read())
                         {
-                            loq = drx["LOQ"].ToString();
-                            nTur = drx["Tur"].ToString();
-                            altAnalizID = drx["ID"].ToString();
-                            xlimit = drx["Limit"].ToString();
-                            xbirim = drx["Birim"].ToString();
+                            loq = dr2x["LOQ"].ToString();
+                            nTur = dr2x["Tur"].ToString();
+                            altAnalizID = dr2x["ID"].ToString();
+                            xlimit = dr2x["Limit"].ToString();
+                            xbirim = dr2x["Birim"].ToString();
 
                             if (loq == "" || loq == null || loq == "-")
                                 loq2 = "Tespit Edilmedi";

@@ -24,7 +24,7 @@ namespace mKYS.Raporlar.English.Cosmetic
             pRaporID.Value = raporID;
             pNumune.Value = numune;
             pMiktar.Value = miktar;
-
+            tNo.Value = tNu;
         }
     }
 }

@@ -203,13 +203,13 @@ namespace mKYS
             {
                 if (fotoname == null)
                 {
-                    string logo = @"http://www.cosmoliz.com/cosmo/Numune/Logo.jpg";
+                    string logo = @"http://www.rootarge.com/cosmo/Numune/Logo.jpg";
                   //  pictureEdit1.Image = new Bitmap(logo);
                     pictureEdit1.LoadAsync(logo);
                 }
                 else
                 {
-                    string yol = @"http://www.cosmoliz.com/cosmo/Numune/" + fotoname;
+                    string yol = @"http://www.rootarge.com/cosmo/Numune/" + fotoname;
                     //   pictureEdit1.Image = new Bitmap(yol);
 
                     var request = WebRequest.Create(yol);
@@ -440,8 +440,8 @@ namespace mKYS
                     {
                         string ftpUsername = "massgrup";
                         string ftpPassword = "!88n2ee5Q";
-                        ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/cosmo/Numune" + "/" + yenisim;
-                        yeniyol = "http://" + "www.cosmoliz.com/cosmo/Numune" + "/" + yenisim;
+                        ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                        yeniyol = "http://" + "www.rootarge.com/cosmo/Numune" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                         // client.UploadFile(ftpfullpath, WebRequestMethods.Ftp.UploadFile, name);
                         client.UploadFile(ftpfullpath, name);

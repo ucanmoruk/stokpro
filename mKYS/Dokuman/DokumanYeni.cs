@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -80,6 +81,7 @@ namespace mKYS.Dokuman
             }
         }
 
+        string ftpfullpath, yeniyol;
         private void btn_sec_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -103,6 +105,23 @@ namespace mKYS.Dokuman
                         lbl_bas.Text = "Seçim Başarılı!";
                         count = "1";
                     }
+
+                    //isim = Path.GetFileName(name);
+                    //path = txt_kod.Text + "-" + revno + ".pdf";
+                    //using (var client = new WebClient())
+                    //{
+                    //    //path = txt_kod.Text + "-" + revno + ".pdf";
+                    //    //File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                    //    string ftpUsername = "massgrup";
+                    //    string ftpPassword = "!88n2ee5Q";
+                    //    ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/cosmo/Raporlar" + "/" + path;
+                    //    yeniyol = "http://" + "www.rootarge.com/cosmo/Raporlar" + "/" + path;
+                    //    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    //    // client.UploadFile(ftpfullpath, WebRequestMethods.Ftp.UploadFile, name);
+                    //    client.UploadFile(@Anasayfa.kpath, name);
+                    //}
+
+
                 }
                 else
                 {

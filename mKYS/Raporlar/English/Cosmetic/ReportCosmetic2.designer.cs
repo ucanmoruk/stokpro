@@ -114,7 +114,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "mass_yeni";
+            this.sqlDataSource1.ConnectionName = "Unique_Cosmoroot";
             this.sqlDataSource1.Name = "sqlDataSource1";
             customSqlQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"135\" Height=\"292\" />";
             customSqlQuery1.Name = "Query";
@@ -829,7 +829,6 @@
             this.pRaporID.AllowNull = true;
             this.pRaporID.Description = "pRaporID";
             this.pRaporID.Name = "pRaporID";
-            this.pRaporID.Visible = false;
             // 
             // MiktarBirim
             // 
@@ -950,7 +949,7 @@
             this.sqlDataSource1});
             this.DataMember = "Query";
             this.DataSource = this.sqlDataSource1;
-            this.FilterString = "[RaporNo] = ?pRaporID";
+            this.FilterString = "[ID] = ?pRaporID";
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margins = new System.Drawing.Printing.Margins(22, 27, 179, 85);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {

@@ -387,7 +387,8 @@ namespace mKYS.Musteri
                 }
                 else
                 {
-                    frm.ProformaGrup();
+                    //frm.ProformaGrup();
+                    frm.ProformaYazdir();
                     frm.ShowDialog();
                 }
 

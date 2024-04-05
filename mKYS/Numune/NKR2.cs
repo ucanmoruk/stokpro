@@ -121,7 +121,7 @@ namespace mKYS
             listele();
             gridduzen();
 
-            date_basla.EditValue = DateTime.Now.AddDays(-30);
+            date_basla.EditValue = DateTime.Now.AddDays(-90);
             date_bit.EditValue = DateTime.Now;
             date_basla.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             date_basla.Properties.Mask.EditMask = "dd-MM-yyyy";
@@ -273,7 +273,7 @@ namespace mKYS
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            //silme
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -712,13 +712,16 @@ namespace mKYS
         string name;
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //türkçe challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                //  nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno +" - "+name;
+                frmPrint.name = raporno +" - "+name;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-1";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik3.raporID = nkrno;
@@ -747,10 +750,13 @@ namespace mKYS
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+              //  nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno + " - " + name;
+                frmPrint.name = raporno + " - " + name;
                 Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
+                Raporlar.English.Cosmetic.ReportCosmetic.tNu = "";
                 Raporlar.English.Cosmetic.ReportCosmetic2.raporID = nkrno;
                 using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
                 {
@@ -770,14 +776,18 @@ namespace mKYS
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //ingilizce challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno + " - " + name;
+                frmPrint.name = raporno + " - " + name;
                 Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
+                Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-1";
                 Raporlar.English.Cosmetic.ReportCosmetic3.raporID = nkrno;
                 using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
                 {
@@ -871,14 +881,17 @@ namespace mKYS
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //stabilite
+            //türkçe stabilite
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                //   nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno + " - " + name;
+                frmPrint.name = raporno + " - " + name;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
                 mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
@@ -903,14 +916,16 @@ namespace mKYS
 
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //stabiliy
+            //ingilizce stabiliy
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+              //  nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno + " - " + name;
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                frmPrint.name = raporno + " - " + name;
                 //mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 //mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
                 //mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
@@ -997,14 +1012,18 @@ namespace mKYS
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //türkçe rapor
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+             //   nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = nkrno + " - " + name;
+                frmPrint.name = raporno + " - " + name;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
+                mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik2.raporID = nkrno;
                 using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
                 {

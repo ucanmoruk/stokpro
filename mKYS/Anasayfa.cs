@@ -239,7 +239,7 @@ namespace mKYS
             //    tanitim();
             //}
 
-            link = "http://www.cosmoliz.com/cosmo/Numune/";
+            link = "http://www.rootarge.com/cosmo/Numune/";
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;

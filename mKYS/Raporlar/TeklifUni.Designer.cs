@@ -316,6 +316,7 @@
             this.calculatedField8 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField9 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField10 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField11 = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).BeginInit();
@@ -1298,7 +1299,7 @@
             this.xrTableCell42.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell42.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Vergi_Dairesi]),\'-\' , [calculatedField3])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Vergi_Dairesi]),\'-\' , [calculatedField11])")});
             this.xrTableCell42.Font = new System.Drawing.Font("Tahoma", 8F);
             this.xrTableCell42.Multiline = true;
             this.xrTableCell42.Name = "xrTableCell42";
@@ -2262,7 +2263,7 @@
             // calculatedField9
             // 
             this.calculatedField9.DataMember = "TeklifX1";
-            this.calculatedField9.Expression = "[TeklifNo]+\' \'+[Tarih]";
+            this.calculatedField9.Expression = "[TeklifNo]+\' / \'+FormatString(\'{0:d MMMM yyyy}\',[Tarih] )";
             this.calculatedField9.Name = "calculatedField9";
             // 
             // calculatedField10
@@ -2270,6 +2271,12 @@
             this.calculatedField10.DataMember = "TeklifX1";
             this.calculatedField10.Expression = "[Ad]+\' \'+[Soyad]";
             this.calculatedField10.Name = "calculatedField10";
+            // 
+            // calculatedField11
+            // 
+            this.calculatedField11.DataMember = "TeklifX1";
+            this.calculatedField11.Expression = "[Vergi_Dairesi]+\' / \'+[Vergi_No]";
+            this.calculatedField11.Name = "calculatedField11";
             // 
             // TeklifUni
             // 
@@ -2292,7 +2299,8 @@
             this.calculatedField7,
             this.calculatedField8,
             this.calculatedField9,
-            this.calculatedField10});
+            this.calculatedField10,
+            this.calculatedField11});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "TeklifX1";
@@ -2461,5 +2469,6 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField8;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField9;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField10;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField11;
     }
 }

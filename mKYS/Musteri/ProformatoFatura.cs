@@ -132,6 +132,10 @@ namespace mKYS.Musteri
             }
             bgl.baglanti().Close();
 
+            if (projeadi == "" || projeadi == null)
+            {
+                combo_proje.Text = "Diğer";
+            }
             //SqlCommand detayd = new SqlCommand("Select Proje from Proje where ID = N'" + projeid + "'", bgl.baglanti());
             //SqlDataReader drde = detayd.ExecuteReader();
             //while (drde.Read())

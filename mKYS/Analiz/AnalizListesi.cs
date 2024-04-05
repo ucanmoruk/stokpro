@@ -92,7 +92,7 @@ namespace mKYS.Analiz
                     string ykod = "P-" + skod;
                     SqlCommand komutSil = new SqlCommand("update StokAnalizListesi set Durumu=@a1 where ID= N'" + aID + "'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
-                    komutSil.Parameters.AddWithValue("@a1", ykod);
+                 //   komutSil.Parameters.AddWithValue("@a1", ykod);
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
                     MessageBox.Show("Silme işlemi gerçekleşmiştir.");

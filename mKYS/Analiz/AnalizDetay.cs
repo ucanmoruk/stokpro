@@ -47,51 +47,59 @@ namespace mKYS.Analiz
         void detaybul()
         {
 
-            SqlCommand komut21 = new SqlCommand("Select * from ValidasyonVeri where AnalizID = N'" + aID + "' and Durum = 'Aktif' or Durum = 'Ortak'", bgl.baglanti());
-            SqlDataReader dr21 = komut21.ExecuteReader();
-            while (dr21.Read())
+            try
             {
-                urun.Text = dr21["Urun"].ToString();
-                date_basla.EditValue = Convert.ToDateTime(dr21["Tarih1"].ToString());
-                date_bit.EditValue = Convert.ToDateTime(dr21["Tarih2"].ToString());
-                birim.Text = dr21["Birim"].ToString();
-                lod.Text = dr21["Lod"].ToString();
-                loq.Text = dr21["Loq"].ToString();
-                gerikazanim.Text = dr21["GK"].ToString();
-                bel.Text = dr21["Bel"].ToString();
-
-            }
-            bgl.baglanti().Close();
-
-            SqlCommand komut2 = new SqlCommand("Select * from  StokAnalizListesi where ID = N'" + aID + "' ", bgl.baglanti());
-            SqlDataReader dr2 = komut2.ExecuteReader();
-            while (dr2.Read())
-            {
-                kod.Text = dr2["Kod"].ToString();
-                ad.Text = dr2["Ad"].ToString();
-                bID = Convert.ToInt32(dr2["Birim"].ToString());
-                mID = Convert.ToInt32(dr2["Metot"].ToString());
-
-                SqlCommand komut1 = new SqlCommand("Select * from  StokDKDListe where ID = N'" + mID + "' ", bgl.baglanti());
-                SqlDataReader dr1 = komut1.ExecuteReader();
-                while (dr1.Read())
+                SqlCommand komut21 = new SqlCommand("Select * from ValidasyonVeri where AnalizID = N'" + aID + "' and Durum = 'Aktif' or Durum = 'Ortak'", bgl.baglanti());
+                SqlDataReader dr21 = komut21.ExecuteReader();
+                while (dr21.Read())
                 {
-                    string kod = dr1["Kod"].ToString();
-                    string ad = dr1["Ad"].ToString();
-                    metot.Text = kod + " " + ad;
+                    urun.Text = dr21["Urun"].ToString();
+                    date_basla.EditValue = Convert.ToDateTime(dr21["Tarih1"].ToString());
+                    date_bit.EditValue = Convert.ToDateTime(dr21["Tarih2"].ToString());
+                    birim.Text = dr21["Birim"].ToString();
+                    lod.Text = dr21["Lod"].ToString();
+                    loq.Text = dr21["Loq"].ToString();
+                    gerikazanim.Text = dr21["GK"].ToString();
+                    bel.Text = dr21["Bel"].ToString();
+
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand komut11 = new SqlCommand(" select * from StokFirmaBirim where ID = '" + bID + "' ", bgl.baglanti());
-                SqlDataReader dr11 = komut11.ExecuteReader();
-                while (dr11.Read())
+                SqlCommand komut2 = new SqlCommand("Select * from  StokAnalizListesi where ID = N'" + aID + "' ", bgl.baglanti());
+                SqlDataReader dr2 = komut2.ExecuteReader();
+                while (dr2.Read())
                 {
-                    txt_birim.Text = dr11["Birim"].ToString();
+                    kod.Text = dr2["Kod"].ToString();
+                    ad.Text = dr2["Ad"].ToString();
+                    bID = Convert.ToInt32(dr2["Birim"].ToString());
+                    mID = Convert.ToInt32(dr2["Metot"].ToString());
+
+                    SqlCommand komut1 = new SqlCommand("Select * from  StokDKDListe where ID = N'" + mID + "' ", bgl.baglanti());
+                    SqlDataReader dr1 = komut1.ExecuteReader();
+                    while (dr1.Read())
+                    {
+                        string kod = dr1["Kod"].ToString();
+                        string ad = dr1["Ad"].ToString();
+                        metot.Text = kod + " " + ad;
+                    }
+                    bgl.baglanti().Close();
+
+                    SqlCommand komut11 = new SqlCommand(" select * from StokFirmaBirim where ID = '" + bID + "' ", bgl.baglanti());
+                    SqlDataReader dr11 = komut11.ExecuteReader();
+                    while (dr11.Read())
+                    {
+                        txt_birim.Text = dr11["Birim"].ToString();
+                    }
+                    bgl.baglanti().Close();
+
                 }
                 bgl.baglanti().Close();
-
             }
-            bgl.baglanti().Close();
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Buda geçer!");
+            }
 
 
         }

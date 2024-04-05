@@ -938,7 +938,7 @@
             this.sqlDataSource1});
             this.DataMember = "New";
             this.DataSource = this.sqlDataSource1;
-            this.FilterString = "[RaporNo] = ?pRaporID";
+            this.FilterString = "[ID] = ?pRaporID";
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margins = new System.Drawing.Printing.Margins(22, 28, 240, 134);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {

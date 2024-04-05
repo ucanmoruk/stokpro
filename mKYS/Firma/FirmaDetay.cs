@@ -199,8 +199,8 @@ namespace mKYS
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/cosmo/Numune" + "/" + yenisim;
-                    yeniyol = "http://" + "www.massgrup.com/cosmo/Numune" + "/" + yenisim;
+                    ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/cosmo/Numune" + "/" + yenisim;
+                    yeniyol = "http://" + "www.rootarge.com/cosmo/Numune" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }
