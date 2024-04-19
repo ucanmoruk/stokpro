@@ -8,7 +8,7 @@ namespace mKYS.Dokuman
     {
         sqlbaglanti bgl = new sqlbaglanti();
 
-        public static string yol, ad, path;
+        public static string yol, ad, path, yol2;
 
         public DokumanGoruntule()
         {
@@ -24,8 +24,10 @@ namespace mKYS.Dokuman
         private void DokumanGoruntule_Load(object sender, EventArgs e)
         {
             path = Path.Combine(Anasayfa.kpath, yol);
+
+           // yol2 = @"U:/Drive'ım/Ortak Drive/Dokuman";
             // path = "http://" + "www.rootarge.com/cosmo/Raporlar" + "/" + yol;
-           // path = @"C:\\Users\\asp\\Desktop\\kayit\\2018 Stok Kampanya.pdf";
+            // path = @"C:\\Users\\asp\\Desktop\\kayit\\2018 Stok Kampanya.pdf";
             //path = Path.Combine("https://" + "www.rootarge.com/cosmo/Raporlar" + "/", yol);
             axAcroPDF1.LoadFile(path);
             
