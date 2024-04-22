@@ -120,7 +120,21 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "dbo.StokListesi"."Kod", "dbo.StokListesi"."Ad",
+       "dbo.StokListesi"."Saklama",
+       "dbo.StokHareket"."Hareket", "dbo.StokHareket"."Marka",
+       "dbo.StokHareket"."Lot", "dbo.StokHareket"."SKT",
+       "dbo.StokFirmaBirim"."Birim", "dbo.StokListesi"."Tur",
+       "dbo.StokHareket"."ID"
+  from (("dbo"."StokHareket" "dbo.StokHareket"
+  inner join "dbo"."StokListesi" "dbo.StokListesi"
+       on ("dbo.StokListesi"."ID" = "dbo.StokHareket"."StokID"))
+  inner join "dbo"."StokFirmaBirim" "dbo.StokFirmaBirim"
+       on ("dbo.StokFirmaBirim"."ID" = "dbo.StokHareket"."BirimID"))
+</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlN0b2tIYXJla2V0Ij48RmllbGQgTmFtZT0iS29kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNha2xhbWEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSGFyZWtldCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYXJrYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJMb3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQmlyaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PFZpZXcgTmFtZT0ibWFzc2xhYl9TdG9rTGlzdGVzaSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJUdXIiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IktvZCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQWQiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkFkRW4iIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkNhcyIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQW1iYWxhaiIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iT3plbGxpayIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iU2FrbGFtYSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iTGltaXQiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQmlyaW0iIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkR1cnVtIiBUeXBlPSJVbmtub3duIiAvPjwvVmlldz48VmlldyBOYW1lPSJtYXNzbGFiX1N0b2tIYXJla2V0Ij48RmllbGQgTmFtZT0iSUQiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IlN0b2tJRCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iTWFya2EiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkxvdCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJCaXJpbSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iSGFyZWtldCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQmlyaW1JRCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iRHVydW0iIFR5cGU9IlVua25vd24iIC8+PC9WaWV3PjxSZWxhdGlvbiBNYXN0ZXI9Im1hc3NsYWJfU3Rva0hhcmVrZXQiIERldGFpbD0ibWFzc2xhYl9TdG9rTGlzdGVzaSI+PEtleUNvbHVtbiBNYXN0ZXI9IlN0b2tJRCIgRGV0YWlsPSJJRCIgLz48L1JlbGF0aW9uPjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlN0b2tIYXJla2V0Ij48RmllbGQgTmFtZT0iS29kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNha2xhbWEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSGFyZWtldCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYXJrYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJMb3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0tUIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQmlyaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

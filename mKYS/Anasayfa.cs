@@ -889,12 +889,19 @@ namespace mKYS
         Tanimlama2 tan2;
         private void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (tan2 == null || tan2.IsDisposed)
+            //if (tan2 == null || tan2.IsDisposed)
+            //{
+            //    tan2 = new Tanimlama2();
+            //    tan2.MdiParent = this;
+            //    tan2.Show();
+            //}
+            if (til == null || til.IsDisposed)
             {
-                tan2 = new Tanimlama2();
-                tan2.MdiParent = this;
-                tan2.Show();
+                til = new TanimlamaListesi();
+                til.MdiParent = this;
+                til.Show();
             }
+
         }
        
         private void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)

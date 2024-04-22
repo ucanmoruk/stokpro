@@ -19,22 +19,22 @@ namespace mKYS.Raporlar
         public static string firmaID;
         public void bilgi()
         {
-            pAciklama.Value = "Ç.02.PR.04";
-            pFirmaID.Value = firmaID;
-            SqlCommand komut = new SqlCommand("select * from DokumanMaster where Kod = N'" + pAciklama.Value + "'", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                revno = dr["Revno"].ToString();
-                tarih = dr["RevTarihi"].ToString();
-                ytarih = dr["YayinTarihi"].ToString();
-            }
-            bgl.baglanti().Close();
+            //pAciklama.Value = "Ç.02.PR.04";
+            //pFirmaID.Value = firmaID;
+            //SqlCommand komut = new SqlCommand("select * from DokumanMaster where Kod = N'" + pAciklama.Value + "'", bgl.baglanti());
+            //SqlDataReader dr = komut.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    revno = dr["Revno"].ToString();
+            //    tarih = dr["RevTarihi"].ToString();
+            //    ytarih = dr["YayinTarihi"].ToString();
+            //}
+            //bgl.baglanti().Close();
 
-            pRev.Value = revno + " / " + tarih;
-            //pYayin.Value = ytarih;
-            DateTime ptarih = DateTime.Parse(ytarih);
-            pYayin.Value = ptarih.ToShortDateString();
+            //pRev.Value = revno + " / " + tarih;
+            ////pYayin.Value = ytarih;
+            //DateTime ptarih = DateTime.Parse(ytarih);
+            //pYayin.Value = ptarih.ToShortDateString();
 
         }
 

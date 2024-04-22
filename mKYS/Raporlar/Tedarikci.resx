@@ -120,6 +120,18 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "dbo.StokTedarikci"."ID", "dbo.StokTedarikci"."Ad",
+       "dbo.StokTedarikci"."Adres", "dbo.StokTedarikci"."Tur",
+       "dbo.StokTedarikci"."Yetkili",
+       "dbo.StokTedarikci"."Telefon",
+       "dbo.StokTedarikci"."Email",
+       "dbo.StokTedarikci"."Faks",
+       "dbo.StokTedarikci"."Durum",
+       "dbo.StokTedarikci"."Durumu"
+  from "dbo"."StokTedarikci" "dbo.StokTedarikci"
+</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfU3Rva1RlZGFyaWtjaSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRyZXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVsZWZvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFbWFpbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGYWtzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkR1cnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkR1cnVtdSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>

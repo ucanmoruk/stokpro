@@ -362,12 +362,15 @@ namespace mKYS
             Numune.SonucListesi.raporID = raporID;
             Numune.SonucListesi.raporNo = raporno;
 
-            if (sl == null || sl.IsDisposed)
-            {
-                sl = new Numune.SonucListesi();
-                sl.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
-                sl.Show();
-            }
+            Numune.SonucListesi sl = new Numune.SonucListesi();
+            sl.Show();
+
+            //if (sl == null || sl.IsDisposed)
+            //{
+            //    sl = new Numune.SonucListesi();
+            //    sl.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
+            //    sl.Show();
+            //}
         }
     }
 }

@@ -201,13 +201,25 @@ namespace mKYS
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Raporlar.KimyasalEtiket.sTur = "CRM";
+            Raporlar.KimyasalEtiket.sTur = "Besiyeri";
             using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
             {
                 frm.KimyasalEtiket();
                 frm.ShowDialog();
             }
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //referans kültür
+            Raporlar.KimyasalEtiket.sTur = "Referans Kültür";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
+    
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {

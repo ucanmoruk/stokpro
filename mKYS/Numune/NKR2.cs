@@ -66,7 +66,7 @@ namespace mKYS
             join Firma f on f.ID = n.Firma_ID 
             join Odeme o on o.Evrak_No = n.Evrak_No 
             left join Termin t on t.RaporID = n.ID 
-            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.Evrak_No desc", bgl.baglanti());
+            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["aID"].Visible = false;
@@ -350,7 +350,7 @@ namespace mKYS
         }
 
         public static int nkrID, turID;
-        public static string evrakNo, raporDurumu, faturaDurumu, ftarih, ffirma, fnumune, fadet, ftur, fgrup, fanaliz, faciklama, fbirim;
+        public static string evrakNo, raporDurumu, faturaDurumu, ftarih, ffirma, fnumune, fadet, ftur, fgrup, fanaliz, faciklama, fbirim, karar;
 
         int projeid, rapornos;
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -1137,12 +1137,13 @@ namespace mKYS
                     faciklama = dr["Açıklama"].ToString();
                 //    akreditasyon = dr["Akreditasyon"].ToString();
 
-                    SqlCommand komut2 = new SqlCommand("Select ID, Revno from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
+                    SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
                     SqlDataReader dr2 = komut2.ExecuteReader();
                     while (dr2.Read())
                     {
                         nkrID = Convert.ToInt32(dr2["ID"]);
                         revno = Convert.ToInt32(dr2["Revno"]);
+                        karar = dr2["Karar"].ToString();
                         label1.Text = Convert.ToString(nkrID);
 
                     }

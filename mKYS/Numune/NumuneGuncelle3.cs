@@ -106,6 +106,7 @@ namespace mKYS
             combo_tur.Text = tur;
             combo_grup.Text = NKR2.fgrup;
             txt_aciklama.Text = NKR2.faciklama;
+            combo_karar.Text = NKR2.karar;
             // comboBoxEdit1.Text = projeadi;
 
             if (NKR2.nakr == "Var")
@@ -181,6 +182,7 @@ namespace mKYS
             combo_yetkili.Text = "";
             combo_bakanlik.Text = "";
             combo_denetci.Text = "";
+            combo_karar.Text = "";
         }
 
         public static int nID, firmadanGelenID, aliciid;
@@ -314,7 +316,7 @@ namespace mKYS
 
                 bgl.baglanti().Close();
                 SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                 "update NKR set Evrak_No=@n3, Revno=@n7, RaporNo = @n1,Numune_Adi=@n2,Tarih=@n4,Tur=@n5,Grup=@n6,Aciklama=@n8,Firma_ID=@n9, Akreditasyon=@n10 where ID = N'" + nID + "'" +
+                 "update NKR set Evrak_No=@n3, Revno=@n7, RaporNo = @n1,Numune_Adi=@n2,Tarih=@n4,Tur=@n5,Grup=@n6,Aciklama=@n8,Firma_ID=@n9, Akreditasyon=@n10, Karar = @n11 where ID = N'" + nID + "'" +
                  "update Termin set Termin=@t1 where RaporID = N'" + nID + "'" +
                  "update Odeme set Evrak_No=@k1 where ID = N'" + odemeid + "'" +
                  "update NumuneDetay2 set YetkiliID =@x1, DenetciID=@x2 where RaporID = N'" + nID + "'" +
@@ -331,6 +333,7 @@ namespace mKYS
                 komut.Parameters.AddWithValue("@n8", txt_aciklama.Text);
                 komut.Parameters.AddWithValue("@n9", firmadanGelenID);
                 komut.Parameters.AddWithValue("@n10", durum);
+                komut.Parameters.AddWithValue("@n11", combo_karar.Text);
                 komut.Parameters.AddWithValue("@t1", dateTermin.EditValue);
                 komut.Parameters.AddWithValue("@o1", alicifirma);
                 komut.Parameters.AddWithValue("@o2", txt_marka.Text);

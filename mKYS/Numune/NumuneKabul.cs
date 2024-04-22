@@ -119,7 +119,14 @@ namespace mKYS
 
         private void txtAdet_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            // e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08 && e.KeyChar != (char)44)
+            // text'e sadece sayıların girmesi,geri silme tuşu(ascii kodu:08),virgül(ascii kodu:44) karakterinin girilmesini sağlar.
+            //del tuşununda aktif olmasını isterseniz del ascıı kodu:127
+            //
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtEvrak_KeyPress(object sender, KeyPressEventArgs e)
@@ -145,7 +152,7 @@ namespace mKYS
             DateTime tarih = DateTime.Now;
             SqlCommand add = new SqlCommand("insert into NumuneDurum (RaporNo, Durum, Kim) values (@o1, @o3,@o4) ; " +
                 " insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
-            add.Parameters.AddWithValue("@o1", lbl_rapno.Text);
+            add.Parameters.AddWithValue("@o1", txtRapor.Text);
             add.Parameters.AddWithValue("@o2", tarih);
             add.Parameters.AddWithValue("@o3", "Numune Kabul Edildi");
             add.Parameters.AddWithValue("@o4", Giris.kullaniciID);
@@ -182,23 +189,16 @@ namespace mKYS
                         tekrarevrak();
                     }
 
-                    lbl_rapno.Text = txtRapor.Text;
-                    Evrakmax();
-                    txtRapor.Text = "";
-                    RaporNoMax();
-                    int yenirap = maxrapor + 1;
-                    txtRapor.Text = yenirap.ToString();
-                    n.listele();
-
+                    //   lbl_rapno.Text = txtRapor.Text;
                     durumekle();
-
-                    fotokaydet();
+                    fotokaydet();                  
+                    n.listele();                    
 
                     tabPane1.SelectedPage = tabNavigationPage2;
 
                 }
 
-                n.listele();
+              //  n.listele();
             }
             catch (Exception ex)
             {
@@ -339,7 +339,7 @@ namespace mKYS
             int Donen = 0;
 
             SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                         "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14) SET @ID = SCOPE_IDENTITY() ; " +
+                         "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15) SET @ID = SCOPE_IDENTITY() ; " +
                          "insert into Odeme(Odeme_Durumu, Evrak_No) values(@o1,@o2); " +
                          "insert into NumuneDetay(AliciFirma,Miktar,SeriNo,UretimTarihi,SKT,BasvuruNo,Marka,RaporID,Model,ProjeID,Birim) values(@a1,@a2,@a3,@a4,@a5,@a6,@a7,IDENT_CURRENT('NKR'),@a8,@a9,@a10)" +
                          "insert into NumuneDetay2(RaporID,YetkiliID, DenetciID) values(IDENT_CURRENT('NKR'),@x1,@x2);" +
@@ -359,6 +359,7 @@ namespace mKYS
             komut.Parameters.AddWithValue("@n12", txtRev.Text);
             komut.Parameters.AddWithValue("@n13", akredite);
             komut.Parameters.AddWithValue("@n14", "Aktif");
+            komut.Parameters.AddWithValue("@n15", combo_karar.Text);
             komut.Parameters.AddWithValue("@o1", fDurumu);
             komut.Parameters.AddWithValue("@o2", txtEvrak.Text);
             komut.Parameters.AddWithValue("@a1", alicifirma);
@@ -405,7 +406,7 @@ namespace mKYS
             }
 
             SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                          "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14) ; " +
+                          "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15)  SET @ID = SCOPE_IDENTITY() ; " +
                           "insert into NumuneDetay(AliciFirma,Miktar,SeriNo,UretimTarihi,SKT,BasvuruNo,Marka,RaporID,Model,ProjeID,Birim) values(@a1,@a2,@a3,@a4,@a5,@a6,@a7,IDENT_CURRENT('NKR'),@a8,@a9,@a10)" +
                           "insert into NumuneDetay2(RaporID,YetkiliID, DenetciID) values(IDENT_CURRENT('NKR'),@x1,@x2);" +
                           "insert into Termin(RaporID,Termin) values(IDENT_CURRENT('NKR'),@b1); " +
@@ -423,6 +424,7 @@ namespace mKYS
             komut.Parameters.AddWithValue("@n12", txtRev.Text);
             komut.Parameters.AddWithValue("@n13", akredite);
             komut.Parameters.AddWithValue("@n14", "Aktif");
+            komut.Parameters.AddWithValue("@n15", combo_karar.Text);
             komut.Parameters.AddWithValue("@a1", alicifirma);
             komut.Parameters.AddWithValue("@a2", txtAdet.Text);
             komut.Parameters.AddWithValue("@a3", txt_lot.Text);
@@ -440,8 +442,13 @@ namespace mKYS
             komut.Parameters.AddWithValue("@c2", "Yeni Numune");
             komut.Parameters.AddWithValue("@c3", dateTime.EditValue);
             komut.Parameters.AddWithValue("@c4", Giris.kullaniciID);
+            //komut.ExecuteNonQuery();
+            //bgl.baglanti().Close();
+            komut.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
             komut.ExecuteNonQuery();
+            ykrID = Convert.ToInt32(komut.Parameters["@ID"].Value);
             bgl.baglanti().Close();
+           
         }
 
         //  int raporID;
@@ -683,7 +690,7 @@ namespace mKYS
                 else
                 {
                     string isim = Path.GetFileName(name);
-                    yenisim = lbl_rapno.Text + " - " + isim;
+                    yenisim = txtRapor.Text + " - " + isim;
 
                     using (var client = new WebClient())
                     {
@@ -700,17 +707,17 @@ namespace mKYS
                     //string yol = Path.Combine(@"\\WDMyCloud\Numune\2020\Foto", yenisim);
                     //File.Copy(name, yol, true);
 
-                    SqlCommand komut = new SqlCommand("Select ID from NKR where RaporNo = N'" + lbl_rapno.Text + "' ", bgl.baglanti());
-                    SqlDataReader dr = komut.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        txt_yeniID.Text = dr[0].ToString();
-                    }
-                    bgl.baglanti().Close();
+                    //SqlCommand komut = new SqlCommand("Select ID from NKR where RaporNo = N'" + txtRapor.Text + "' ", bgl.baglanti());
+                    //SqlDataReader dr = komut.ExecuteReader();
+                    //while (dr.Read())
+                    //{
+                    //    txt_yeniID.Text = dr[0].ToString();
+                    //}
+                    //bgl.baglanti().Close();
 
 
                     SqlCommand ekle = new SqlCommand("insert into Fotograf(RaporID,Path) values(@d1,@d2)", bgl.baglanti());
-                    ekle.Parameters.AddWithValue("@d1", txt_yeniID.Text);
+                    ekle.Parameters.AddWithValue("@d1", ykrID);
                     ekle.Parameters.AddWithValue("@d2", yenisim);
                     ekle.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -778,7 +785,7 @@ namespace mKYS
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, l.ID as 'aID' from NumuneX1 x
             left join StokAnalizListesi l on x.AnalizID = l.ID
-            where x.RaporID = '" + txt_yeniID.Text + "' order by l.Kod", bgl.baglanti());
+            where x.RaporID = '" + ykrID + "' order by l.Kod", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView3.Columns["aID"].Visible = false;
@@ -809,7 +816,7 @@ namespace mKYS
                     "insert into NumuneX1 (RaporID, AnalizID, x3ID) " +
                     "values (@o1,@o2, @o3);" +
                     "COMMIT TRANSACTION", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", txt_yeniID.Text);
+                add2.Parameters.AddWithValue("@o1", ykrID);
                 add2.Parameters.AddWithValue("@o2", o2);
                 add2.Parameters.AddWithValue("@o3", gridLookUpEdit1.EditValue);
                 add2.ExecuteNonQuery();
@@ -831,7 +838,7 @@ namespace mKYS
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
                     "delete from NumuneX1 where AnalizID = @o2 and RaporID = @o1;" +
                     "COMMIT TRANSACTION", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", txt_yeniID.Text);
+                add2.Parameters.AddWithValue("@o1", ykrID);
                 add2.Parameters.AddWithValue("@o2", o2);
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -876,6 +883,12 @@ namespace mKYS
                     analizler();
                     tabPane1.SelectedPage = tabNavigationPage1;
                     pictureEdit1.Image = null;
+
+                    Evrakmax();
+                    txtRapor.Text = "";
+                    RaporNoMax();
+                    int yenirap = maxrapor + 1;
+                    txtRapor.Text = yenirap.ToString();
                 }
 
                 if (cikis == DialogResult.No)
