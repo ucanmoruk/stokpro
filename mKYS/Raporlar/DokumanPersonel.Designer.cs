@@ -29,42 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DokumanPersonel));
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column5 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression5 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table3 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column11 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression11 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column12 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression12 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column13 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression13 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column14 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression14 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -134,7 +100,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 38.1166F;
+            this.BottomMargin.HeightF = 38F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // PageHeader
@@ -175,15 +141,16 @@
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell1.Weight = 2.6231826782226562D;
+            this.xrTableCell1.Weight = 1.6752659606933593D;
             // 
             // xrPictureBox1
             // 
             this.xrPictureBox1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(32.75713F, 9.999982F);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.UNİQUE_LOGO, true);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(25F, 5.2F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(210.0694F, 84.16665F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(116.3194F, 84.16665F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             this.xrPictureBox1.StylePriority.UseBorders = false;
             // 
             // xrTableCell2
@@ -198,7 +165,7 @@
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "PERSONEL İLETİŞİM \r\nBİLGİLERİ LİSTESİ";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell2.Weight = 4.2631240844726559D;
+            this.xrTableCell2.Weight = 5.2110408020019525D;
             // 
             // xrTable2
             // 
@@ -240,8 +207,6 @@
             // 
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pAciklama")});
             this.xrTableCell4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
@@ -250,7 +215,7 @@
             this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.StylePriority.UsePadding = false;
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
-            this.xrTableCell4.Text = "Ç.01.PR.16";
+            this.xrTableCell4.Text = "F.03.PR.01";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell4.Weight = 1.2205909167109761D;
             // 
@@ -280,8 +245,6 @@
             // xrTableCell6
             // 
             this.xrTableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pYayin")});
             this.xrTableCell6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
@@ -290,7 +253,7 @@
             this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.StylePriority.UsePadding = false;
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
-            this.xrTableCell6.Text = "08.05.2018";
+            this.xrTableCell6.Text = "27.09.2023";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell6.Weight = 1.2205909167109761D;
             // 
@@ -313,15 +276,13 @@
             this.xrTableCell7.StylePriority.UseFont = false;
             this.xrTableCell7.StylePriority.UsePadding = false;
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
-            this.xrTableCell7.Text = "Revizyon No/Tarih:";
+            this.xrTableCell7.Text = "Revizyon Tarih/No:";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell7.Weight = 1.5430325096572666D;
             // 
             // xrTableCell8
             // 
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pRev")});
             this.xrTableCell8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
@@ -330,7 +291,7 @@
             this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.StylePriority.UsePadding = false;
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
-            this.xrTableCell8.Text = "01/22.10.2018";
+            this.xrTableCell8.Text = "--.--.----/--";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell8.Weight = 1.2205909167109761D;
             // 
@@ -383,86 +344,12 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "massgrup_mass_Connection";
+            this.sqlDataSource1.ConnectionName = "Unique_Cosmoroot";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression1.ColumnName = "Kod";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"210\" />";
-            table1.Name = "masslab.StokAnalizListesi";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "Ad";
-            columnExpression2.Table = table1;
-            column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "Matriks";
-            columnExpression3.Table = table1;
-            column3.Expression = columnExpression3;
-            columnExpression4.ColumnName = "Durumu";
-            columnExpression4.Table = table1;
-            column4.Expression = columnExpression4;
-            column5.Alias = "masslab.StokDKDListe_Kod";
-            columnExpression5.ColumnName = "Kod";
-            table2.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"248\" />";
-            table2.Name = "masslab.StokDKDListe";
-            columnExpression5.Table = table2;
-            column5.Expression = columnExpression5;
-            column6.Alias = "masslab.StokDKDListe_Ad";
-            columnExpression6.ColumnName = "Ad";
-            columnExpression6.Table = table2;
-            column6.Expression = columnExpression6;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Columns.Add(column3);
-            selectQuery1.Columns.Add(column4);
-            selectQuery1.Columns.Add(column5);
-            selectQuery1.Columns.Add(column6);
-            selectQuery1.Name = "masslab_StokAnalizListesi";
-            relationColumnInfo1.NestedKeyColumn = "ID";
-            relationColumnInfo1.ParentKeyColumn = "Metot";
-            join1.KeyColumns.Add(relationColumnInfo1);
-            join1.Nested = table2;
-            join1.Parent = table1;
-            selectQuery1.Relations.Add(join1);
-            selectQuery1.Tables.Add(table1);
-            selectQuery1.Tables.Add(table2);
-            columnExpression7.ColumnName = "Ad";
-            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"267\" />";
-            table3.Name = "masslab.StokKullanici";
-            columnExpression7.Table = table3;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "Soyad";
-            columnExpression8.Table = table3;
-            column8.Expression = columnExpression8;
-            columnExpression9.ColumnName = "Gorev";
-            columnExpression9.Table = table3;
-            column9.Expression = columnExpression9;
-            columnExpression10.ColumnName = "Email";
-            columnExpression10.Table = table3;
-            column10.Expression = columnExpression10;
-            columnExpression11.ColumnName = "Telefon";
-            columnExpression11.Table = table3;
-            column11.Expression = columnExpression11;
-            columnExpression12.ColumnName = "Durum";
-            columnExpression12.Table = table3;
-            column12.Expression = columnExpression12;
-            columnExpression13.ColumnName = "ID";
-            columnExpression13.Table = table3;
-            column13.Expression = columnExpression13;
-            columnExpression14.ColumnName = "BirimID";
-            columnExpression14.Table = table3;
-            column14.Expression = columnExpression14;
-            selectQuery2.Columns.Add(column7);
-            selectQuery2.Columns.Add(column8);
-            selectQuery2.Columns.Add(column9);
-            selectQuery2.Columns.Add(column10);
-            selectQuery2.Columns.Add(column11);
-            selectQuery2.Columns.Add(column12);
-            selectQuery2.Columns.Add(column13);
-            selectQuery2.Columns.Add(column14);
-            selectQuery2.Name = "masslab_StokKullanici";
-            selectQuery2.Tables.Add(table3);
+            customSqlQuery1.Name = "masslab_StokKullanici";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1,
-            selectQuery2});
+            customSqlQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // GroupHeader1
@@ -501,12 +388,14 @@
             // 
             // xrTableCell36
             // 
+            this.xrTableCell36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
             this.xrTableCell36.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell36.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell36.Multiline = true;
             this.xrTableCell36.Name = "xrTableCell36";
+            this.xrTableCell36.StylePriority.UseBackColor = false;
             this.xrTableCell36.StylePriority.UseBorders = false;
             this.xrTableCell36.StylePriority.UseFont = false;
             this.xrTableCell36.Text = "No";
@@ -514,11 +403,13 @@
             // 
             // xrTableCell27
             // 
+            this.xrTableCell27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
             this.xrTableCell27.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell27.Multiline = true;
             this.xrTableCell27.Name = "xrTableCell27";
+            this.xrTableCell27.StylePriority.UseBackColor = false;
             this.xrTableCell27.StylePriority.UseBorders = false;
             this.xrTableCell27.StylePriority.UseFont = false;
             this.xrTableCell27.Text = "Personelin Adı ve Soyadı";
@@ -526,11 +417,13 @@
             // 
             // xrTableCell28
             // 
+            this.xrTableCell28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
+            this.xrTableCell28.StylePriority.UseBackColor = false;
             this.xrTableCell28.StylePriority.UseBorders = false;
             this.xrTableCell28.StylePriority.UseFont = false;
             this.xrTableCell28.Text = "Görevi";
@@ -538,11 +431,13 @@
             // 
             // xrTableCell29
             // 
+            this.xrTableCell29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
             this.xrTableCell29.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell29.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell29.Multiline = true;
             this.xrTableCell29.Name = "xrTableCell29";
+            this.xrTableCell29.StylePriority.UseBackColor = false;
             this.xrTableCell29.StylePriority.UseBorders = false;
             this.xrTableCell29.StylePriority.UseFont = false;
             this.xrTableCell29.Text = "Cep Telefonu";
@@ -550,11 +445,13 @@
             // 
             // xrTableCell20
             // 
+            this.xrTableCell20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
             this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.StylePriority.UseBackColor = false;
             this.xrTableCell20.StylePriority.UseBorders = false;
             this.xrTableCell20.StylePriority.UseFont = false;
             this.xrTableCell20.Text = "Elektronik Posta Adresi";

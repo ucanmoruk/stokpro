@@ -297,14 +297,33 @@ namespace mKYS.Analiz
                     //add2.ExecuteNonQuery();
                     //bgl.baglanti().Close();
 
-                    //MessageBox.Show("Başarıyla kaydedildi! ", "Oooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    SqlCommand add = new SqlCommand("insert into ValidasyonVeri (AnalizID, Urun, Tarih1, Tarih2, Birim, Lod, Loq, GK, Bel, Durum, Kalibrasyon, Ek) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7,@a8,@a9,@a11, @a12, @a13) ", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", aID);
+                    add.Parameters.AddWithValue("@a2", urun.Text);
+                    add.Parameters.AddWithValue("@a3", date_basla.EditValue);
+                    add.Parameters.AddWithValue("@a4", date_bit.EditValue);
+                    add.Parameters.AddWithValue("@a5", birim.Text);
+                    add.Parameters.AddWithValue("@a6", lod.Text);
+                    add.Parameters.AddWithValue("@a7", loq.Text);
+                    add.Parameters.AddWithValue("@a8", gerikazanim.Text);
+                    add.Parameters.AddWithValue("@a9", bel.Text);
+                    add.Parameters.AddWithValue("@a11", "Aktif");
+                    add.Parameters.AddWithValue("@a12", txt_kal.Text);
+                    add.Parameters.AddWithValue("@a13", txt_ek.Text);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
 
-                    //if (Application.OpenForms["YeniPlanListesi"] == null)
-                    //{ }
-                    //else
-                    //{
-                    //    X.listele();
-                    //}
+                    MessageBox.Show("Veriler başarıyla kaydedildi!", "Oooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+               //     MessageBox.Show("Başarıyla kaydedildi! ", "Oooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    if (Application.OpenForms["YeniPlanListesi"] == null)
+                    { }
+                    else
+                    {
+                        X.listele();
+                    }
 
                 }
 

@@ -479,9 +479,7 @@
             selectQuery2.Tables.Add(table5);
             selectQuery2.Tables.Add(table4);
             customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = "select l.Birim, l.Ad, l.Kod, l.Tarih, l.Kaynak, k.Kontrol, m.Ad, m.Soyad, l.Durum" +
-    "  from StokDKDListe l \r\nleft join StokDKDKontrol k on l.Kod = k.Kod \r\nleft join " +
-    "StokKullanici m on k.PersonelID = m.ID";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             selectQuery1,
             selectQuery2,

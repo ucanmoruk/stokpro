@@ -161,12 +161,12 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 48);
+            this.gridControl1.Location = new System.Drawing.Point(0, 10);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(800, 378);
+            this.gridControl1.Size = new System.Drawing.Size(800, 416);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -203,8 +203,9 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 48);
+            this.panelControl1.Size = new System.Drawing.Size(800, 10);
             this.panelControl1.TabIndex = 10;
+            this.panelControl1.Visible = false;
             // 
             // simpleButton2
             // 

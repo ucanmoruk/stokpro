@@ -63,9 +63,6 @@
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell26 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.pAciklama = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pRev = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pYayin = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrTable10 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow30 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -449,7 +446,7 @@
             this.xrTableCell2.StylePriority.UseBorders = false;
             this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
-            this.xrTableCell2.Text = "TEDARİKÇİ \r\nDEĞERLENDİRME ÇİZELGESİ";
+            this.xrTableCell2.Text = "TEDARİKÇİ \r\nDEĞERLENDİRME FORMU";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell2.Weight = 4.1342657470703124D;
             // 
@@ -551,21 +548,6 @@
             this.xrTableCell31.Text = "Ad / Soyad:\r\nTarih          :\r\nİmza          :";
             this.xrTableCell31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.xrTableCell31.Weight = 1.2633721752148246D;
-            // 
-            // pAciklama
-            // 
-            this.pAciklama.Description = "pAciklama";
-            this.pAciklama.Name = "pAciklama";
-            // 
-            // pRev
-            // 
-            this.pRev.Description = "pRev";
-            this.pRev.Name = "pRev";
-            // 
-            // pYayin
-            // 
-            this.pYayin.Description = "pYayin";
-            this.pYayin.Name = "pYayin";
             // 
             // GroupHeader1
             // 
@@ -1818,9 +1800,6 @@
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(17, 14, 16, 20);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.pAciklama,
-            this.pRev,
-            this.pYayin,
             this.pFirmaID});
             this.Version = "19.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -1864,9 +1843,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
-        private DevExpress.XtraReports.Parameters.Parameter pAciklama;
-        private DevExpress.XtraReports.Parameters.Parameter pRev;
-        private DevExpress.XtraReports.Parameters.Parameter pYayin;
         private DevExpress.XtraReports.UI.XRTable xrTable4;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow7;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;

@@ -107,6 +107,7 @@ namespace mKYS
             combo_grup.Text = NKR2.fgrup;
             txt_aciklama.Text = NKR2.faciklama;
             combo_karar.Text = NKR2.karar;
+            combo_dil.Text = NKR2.dil;
             // comboBoxEdit1.Text = projeadi;
 
             if (NKR2.nakr == "Var")
@@ -183,6 +184,7 @@ namespace mKYS
             combo_bakanlik.Text = "";
             combo_denetci.Text = "";
             combo_karar.Text = "";
+            combo_dil.Text = "";
         }
 
         public static int nID, firmadanGelenID, aliciid;
@@ -316,7 +318,7 @@ namespace mKYS
 
                 bgl.baglanti().Close();
                 SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                 "update NKR set Evrak_No=@n3, Revno=@n7, RaporNo = @n1,Numune_Adi=@n2,Tarih=@n4,Tur=@n5,Grup=@n6,Aciklama=@n8,Firma_ID=@n9, Akreditasyon=@n10, Karar = @n11 where ID = N'" + nID + "'" +
+                 "update NKR set Evrak_No=@n3, Revno=@n7, RaporNo = @n1,Numune_Adi=@n2,Tarih=@n4,Tur=@n5,Grup=@n6,Aciklama=@n8,Firma_ID=@n9, Akreditasyon=@n10, Karar = @n11, Dil = @n12 where ID = N'" + nID + "'" +
                  "update Termin set Termin=@t1 where RaporID = N'" + nID + "'" +
                  "update Odeme set Evrak_No=@k1 where ID = N'" + odemeid + "'" +
                  "update NumuneDetay2 set YetkiliID =@x1, DenetciID=@x2 where RaporID = N'" + nID + "'" +
@@ -334,6 +336,7 @@ namespace mKYS
                 komut.Parameters.AddWithValue("@n9", firmadanGelenID);
                 komut.Parameters.AddWithValue("@n10", durum);
                 komut.Parameters.AddWithValue("@n11", combo_karar.Text);
+                komut.Parameters.AddWithValue("@n12", combo_dil.Text);
                 komut.Parameters.AddWithValue("@t1", dateTermin.EditValue);
                 komut.Parameters.AddWithValue("@o1", alicifirma);
                 komut.Parameters.AddWithValue("@o2", txt_marka.Text);
@@ -1037,6 +1040,12 @@ namespace mKYS
 
         PrintDialog prd = new PrintDialog();
         string analiz, metod, kod;
+
+        private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void Kagit_PrintPage(object sender, PrintPageEventArgs e)
         {
             //throw new NotImplementedException();

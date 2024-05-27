@@ -143,24 +143,7 @@ namespace mKYS.Analiz
             durum = dr["Durumu"].ToString();
 
 
-            if (durum == "Planlandı")
-            {
-                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
-            else if (durum == "Gerçekleşti")
-            {
-                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
-            else
-            {
-                barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
+           
         }
 
         private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -169,6 +152,25 @@ namespace mKYS.Analiz
             {
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
+
+                //if (durum == "Planlandı")
+                //{
+                //    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
+                //else if (durum == "Gerçekleşti")
+                //{
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
+                //else
+                //{
+                //    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
             }
 
         }

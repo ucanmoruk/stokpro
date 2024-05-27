@@ -106,6 +106,7 @@
             this.RapNo = new DevExpress.XtraReports.UI.CalculatedField();
             this.tNo = new DevExpress.XtraReports.Parameters.Parameter();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -281,6 +282,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel4,
             this.xrLabel5,
             this.xrPageInfo1,
             this.xrLine2,
@@ -337,10 +339,10 @@
             this.xrLabel26.Multiline = true;
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel26.SizeF = new System.Drawing.SizeF(490F, 23F);
+            this.xrLabel26.SizeF = new System.Drawing.SizeF(62.26563F, 23F);
             this.xrLabel26.StylePriority.UseFont = false;
             this.xrLabel26.StylePriority.UseTextAlignment = false;
-            this.xrLabel26.Text = "Ek-1.PR.20  Yayın Tarihi: 27.09.2023   Revizyon Tarih / No:  --.--.---- / --";
+            this.xrLabel26.Text = "Ek-1.PR.20 ";
             this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // Detail
@@ -923,6 +925,19 @@
     "rmin])";
             this.calculatedField1.Name = "calculatedField1";
             // 
+            // xrLabel4
+            // 
+            this.xrLabel4.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(62.26563F, 107.1428F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(284.6582F, 22.99999F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
+            this.xrLabel4.Text = "Yayın Tarihi: 27.09.2023   Revizyon Tarih / No:  --.--.---- / --";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // RaporKozmetik
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1030,5 +1045,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
     }
 }

@@ -19,23 +19,23 @@ namespace mKYS.Raporlar
         string revno, tarih, ytarih;
         public void bilgi()
         {
-            pAciklama.Value = "Ç.01.PR.15";
+            //pAciklama.Value = "Ç.01.PR.15";
 
-            SqlCommand komut = new SqlCommand("select * from DokumanMaster where Kod = N'" + pAciklama.Value + "'", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                revno = dr["Revno"].ToString();
-                tarih = dr["RevTarihi"].ToString();
-                ytarih = dr["YayinTarihi"].ToString();
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komut = new SqlCommand("select * from DokumanMaster where Kod = N'" + pAciklama.Value + "'", bgl.baglanti());
+            //SqlDataReader dr = komut.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    revno = dr["Revno"].ToString();
+            //    tarih = dr["RevTarihi"].ToString();
+            //    ytarih = dr["YayinTarihi"].ToString();
+            //}
+            //bgl.baglanti().Close();
 
-            //pRaporID.Value = ID;
-            pRev.Value = revno + " / " + tarih;
+            ////pRaporID.Value = ID;
+            //pRev.Value = revno + " / " + tarih;
 
-            DateTime ptarih = DateTime.Parse(ytarih);
-            pYayin.Value = ptarih.ToShortDateString();
+            //DateTime ptarih = DateTime.Parse(ytarih);
+            //pYayin.Value = ptarih.ToShortDateString();
 
         }
     }

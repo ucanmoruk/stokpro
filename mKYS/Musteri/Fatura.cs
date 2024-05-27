@@ -28,23 +28,37 @@ namespace mKYS.Musteri
         public void listele()
         {
             DataTable dt = new DataTable();
-            //// SqlDataAdapter da = new SqlDataAdapter("select Fatura_No as 'Fatura No', Tutar, KDV, Toplam, Durumu from Fatura", bgl.baglanti());
-            ////SqlDataAdapter da = new SqlDataAdapter("select f.ID as 'No',  f.Fatura_No as 'Fatura No', y.Rapor_No as 'Rapor No', k.Firma_Adi, f.Tutar, f.KDV, f.Toplam, f.Durumu from Fatura f inner join NKR y on f.Rapor_Id = y.ID inner join Firma k on k.ID = y.Firma_ID ", bgl.baglanti());
-            //SqlDataAdapter da = new SqlDataAdapter("select DISTINCT f.Fatura_No as 'Fatura No' , f.Tarih, n.Evrak_No as 'Evrak No' , n.Grup, a.Firma_Adi as 'Faturalandırılacak Firma', c.Firma_Adi as 'Proje', " +
-            //"b.Firma_Adi as 'Raporlandırılacak Firma' ,f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f " +
-            //"inner join Odeme o on o.Fatura_ID= f.ID inner join Proje p on p.ID = f.Proje_ID inner join NKR n on n.Evrak_No=o.Evrak_No " +
-            //"inner join Firma a on a.ID = f.FaturaFirmaID inner join Firma b on b.ID = f.RaporFirmaID inner join NumuneDetay nd on nd.RaporID = n.ID inner join Firma c on c.ID = nd.ProjeID " +
-            //"where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
-            //SqlDataAdapter da = new SqlDataAdapter("select DISTINCT f.Fatura_No  as 'Fatura No', f.Tarih, o.Evrak_No  as 'Evrak No', n.Grup, n.Tur, a.Firma_Adi as 'Faturalandırılacak Firma', b.Firma_Adi as 'Proje', c.Firma_Adi  as 'Raporlandırılacak Firma',  " +
-            //   " f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f  " +
-            //   " inner join Odeme o on o.Fatura_ID =f.ID inner join Firma a on a.ID = f.FaturaFirmaID " +
-            //   " inner join Firma b on b.ID = f.Proje_ID inner join Firma c on c.ID = f.RaporFirmaID inner join NKR n on n.Evrak_No = o.Evrak_No " +
-            //   "where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
-            SqlDataAdapter da = new SqlDataAdapter(@"select DISTINCT f.Fatura_No  as 'Fatura No', f.Tarih, o.Evrak_No  as 'Evrak No', n.Grup, a.Firma_Adi as 'Faturalandırılacak Firma', b.Firma_Adi as 'Proje', c.Firma_Adi  as 'Raporlandırılacak Firma',  
-            f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f  
-            inner join Odeme o on o.Fatura_ID =f.ID inner join Firma a on a.ID = f.FaturaFirmaID 
-            inner join Firma b on b.ID = f.Proje_ID inner join Firma c on c.ID = f.RaporFirmaID inner join NKR n on n.Evrak_No = o.Evrak_No 
-           where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
+           // //// SqlDataAdapter da = new SqlDataAdapter("select Fatura_No as 'Fatura No', Tutar, KDV, Toplam, Durumu from Fatura", bgl.baglanti());
+           // ////SqlDataAdapter da = new SqlDataAdapter("select f.ID as 'No',  f.Fatura_No as 'Fatura No', y.Rapor_No as 'Rapor No', k.Firma_Adi, f.Tutar, f.KDV, f.Toplam, f.Durumu from Fatura f inner join NKR y on f.Rapor_Id = y.ID inner join Firma k on k.ID = y.Firma_ID ", bgl.baglanti());
+           // //SqlDataAdapter da = new SqlDataAdapter("select DISTINCT f.Fatura_No as 'Fatura No' , f.Tarih, n.Evrak_No as 'Evrak No' , n.Grup, a.Firma_Adi as 'Faturalandırılacak Firma', c.Firma_Adi as 'Proje', " +
+           // //"b.Firma_Adi as 'Raporlandırılacak Firma' ,f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f " +
+           // //"inner join Odeme o on o.Fatura_ID= f.ID inner join Proje p on p.ID = f.Proje_ID inner join NKR n on n.Evrak_No=o.Evrak_No " +
+           // //"inner join Firma a on a.ID = f.FaturaFirmaID inner join Firma b on b.ID = f.RaporFirmaID inner join NumuneDetay nd on nd.RaporID = n.ID inner join Firma c on c.ID = nd.ProjeID " +
+           // //"where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
+           // //SqlDataAdapter da = new SqlDataAdapter("select DISTINCT f.Fatura_No  as 'Fatura No', f.Tarih, o.Evrak_No  as 'Evrak No', n.Grup, n.Tur, a.Firma_Adi as 'Faturalandırılacak Firma', b.Firma_Adi as 'Proje', c.Firma_Adi  as 'Raporlandırılacak Firma',  " +
+           // //   " f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f  " +
+           // //   " inner join Odeme o on o.Fatura_ID =f.ID inner join Firma a on a.ID = f.FaturaFirmaID " +
+           // //   " inner join Firma b on b.ID = f.Proje_ID inner join Firma c on c.ID = f.RaporFirmaID inner join NKR n on n.Evrak_No = o.Evrak_No " +
+           // //   "where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
+           // SqlDataAdapter da = new SqlDataAdapter(@"select DISTINCT f.Fatura_No  as 'Fatura No', f.Tarih, o.Evrak_No  as 'Evrak No', n.Grup, a.Firma_Adi as 'Faturalandırılacak Firma', b.Firma_Adi as 'Proje', c.Firma_Adi  as 'Raporlandırılacak Firma',  
+           // f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu', f.ID as 'ID' from Fatura f  
+           // inner join Odeme o on o.Fatura_ID =f.ID inner join Firma a on a.ID = f.FaturaFirmaID 
+           // inner join Firma b on b.ID = f.Proje_ID inner join Firma c on c.ID = f.RaporFirmaID inner join NKR n on n.Evrak_No = o.Evrak_No 
+           //where year(f.Tarih) = N'" + combo_year.Text + "' and month(f.Tarih) = N'" + ayi + "' and f.Durum='Aktif'", bgl.baglanti());
+
+
+            SqlDataAdapter da = new SqlDataAdapter(@"select distinct f.Fatura_No  as 'Fatura No', f.Tarih, o.Evrak_No  as 'Evrak No',
+                a.Firma_Adi as 'Faturalandırılacak Firma', b.Firma_Adi as 'Proje', c.Firma_Adi  as 'Raporlandırılacak Firma',  
+                f.Tutar, f.KDV, f.Toplam, f.Aciklama as 'Açıklama', o.Odeme_Durumu as 'Ödeme Durumu',  f.ID
+                from Fatura f 
+                left join Odeme o on f.ID = o.Fatura_ID
+                left join Firma a on f.FaturaFirmaID = a.ID
+                left join Firma b on f.Proje_ID = b.ID
+                left join Firma c on f.RaporFirmaID = c.ID
+                left join NKR n on o.Evrak_No = n.Evrak_No
+                where f.Durum = 'Aktif'
+                order by f.Tarih desc", bgl.baglanti());
+
             da.Fill(dt);
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();

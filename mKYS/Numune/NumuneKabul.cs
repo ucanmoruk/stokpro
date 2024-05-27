@@ -339,7 +339,7 @@ namespace mKYS
             int Donen = 0;
 
             SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                         "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15) SET @ID = SCOPE_IDENTITY() ; " +
+                         "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar,Dil) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15,@n16) SET @ID = SCOPE_IDENTITY() ; " +
                          "insert into Odeme(Odeme_Durumu, Evrak_No) values(@o1,@o2); " +
                          "insert into NumuneDetay(AliciFirma,Miktar,SeriNo,UretimTarihi,SKT,BasvuruNo,Marka,RaporID,Model,ProjeID,Birim) values(@a1,@a2,@a3,@a4,@a5,@a6,@a7,IDENT_CURRENT('NKR'),@a8,@a9,@a10)" +
                          "insert into NumuneDetay2(RaporID,YetkiliID, DenetciID) values(IDENT_CURRENT('NKR'),@x1,@x2);" +
@@ -360,6 +360,7 @@ namespace mKYS
             komut.Parameters.AddWithValue("@n13", akredite);
             komut.Parameters.AddWithValue("@n14", "Aktif");
             komut.Parameters.AddWithValue("@n15", combo_karar.Text);
+            komut.Parameters.AddWithValue("@n16", combo_dil.Text);
             komut.Parameters.AddWithValue("@o1", fDurumu);
             komut.Parameters.AddWithValue("@o2", txtEvrak.Text);
             komut.Parameters.AddWithValue("@a1", alicifirma);
@@ -406,7 +407,7 @@ namespace mKYS
             }
 
             SqlCommand komut = new SqlCommand("BEGIN TRANSACTION " +
-                          "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15)  SET @ID = SCOPE_IDENTITY() ; " +
+                          "insert into NKR (Evrak_No,Numune_Adi,Tarih,Tur,Grup,Firma_ID,Rapor_Durumu,Aciklama,RaporNo,Revno,Akreditasyon,Durum,Karar, Dil) values (@n1,@n2,@n4,@n5,@n6,@n7,@n8,@n9,@n11,@n12,@n13,@n14,@n15,@n16)  SET @ID = SCOPE_IDENTITY() ; " +
                           "insert into NumuneDetay(AliciFirma,Miktar,SeriNo,UretimTarihi,SKT,BasvuruNo,Marka,RaporID,Model,ProjeID,Birim) values(@a1,@a2,@a3,@a4,@a5,@a6,@a7,IDENT_CURRENT('NKR'),@a8,@a9,@a10)" +
                           "insert into NumuneDetay2(RaporID,YetkiliID, DenetciID) values(IDENT_CURRENT('NKR'),@x1,@x2);" +
                           "insert into Termin(RaporID,Termin) values(IDENT_CURRENT('NKR'),@b1); " +
@@ -425,6 +426,7 @@ namespace mKYS
             komut.Parameters.AddWithValue("@n13", akredite);
             komut.Parameters.AddWithValue("@n14", "Aktif");
             komut.Parameters.AddWithValue("@n15", combo_karar.Text);
+            komut.Parameters.AddWithValue("@n16", combo_dil.Text);
             komut.Parameters.AddWithValue("@a1", alicifirma);
             komut.Parameters.AddWithValue("@a2", txtAdet.Text);
             komut.Parameters.AddWithValue("@a3", txt_lot.Text);

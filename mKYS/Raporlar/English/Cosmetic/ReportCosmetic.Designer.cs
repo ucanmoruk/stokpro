@@ -109,6 +109,7 @@
             this.pMiktar = new DevExpress.XtraReports.Parameters.Parameter();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.tNo = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -274,6 +275,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel7,
             this.xrPageInfo1,
             this.xrLabel5,
             this.xrLine2,
@@ -336,14 +338,14 @@
             // xrLabel26
             // 
             this.xrLabel26.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 73.48897F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 73.489F);
             this.xrLabel26.Multiline = true;
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel26.SizeF = new System.Drawing.SizeF(490F, 23F);
+            this.xrLabel26.SizeF = new System.Drawing.SizeF(74.58334F, 23F);
             this.xrLabel26.StylePriority.UseFont = false;
             this.xrLabel26.StylePriority.UseTextAlignment = false;
-            this.xrLabel26.Text = "Annex-1.PR.20  Release Date: 27.09.2023   Revision Date-No:  --.--.---- / --";
+            this.xrLabel26.Text = "Annex-1.PR.20 ";
             this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // Detail
@@ -946,6 +948,19 @@
             this.tNo.Description = "tNo";
             this.tNo.Name = "tNo";
             // 
+            // xrLabel7
+            // 
+            this.xrLabel7.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(74.58334F, 73.489F);
+            this.xrLabel7.Multiline = true;
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(443.125F, 23F);
+            this.xrLabel7.StylePriority.UseFont = false;
+            this.xrLabel7.StylePriority.UseTextAlignment = false;
+            this.xrLabel7.Text = "Release Date: 27.09.2023   Revision Date-No:  --.--.---- / --";
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // ReportCosmetic
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1059,5 +1074,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel39;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.Parameters.Parameter tNo;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
     }
 }

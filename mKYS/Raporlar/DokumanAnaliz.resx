@@ -120,7 +120,19 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "dbo.StokAnalizListesi"."Kod",
+       "dbo.StokAnalizListesi"."Ad",
+       "dbo.StokAnalizListesi"."Matriks",
+       "dbo.StokAnalizListesi"."Durumu",
+       "dbo.StokDKDListe"."Kod" as "dbo.StokDKDListe_Kod",
+       "dbo.StokDKDListe"."Ad" as "dbo.StokDKDListe_Ad",
+       "dbo.StokAnalizListesi"."Akreditasyon"
+  from ("dbo"."StokAnalizListesi" "dbo.StokAnalizListesi"
+  left join "dbo"."StokDKDListe" "dbo.StokDKDListe"
+       on ("dbo.StokDKDListe"."ID" = "dbo.StokAnalizListesi"."Metot"))</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfU3Rva0FuYWxpekxpc3Rlc2kiPjxGaWVsZCBOYW1lPSJLb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWF0cmlrcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEdXJ1bXUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0ibWFzc2xhYi5TdG9rREtETGlzdGVfS29kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im1hc3NsYWIuU3Rva0RLRExpc3RlX0FkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFrcmVkaXRhc3lvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfU3Rva0FuYWxpekxpc3Rlc2kiPjxGaWVsZCBOYW1lPSJLb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWF0cmlrcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEdXJ1bXUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iZGJvLlN0b2tES0RMaXN0ZV9Lb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iZGJvLlN0b2tES0RMaXN0ZV9BZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBa3JlZGl0YXN5b24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

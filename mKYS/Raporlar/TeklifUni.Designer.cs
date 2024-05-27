@@ -1682,7 +1682,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',[Toplam]*[Adet])+\' \'+[ParaBirimi]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',[Toplam])+\' \'+[ParaBirimi]")});
             this.xrTableCell20.Font = new System.Drawing.Font("Tahoma", 8F);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";

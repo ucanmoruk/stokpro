@@ -22,7 +22,18 @@ namespace mKYS
 
         private void SertifikaGoruntule_Load_1(object sender, EventArgs e)
         {
-            path = Path.Combine(Anasayfa.path, yol);
+
+            path = Path.Combine(Anasayfa.kpath, yol);
+
+            // yol2 = @"U:/Drive'ım/Ortak Drive/Dokuman";
+            // path = "http://" + "www.rootarge.com/cosmo/Raporlar" + "/" + yol;
+            // path = @"C:\\Users\\asp\\Desktop\\kayit\\2018 Stok Kampanya.pdf";
+            //path = Path.Combine("https://" + "www.rootarge.com/cosmo/Raporlar" + "/", yol);
+            axAcroPDF1.LoadFile(path);
+
+            
+
+            //path = Path.Combine(Anasayfa.path, yol);
            // axAcroPDF1.LoadFile(path);
 
             if (Text == "" || Text == null)

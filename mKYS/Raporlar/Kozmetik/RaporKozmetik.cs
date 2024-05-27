@@ -18,9 +18,10 @@ namespace mKYS.Raporlar.Kozmetik
         sqlbaglanti bgl = new sqlbaglanti();
 
 
-        public static string raporID, tNu;
+        public static string raporID, tNu, kod;
         public void bilgi()
         {
+            xrLabel26.Text = kod;
             pRaporID.Value = raporID;
             tNo.Value = tNu;
         }

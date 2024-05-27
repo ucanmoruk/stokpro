@@ -350,7 +350,7 @@ namespace mKYS
         }
 
         public static int nkrID, turID;
-        public static string evrakNo, raporDurumu, faturaDurumu, ftarih, ffirma, fnumune, fadet, ftur, fgrup, fanaliz, faciklama, fbirim, karar;
+        public static string evrakNo, raporDurumu, faturaDurumu, ftarih, ffirma, fnumune, fadet, ftur, fgrup, fanaliz, faciklama, fbirim, karar, dil;
 
         int projeid, rapornos;
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -722,6 +722,7 @@ namespace mKYS
                 nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = raporno +" - "+name;
+                mKYS.Raporlar.Kozmetik.RaporKozmetik.kod = "Ek-2.PR.20";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-1";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik3.raporID = nkrno;
@@ -755,6 +756,7 @@ namespace mKYS
                 string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = raporno + " - " + name;
+                Raporlar.English.Cosmetic.ReportCosmetic.kod = "Annex-1.PR.20";
                 Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
                 Raporlar.English.Cosmetic.ReportCosmetic.tNu = "";
                 Raporlar.English.Cosmetic.ReportCosmetic2.raporID = nkrno;
@@ -786,6 +788,7 @@ namespace mKYS
                 nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = raporno + " - " + name;
+                Raporlar.English.Cosmetic.ReportCosmetic.kod = "Annex-2.PR.20";
                 Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
                 Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-1";
                 Raporlar.English.Cosmetic.ReportCosmetic3.raporID = nkrno;
@@ -892,6 +895,7 @@ namespace mKYS
                 nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = raporno + " - " + name;
+                mKYS.Raporlar.Kozmetik.RaporKozmetik.kod = "Ek-4.PR.20";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
                 mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
@@ -929,7 +933,7 @@ namespace mKYS
                 //mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 //mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
                 //mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
-
+                Raporlar.English.Cosmetic.ReportCosmetic.kod = "Annex-4.PR.20";
                 Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
                 Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-2";
                 Raporlar.English.Cosmetic.Stabilityv2.raporID = nkrno;
@@ -1022,6 +1026,7 @@ namespace mKYS
                 string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
                 name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
                 frmPrint.name = raporno + " - " + name;
+                mKYS.Raporlar.Kozmetik.RaporKozmetik.kod = "Ek-1.PR.20";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
                 mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "";
                 mKYS.Raporlar.Kozmetik.RaporKozmetik2.raporID = nkrno;
@@ -1137,13 +1142,14 @@ namespace mKYS
                     faciklama = dr["Açıklama"].ToString();
                 //    akreditasyon = dr["Akreditasyon"].ToString();
 
-                    SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
+                    SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar, Dil from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
                     SqlDataReader dr2 = komut2.ExecuteReader();
                     while (dr2.Read())
                     {
                         nkrID = Convert.ToInt32(dr2["ID"]);
                         revno = Convert.ToInt32(dr2["Revno"]);
                         karar = dr2["Karar"].ToString();
+                        dil = dr2["Dil"].ToString();
                         label1.Text = Convert.ToString(nkrID);
 
                     }

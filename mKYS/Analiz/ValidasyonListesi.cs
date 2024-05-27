@@ -41,8 +41,8 @@ namespace mKYS.Analiz
                                 ), 2, 2, '' )
                             AS 'Personel'
                 from ValidasyonVeri v 
-                inner join StokAnalizListesi s on v.AnalizID = s.ID 
-                inner join StokDKDListe d on s.Metot = d.ID 
+                left join StokAnalizListesi s on v.AnalizID = s.ID 
+                left join StokDKDListe d on s.Metot = d.ID 
                 where v.Durum = 'Aktif'  order by s.Kod", bgl.baglanti());
 
             da.Fill(dt);

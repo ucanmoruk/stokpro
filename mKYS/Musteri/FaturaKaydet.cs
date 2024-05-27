@@ -227,7 +227,7 @@ namespace mKYS.Musteri
             {
                 decimal KDV = 0, Tutar = 0, Toplam = 0;
                 Tutar = Convert.ToDecimal(txtTutar.Text);
-                KDV = Tutar * 18 / 100;
+                KDV = Tutar * 20 / 100;
                 Toplam = Tutar + KDV;
                 txtKDV.Text = Convert.ToString(KDV);
                 txtToplam.Text = Convert.ToString(Toplam);

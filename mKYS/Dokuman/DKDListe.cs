@@ -25,8 +25,13 @@ namespace mKYS.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by l.ID) as 'No', l.Birim, l.Kaynak, l.Kod, l.Ad, l.Tarih, l.Tur as 'Açıklama', l.Link,  d.Kontrol as 'Kontrol Tarihi', k.Ad + ' ' +  k.Soyad as 'Kontrol Eden', l.ID  from StokDKDListe l " +
-                " left join StokDKDKontrol d on l.Kod = d.Kod left join StokKullanici k on d.PersonelID = k.ID where l.Durum = N'Aktif' order by l.Birim", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select Row_number() over(order by l.ID) as 'No', l.Birim, l.Kaynak, l.Kod, l.Ad, l.Tarih, l.Tur as 'Açıklama', l.Link,  
+            d.Kontrol as 'Kontrol Tarihi',
+            k.Ad + ' ' +  k.Soyad as 'Kontrol Eden', l.ID 
+            from StokDKDListe l 
+            left join StokDKDKontrol d on l.Kod = d.Kod 
+            left join StokKullanici k on d.PersonelID = k.ID 
+            where l.Durum = N'Aktif' order by l.Birim", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
