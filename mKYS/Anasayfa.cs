@@ -22,6 +22,8 @@ using mKYS.Dokuman;
 using mKYS.Talep;
 using mKYS.Duyuru;
 using mKYS.Musteri;
+using mKYS.Raporlar;
+using mKYS.Numune;
 using DevExpress.LookAndFeel;
 
 namespace mKYS
@@ -402,7 +404,7 @@ namespace mKYS
 
         private void barButtonItem50_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var mfrm = (DokumanMaster)Application.OpenForms["DokumanMaster"];
+            var mfrm = (Dokuman.DokumanMaster)Application.OpenForms["DokumanMaster"];
             if (mfrm != null)
                 mfrm.excelaktar();
 
@@ -683,7 +685,7 @@ namespace mKYS
         {
             if (te == null || te.IsDisposed)
             {
-                te = new Teklif();
+                te = new Musteri.Teklif();
                 te.MdiParent = this;
                 te.Show();
             }
@@ -911,6 +913,24 @@ namespace mKYS
         }
 
         Musteri.AnalizListesi mal;
+
+        RaporMaster rmas;
+        private void barButtonItem93_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (rmas == null || rmas.IsDisposed)
+            {
+                rmas = new RaporMaster();
+                rmas.MdiParent = this;
+                rmas.Show();
+            }
+        }
+
+        private void barButtonItem94_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RaporYukle ry = new RaporYukle();
+            ry.Show();
+        }
+
         private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (mal == null || mal.IsDisposed)

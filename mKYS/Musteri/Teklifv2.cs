@@ -438,16 +438,20 @@ namespace mKYS.Musteri
                             bgl.baglanti().Close();
                         }
                     }
-                    SqlCommand komutaz = new SqlCommand(@"update TeklifX1 set PlasiyerID = @a1, Tarih= @a2, FirmaID = @a3, ProjeID = @a4, Aciklama = @a5, Durum = @a6, Iskonto = @a7, ParaBirimi = @a8 
+                    SqlCommand komutaz = new SqlCommand(@"update TeklifX1 set PlasiyerID = @a1, Tarih= @a2, FirmaID = @a3, ProjeID = @a4, Aciklama = @a5, Durum = @a6, Iskonto = @a7, ParaBirimi = @a8, TeklifDurum = @a9 
 	                where TeklifNo = '" + txt_no.Text + "' ", bgl.baglanti());
                     komutaz.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
                     komutaz.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a3", gridLookUpEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a4", gridLookUpEdit2.EditValue);
-                    komutaz.Parameters.AddWithValue("@a5", txt_aciklama.Text);
+                    if(txt_aciklama.Text=="" || txt_aciklama.Text == null)
+                        komutaz.Parameters.AddWithValue("@a5", "Fiyat teklifimiz");
+                    else
+                        komutaz.Parameters.AddWithValue("@a5", txt_aciklama.Text);
                     komutaz.Parameters.AddWithValue("@a6", "Aktif");
                     komutaz.Parameters.AddWithValue("@a7", txt_iskonto.Text);
                     komutaz.Parameters.AddWithValue("@a8", combo_birim.Text);
+                    komutaz.Parameters.AddWithValue("@a9", "Onay Bekliyor");
                     komutaz.ExecuteNonQuery();
                     bgl.baglanti().Close();
                 }

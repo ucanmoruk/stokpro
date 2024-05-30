@@ -19,7 +19,7 @@ namespace mKYS.Musteri
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select t.Tarih, t.TeklifNo as [Teklif No],  k.Ad as [Plasiyer], t.TeklifTuru as [Teklif Türü],
-            f.Firma_Adi as [Firma adı], t.ID from TeklifX1 t 
+            f.Firma_Adi as [Firma adı],  t.Aciklama, t.TeklifDurum, t.ID from TeklifX1 t 
              inner join Firma f on t.FirmaID = f.ID 
             inner join StokKullanici k on k.ID = t.PlasiyerID 
             where t.Durum <> 'Pasif' order by t.TeklifNo desc", bgl.baglanti());
@@ -37,7 +37,9 @@ namespace mKYS.Musteri
             this.gridView1.Columns[1].Width = 30;
             this.gridView1.Columns[2].Width = 75;
             this.gridView1.Columns[3].Width = 60;
-            this.gridView1.Columns[4].Width = 260;
+            this.gridView1.Columns[4].Width = 200;
+            this.gridView1.Columns[5].Width = 100;
+            this.gridView1.Columns[6].Width = 75;
         }
 
         //private void simpleButton1_Click(object sender, EventArgs e)
@@ -195,6 +197,34 @@ namespace mKYS.Musteri
             }
         }
 
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //onaylandı
+
+            SqlCommand komutz = new SqlCommand("update TeklifX1 set TekilfDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
+            komutz.Parameters.AddWithValue("@o1", "Onaylandı");
+            komutz.Parameters.AddWithValue("@o3", DateTime.Now);
+            komutz.Parameters.AddWithValue("@o2", teklifID);
+            komutz.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            listele();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Onay bekliyor
+
+            SqlCommand komutz = new SqlCommand("update TeklifX1 set TekilfDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
+            komutz.Parameters.AddWithValue("@o1", "Onay Bekliyor");
+            komutz.Parameters.AddWithValue("@o3", DateTime.Now);
+            komutz.Parameters.AddWithValue("@o2", teklifID);
+            komutz.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            listele();
+        }
+
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             Teklifv2 n = new Teklifv2();
@@ -203,7 +233,7 @@ namespace mKYS.Musteri
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-                if (e.Column.FieldName == "Tarih" || e.Column.FieldName == "Teklif No" )
+                if (e.Column.FieldName == "Tarih" || e.Column.FieldName == "Teklif No" || e.Column.FieldName == "TeklifDurum")
                     e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 

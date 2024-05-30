@@ -185,6 +185,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem87 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem94 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -300,9 +302,11 @@
             this.barButtonItem89,
             this.barButtonItem90,
             this.barButtonItem91,
-            this.barButtonItem92});
+            this.barButtonItem92,
+            this.barButtonItem93,
+            this.barButtonItem94});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 100;
+            this.ribbonControl1.MaxItemId = 102;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage8,
@@ -320,7 +324,7 @@
             this.repositoryItemDateEdit2,
             this.repositoryItemTextEdit1});
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
-            this.ribbonControl1.Size = new System.Drawing.Size(758, 125);
+            this.ribbonControl1.Size = new System.Drawing.Size(1039, 125);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barButtonItem1
@@ -1258,6 +1262,8 @@
             // ribbonPageGroup33
             // 
             this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem80);
+            this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem93);
+            this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem94);
             this.ribbonPageGroup33.Name = "ribbonPageGroup33";
             this.ribbonPageGroup33.Text = "ribbonPageGroup33";
             // 
@@ -1575,9 +1581,9 @@
             this.groupControl1.Controls.Add(this.lbl_kullanici);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 439);
+            this.groupControl1.Location = new System.Drawing.Point(0, 579);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(758, 29);
+            this.groupControl1.Size = new System.Drawing.Size(1039, 29);
             this.groupControl1.TabIndex = 2;
             // 
             // lbl_kullanici
@@ -1612,12 +1618,30 @@
             this.barButtonItem87.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem87.ImageOptions.LargeImage")));
             this.barButtonItem87.Name = "barButtonItem87";
             // 
+            // barButtonItem93
+            // 
+            this.barButtonItem93.Caption = "Rapor Master";
+            this.barButtonItem93.Id = 100;
+            this.barButtonItem93.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem93.ImageOptions.Image")));
+            this.barButtonItem93.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem93.ImageOptions.LargeImage")));
+            this.barButtonItem93.Name = "barButtonItem93";
+            this.barButtonItem93.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem93_ItemClick);
+            // 
+            // barButtonItem94
+            // 
+            this.barButtonItem94.Caption = "Dosya Yükle";
+            this.barButtonItem94.Id = 101;
+            this.barButtonItem94.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem94.ImageOptions.Image")));
+            this.barButtonItem94.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem94.ImageOptions.LargeImage")));
+            this.barButtonItem94.Name = "barButtonItem94";
+            this.barButtonItem94.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem94_ItemClick);
+            // 
             // Anasayfa
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 468);
+            this.ClientSize = new System.Drawing.Size(1039, 608);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1800,6 +1824,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup37;
         private DevExpress.XtraBars.BarButtonItem barButtonItem91;
         private DevExpress.XtraBars.BarButtonItem barButtonItem92;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem93;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem94;
     }
 }
 

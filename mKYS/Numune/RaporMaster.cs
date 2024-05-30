@@ -19,11 +19,11 @@ using mKYS.Musteri;
 using mKYS.Numune;
 using mKYS.Raporlar;
 
-namespace mKYS
+namespace mKYS.Numune
 {
-    public partial class TalepListe : Form
+    public partial class RaporMaster : Form
     {
-        public TalepListe()
+        public RaporMaster()
         {
             InitializeComponent();
         }
@@ -45,46 +45,33 @@ namespace mKYS
 
             DataTable dt = new DataTable();
 
-            SqlDataAdapter da = new SqlDataAdapter(@"select t.ID,  t.TalepNo, t.Tarih, t.Tur, f.Firma_Adi as 'Talebi Oluşturan', r.Firma as 'Raporlama Firma',  t.Durum 
-            from Talep t 
-            left join Firma f on t.FirmaKodu = f.Kod
-            left join TalepRaporlama r on t.ID = r.TalepID
-            order by ID desc
-             ", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT        r.Tarih, r.NumuneTur AS [Dosya Türü], r.RaporNo AS [Dosya No],  r.RaporID, r.TalepNo,  
+            f.Firma_Adi AS Müşteri, k.Firma_Adi AS Proje, r.NumuneAd AS [Dosya Adı], r.Yol, r.Durum, r.ID
+            FROM            dbo.Rapor AS r LEFT OUTER JOIN
+                                     dbo.Firma AS f ON r.FirmaID = f.ID LEFT OUTER JOIN
+                                     dbo.Firma AS k ON r.ProjeID = k.ID
+            WHERE        (r.Durum = 'Aktif')", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["ID"].Visible = false;
         }
 
-        public void listele2()
-        {
-            //date_baslangic.EditValue = date_basla.EditValue;
-            //date_baslangic.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
-            //date_baslangic.Properties.Mask.EditMask = "yyyy-MM-dd";
-            //date_baslangic.Properties.Mask.UseMaskAsDisplayFormat = true;
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur, n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu' , n.ID as 'aID' " +
-            //"from NKR n join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID" +
-            //" where n.Tarih >= N'" + date_baslangic.Text + "'  and n.Durum = 'Aktif' and not ( n.Rapor_Durumu = 'Raporlandı' and o.Odeme_Durumu = 'Ödendi') order by RaporNo desc", bgl.baglanti());
 
-            //da.Fill(dt);
-            //gridControl1.DataSource = dt;
-
-            //gridView3.Columns["aID"].Visible = false;
-        }
         public static int boold;
         public static string bid;
 
         void gridduzen()
         {
-            this.gridView3.Columns[1].Width = 60;
-            this.gridView3.Columns[2].Width = 60;
-            this.gridView3.Columns[3].Width = 60;
-           // this.gridView3.Columns[4].Width = 25; 
-            this.gridView3.Columns[4].Width = 150; 
-            this.gridView3.Columns[5].Width = 100;
-          //  this.gridView3.Columns[7].Width = 50;
-            this.gridView3.Columns[6].Width = 60;
+            this.gridView3.Columns[0].Width = 55;
+            this.gridView3.Columns[1].Width = 55;
+            this.gridView3.Columns[2].Width = 55;
+            this.gridView3.Columns[3].Width = 55;
+            this.gridView3.Columns[4].Width = 55; 
+            this.gridView3.Columns[5].Width = 180;
+            this.gridView3.Columns[6].Width = 100;
+            this.gridView3.Columns[7].Width = 125;
+            this.gridView3.Columns[8].Width = 75;
+            this.gridView3.Columns[9].Width = 60;
 
         }
         private void NKR_Load(object sender, EventArgs e)
@@ -93,11 +80,6 @@ namespace mKYS
             listele();
             gridduzen();
 
-            //date_basla.EditValue = DateTime.Now.AddDays(-30);
-            //date_bit.EditValue = DateTime.Now;
-            //date_basla.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
-            //date_basla.Properties.Mask.EditMask = "dd-MM-yyyy";
-            //date_basla.Properties.Mask.UseMaskAsDisplayFormat = true;
 
         }
 
@@ -294,8 +276,6 @@ namespace mKYS
             //gridControl1.DataSource = null;
             //gridView3.Columns.Clear();
 
-            listele2();
-            gridduzen();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -498,6 +478,34 @@ namespace mKYS
         
         }
 
+        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //sil
+
+            try
+            {
+                DialogResult Secim = new DialogResult();
+
+                Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (Secim == DialogResult.Yes)
+                {
+                    // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update Rapor set Durum=@a1 where ID = @p1", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@p1", tID);
+                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                    listele();
+                    MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata2 : " + ex.Message);
+            }
+        }
+
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = aID;
@@ -537,7 +545,7 @@ namespace mKYS
         private void gridView3_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             
-            if (e.Column.FieldName == "TalepNo" || e.Column.FieldName == "Tarih" || e.Column.FieldName == "Durum" || e.Column.FieldName == "Rapor Durumu"  || e.Column.FieldName == "Evrak No" || e.Column.FieldName =="Tarih" )
+            if (e.Column.FieldName == "Tarih" || e.Column.FieldName == "Durum" || e.Column.FieldName == "Dosya No" || e.Column.FieldName == "Talep No")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
           
         }

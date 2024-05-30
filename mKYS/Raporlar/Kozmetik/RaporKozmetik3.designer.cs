@@ -1889,7 +1889,7 @@
             this.xrTableCell7.StylePriority.UseBorders = false;
             this.xrTableCell7.StylePriority.UseForeColor = false;
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
-            this.xrTableCell7.Text = "1. Koruyucu Etkinlik (Challenge) Testi – ISO 11930";
+            this.xrTableCell7.Text = "7. Koruyucu Etkinlik (Challenge) Testi – ISO 11930";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell7.Weight = 7.8998747030395684D;
             // 

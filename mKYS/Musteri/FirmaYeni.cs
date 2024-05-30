@@ -132,7 +132,7 @@ namespace mKYS.Musteri
 
             //  SqlCommand komut = new SqlCommand("insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,Plasiyer,mail) values (@f1,@f2,@f3,@f4,@f5,@f6,@f7) ; insert into Yetkili (Yetkili,Mail,Telefon,Firma_ID) values (@y1,@y2,@y3,IDENT_CURRENT('Firma'))", bgl.baglanti());
             SqlCommand komut = new SqlCommand(@"insert into Firma (Firma_Adi,Adres,Vergi_Dairesi,Vergi_No,Telefon,PlasiyerID,Mail,Durum,Sektor,Hizmet,Kod,Parola,Tur,Vade,Odeme ) 
-            values (@f1,@f2,@f3,@f4,@f5,@f6,@f7,@f8,@f9,@f10,Concat('MS',IDENT_CURRENT('Firma')),@f12,@f13,@f14,@f15) ", bgl.baglanti());
+            values (@f1,@f2,@f3,@f4,@f5,@f6,@f7,@f8,@f9,@f10,Concat('COS',IDENT_CURRENT('Firma')),@f12,@f13,@f14,@f15) ", bgl.baglanti());
             komut.Parameters.AddWithValue("@f1", txt_firmaad.Text);
             komut.Parameters.AddWithValue("@f2", txt_adres.Text);
             komut.Parameters.AddWithValue("@f3", txt_vergid.Text);

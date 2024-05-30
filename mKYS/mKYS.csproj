@@ -368,6 +368,12 @@
     <Compile Include="Musteri\YeniFatura.designer.cs">
       <DependentUpon>YeniFatura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numune\RaporYukle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\RaporYukle.Designer.cs">
+      <DependentUpon>RaporYukle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numune\LabTermin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +385,12 @@
     </Compile>
     <Compile Include="Numune\MusteriTakip.Designer.cs">
       <DependentUpon>MusteriTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\RaporMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\RaporMaster.Designer.cs">
+      <DependentUpon>RaporMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\English\Cosmetic\Stabilityv2.cs">
       <SubType>Component</SubType>
@@ -1255,11 +1267,17 @@
     <EmbeddedResource Include="Musteri\YeniFatura.resx">
       <DependentUpon>YeniFatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numune\RaporYukle.resx">
+      <DependentUpon>RaporYukle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Numune\LabTermin.resx">
       <DependentUpon>LabTermin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\MusteriTakip.resx">
       <DependentUpon>MusteriTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\RaporMaster.resx">
+      <DependentUpon>RaporMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\English\Cosmetic\Stabilityv2.resx">
       <DependentUpon>Stabilityv2.cs</DependentUpon>

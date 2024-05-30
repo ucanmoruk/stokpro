@@ -2591,7 +2591,7 @@
             this.xrTableCell113.StylePriority.UseBackColor = false;
             this.xrTableCell113.StylePriority.UseBorders = false;
             this.xrTableCell113.StylePriority.UseForeColor = false;
-            this.xrTableCell113.Text = "23°C";
+            this.xrTableCell113.Text = "25°C";
             this.xrTableCell113.Weight = 1.1457844844305103D;
             // 
             // xrTableCell114
