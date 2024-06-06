@@ -762,6 +762,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView3
@@ -780,6 +781,7 @@
             this.gridView3.OptionsFind.ShowCloseButton = false;
             this.gridView3.OptionsFind.ShowFindButton = false;
             this.gridView3.OptionsFind.ShowSearchNavButtons = false;
+            this.gridView3.OptionsSelection.CheckBoxSelectorColumnWidth = 15;
             this.gridView3.OptionsSelection.MultiSelect = true;
             this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView3.OptionsView.ShowFooter = true;

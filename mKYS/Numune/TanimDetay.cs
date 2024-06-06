@@ -51,10 +51,18 @@ namespace mKYS.Numune
 
 
 
-        public static string raporID;
+        public static string raporID, raporno;
         private void TanimDetay_Load(object sender, EventArgs e)
         {
-            txt_raporno.Text = TanimlamaListesi.raporno;          
+            if (raporno == "" || raporno == null)
+            {                
+                txt_raporno.Text = TanimlamaListesi.raporno;
+            }
+            else
+            {
+                txt_raporno.Text = raporno;
+            }
+                   
             listele();
             bul();
 
@@ -221,6 +229,7 @@ namespace mKYS.Numune
         private void TanimDetay_FormClosing(object sender, FormClosingEventArgs e)
         {
             raporID = null;
+            raporno = null;
         }
     }
 }

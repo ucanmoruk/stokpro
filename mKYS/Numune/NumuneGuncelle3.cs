@@ -46,12 +46,13 @@ namespace mKYS
         void analizler2()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, l.ID as 'aID' from NumuneX1 x
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, x.Termin, l.ID as 'aID' , x.ID as 'xID' from NumuneX1 x
             left join StokAnalizListesi l on x.AnalizID = l.ID
             where x.RaporID = '" + nID + "' order by l.Kod", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView3.Columns["aID"].Visible = false;
+            gridView3.Columns["xID"].Visible = false;
         }
 
         public void Firma()
@@ -1288,12 +1289,14 @@ namespace mKYS
                 int y = Convert.ToInt32(id);
                 o2 = gridView2.GetRowCellValue(y, "aID").ToString();
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                    "insert into NumuneX1 (RaporID, AnalizID, x3ID) " +
-                    "values (@o1,@o2, @o3);" +
+                    "insert into NumuneX1 (RaporID, AnalizID, x3ID, Durum, HizmetDurum) " +
+                    "values (@o1,@o2, @o3, @o4, @o5);" +
                     "COMMIT TRANSACTION", bgl.baglanti());
                 add2.Parameters.AddWithValue("@o1", nID);
                 add2.Parameters.AddWithValue("@o2", o2);
                 add2.Parameters.AddWithValue("@o3", gridLookUpEdit1.EditValue);
+                add2.Parameters.AddWithValue("@o4", "Aktif");
+                add2.Parameters.AddWithValue("@o5", "Yeni Analiz");
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
@@ -1348,6 +1351,20 @@ namespace mKYS
         {
             try
             {
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {
+                    o2 = gridView3.GetRowCellValue(i, "xID").ToString();
+                    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                        "update NumuneX1 set Termin = @o1 where ID = @o4;" +
+                        "COMMIT TRANSACTION", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@o1", Convert.ToDateTime(gridView3.GetRowCellValue(i, "Termin").ToString())); 
+                    add2.Parameters.AddWithValue("@o4", o2);
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+
+
+
                 MessageBox.Show("Güncelleme işlemi başarılı!");
 
             }

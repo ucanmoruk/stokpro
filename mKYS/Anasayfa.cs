@@ -931,6 +931,18 @@ namespace mKYS
             ry.Show();
         }
 
+
+        Numune.HizmetTermin ht;
+        private void barButtonItem95_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ht == null || ht.IsDisposed)
+            {
+                ht = new Numune.HizmetTermin();
+                ht.MdiParent = this;
+                ht.Show();
+            }
+        }
+
         private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (mal == null || mal.IsDisposed)

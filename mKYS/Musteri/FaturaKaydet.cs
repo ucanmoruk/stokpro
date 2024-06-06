@@ -106,7 +106,7 @@ namespace mKYS.Musteri
                     else
                     {
                         //SqlCommand komut = new SqlCommand("insert into Fatura (Fatura_No,Tutar,KDV,Toplam) values (@a1,@a2,@a3,@a4);insert into Odeme (Odeme_Durumu,Rapor_ID,Fatura_ID) values (@o1,@o2,IDENT_CURRENT('Fatura'))", bgl.baglanti());
-                        SqlCommand komut = new SqlCommand("insert into Fatura (Fatura_No,Tutar,KDV,Toplam,Proje_Id,RaporFirmaID,FaturaFirmaID,Tarih,Durum,Odenen_Tutar) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10);update Odeme set Odeme_Durumu=@o1 , Evrak_No = @o2, Fatura_ID =IDENT_CURRENT('Fatura') where ID = @o3", bgl.baglanti());
+                        SqlCommand komut = new SqlCommand("insert into Fatura (Fatura_No,Tutar,KDV,Toplam,Proje_Id,RaporFirmaID,FaturaFirmaID,Tarih,Durum,Odenen_Tutar,ProformaNo) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11);update Odeme set Odeme_Durumu=@o1 , Evrak_No = @o2, Fatura_ID =IDENT_CURRENT('Fatura') where ID = @o3", bgl.baglanti());
                         komut.Parameters.AddWithValue("@a1", txtFaturaNo.Text);
                         komut.Parameters.AddWithValue("@a2", Convert.ToDecimal(txtTutar.Text));
                         komut.Parameters.AddWithValue("@a3", Convert.ToDecimal(txtKDV.Text));
@@ -115,11 +115,12 @@ namespace mKYS.Musteri
                         komut.Parameters.AddWithValue("@a6", raporfirma);
                         komut.Parameters.AddWithValue("@a7", faturafirma);
                         komut.Parameters.AddWithValue("@a8", dateEdit1.EditValue);
-                        komut.Parameters.AddWithValue("@o1", odemeDurumu);
+                        komut.Parameters.AddWithValue("@o1", "Ödeme Bekliyor");
                         komut.Parameters.AddWithValue("@o2", txtRaporNo.Text);
                         komut.Parameters.AddWithValue("@o3", odemeID);
                         komut.Parameters.AddWithValue("@a9", "Aktif");
                         komut.Parameters.AddWithValue("@a10", 0);
+                        komut.Parameters.AddWithValue("@a11", txtRaporNo.Text);
                         komut.ExecuteNonQuery();
                         bgl.baglanti().Close();
                         MessageBox.Show("Kayıt İşlemi Başarılı.");

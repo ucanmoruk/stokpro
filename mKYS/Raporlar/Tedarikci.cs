@@ -20,7 +20,7 @@ namespace mKYS.Raporlar
         public void bilgi()
         {
             //pAciklama.Value = "Ç.02.PR.04";
-            //pFirmaID.Value = firmaID;
+            pFirmaID.Value = firmaID;
             //SqlCommand komut = new SqlCommand("select * from DokumanMaster where Kod = N'" + pAciklama.Value + "'", bgl.baglanti());
             //SqlDataReader dr = komut.ExecuteReader();
             //while (dr.Read())

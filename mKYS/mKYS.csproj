@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -391,6 +391,12 @@
     </Compile>
     <Compile Include="Numune\RaporMaster.Designer.cs">
       <DependentUpon>RaporMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\HizmetTermin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\HizmetTermin.Designer.cs">
+      <DependentUpon>HizmetTermin.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\English\Cosmetic\Stabilityv2.cs">
       <SubType>Component</SubType>
@@ -1278,6 +1284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\RaporMaster.resx">
       <DependentUpon>RaporMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\HizmetTermin.resx">
+      <DependentUpon>HizmetTermin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\English\Cosmetic\Stabilityv2.resx">
       <DependentUpon>Stabilityv2.cs</DependentUpon>

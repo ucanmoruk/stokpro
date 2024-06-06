@@ -59,11 +59,13 @@ namespace mKYS
 
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, 
             t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
-            f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
+            f.Firma_Adi as 'Firma Adı', k.Firma_Adi as 'Proje', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
             n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu', 
             o.Odeme_Durumu as 'Fatura Durumu',
             n.ID as 'aID' from NKR n 
             join Firma f on f.ID = n.Firma_ID 
+            join NumuneDetay d on n.ID = d.RaporID
+			join Firma k on d.ProjeID = k.ID
             join Odeme o on o.Evrak_No = n.Evrak_No 
             left join Termin t on t.RaporID = n.ID 
             where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
@@ -100,20 +102,21 @@ namespace mKYS
 
         void gridduzen()
         {
-            this.gridView3.Columns[0].Width = 70;
-            this.gridView3.Columns[1].Width = 70;
+            this.gridView3.Columns[0].Width = 60;
+            this.gridView3.Columns[1].Width = 60;
             this.gridView3.Columns[2].Width = 45;
             this.gridView3.Columns[3].Width = 45;
            // this.gridView3.Columns[4].Width = 25; 
-            this.gridView3.Columns[4].Width = 200; 
-            this.gridView3.Columns[5].Width = 150;
+            this.gridView3.Columns[4].Width = 180; 
+            this.gridView3.Columns[5].Width = 130;
+            this.gridView3.Columns[6].Width = 150;
           //  this.gridView3.Columns[7].Width = 50;
-            this.gridView3.Columns[6].Width = 50;
+            this.gridView3.Columns[7].Width = 45;
           //  this.gridView3.Columns[9].Width = 50;
-            this.gridView3.Columns[7].Width = 75;
-            this.gridView3.Columns[8].Width = 75;
+            this.gridView3.Columns[8].Width = 60;
             this.gridView3.Columns[9].Width = 75;
-            this.gridView3.Columns[10].Width = 75;
+            this.gridView3.Columns[10].Width = 70;
+            this.gridView3.Columns[11].Width = 70;
         }
         private void NKR2_Load(object sender, EventArgs e)
         {
@@ -909,6 +912,11 @@ namespace mKYS
         }
 
         private void NKR2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
         {
 
         }

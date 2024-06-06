@@ -207,7 +207,7 @@ namespace mKYS
         private void TalepListesi_Load(object sender, EventArgs e)
         {
             listele();
-            yetkibul();
+         //   yetkibul();
             //kullanicibul();
 
 
@@ -242,72 +242,72 @@ namespace mKYS
 
             kullanicibul();
 
-            if (talepdurum == "Talep Oluşturuldu")
-            {
-                if (olusturan == Anasayfa.tamad)
-                {
-                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                else
-                {
-                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
+            //if (talepdurum == "Talep Oluşturuldu")
+            //{
+            //    if (olusturan == Anasayfa.tamad)
+            //    {
+            //        guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
+            //    else
+            //    {
+            //        guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //        bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
 
 
-                if (yetki == 0)
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    if (yetki == 0)
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-                }
-                else if (yetki == 1)
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
+            //    else if (yetki == 1)
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-                }
-                else if (yetki == 2)
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
+            //    else if (yetki == 2)
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-                }
-                //bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                //bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
+            //    //bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    //bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-            }
-            else if (talepdurum == "Talep Reddedildi" || talepdurum == "İşleme Alındı" || talepdurum == "Tamamlandı")
-            {
-                guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //}
+            //else if (talepdurum == "Talep Reddedildi" || talepdurum == "İşleme Alındı" || talepdurum == "Tamamlandı")
+            //{
+            //    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-            }
-            else if (talepdurum == "Talep Onaylandı")
-            {
-                if (yetki == 3)
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //}
+            //else if (talepdurum == "Talep Onaylandı")
+            //{
+            //    if (yetki == 3)
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //        bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-                }
-                else if (yetki == 2)
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                else
-                {
-                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
-            }
+            //    }
+            //    else if (yetki == 2)
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //        bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //        bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
+            //    else
+            //    {
+            //        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
+            //}
 
 
         }

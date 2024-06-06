@@ -101,14 +101,17 @@ namespace mKYS.Musteri
                 ayi = 12;
 
 
-            this.gridView1.Columns[0].Width = 70;
-            this.gridView1.Columns[1].Width = 70;
-            this.gridView1.Columns[2].Width = 70;
-            this.gridView1.Columns[3].Width = 70;
-            this.gridView1.Columns[4].Width = 200;
-            this.gridView1.Columns[5].Width = 70;
-            this.gridView1.Columns[8].Width = 70;
-            this.gridView1.Columns[9].Width = 70;
+            this.gridView1.Columns[0].Width = 90;
+            this.gridView1.Columns[1].Width = 55;
+            this.gridView1.Columns[2].Width = 50;
+            this.gridView1.Columns[3].Width = 200;
+            this.gridView1.Columns[4].Width = 150;
+            this.gridView1.Columns[5].Width = 150;
+            this.gridView1.Columns[6].Width = 60;
+            this.gridView1.Columns[7].Width = 60;
+            this.gridView1.Columns[8].Width = 60;
+            this.gridView1.Columns[9].Width = 90;
+            this.gridView1.Columns[10].Width = 70;
 
 
             GridGroupSummaryItem item = new GridGroupSummaryItem();

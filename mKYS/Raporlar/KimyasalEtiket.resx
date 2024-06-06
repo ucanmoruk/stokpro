@@ -128,9 +128,9 @@
        "dbo.StokFirmaBirim"."Birim", "dbo.StokListesi"."Tur",
        "dbo.StokHareket"."ID"
   from (("dbo"."StokHareket" "dbo.StokHareket"
-  inner join "dbo"."StokListesi" "dbo.StokListesi"
+  left join "dbo"."StokListesi" "dbo.StokListesi"
        on ("dbo.StokListesi"."ID" = "dbo.StokHareket"."StokID"))
-  inner join "dbo"."StokFirmaBirim" "dbo.StokFirmaBirim"
+  left join "dbo"."StokFirmaBirim" "dbo.StokFirmaBirim"
        on ("dbo.StokFirmaBirim"."ID" = "dbo.StokHareket"."BirimID"))
 </value>
   </data>

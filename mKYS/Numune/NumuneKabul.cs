@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,7 @@ namespace mKYS
         {
             if (combo_grup.Text == "Özel2")
             {
-                SqlCommand komutm = new SqlCommand("select TOP 1 RaporNo from NKR where Grup = 'Özel2' order by ID desc ", bgl.baglanti());
+                SqlCommand komutm = new SqlCommand("select MAX(RaporNo) from NKR where Grup = 'Özel2' ", bgl.baglanti());
                 SqlDataReader drm = komutm.ExecuteReader();
                 while (drm.Read())
                 {
@@ -74,11 +75,20 @@ namespace mKYS
             }
             else
             {
-                SqlCommand komutm = new SqlCommand("select MAX(RaporNo) from NKR", bgl.baglanti());
+                SqlCommand komutm = new SqlCommand("select MAX(RaporNo) from NKR where Grup = 'Özel' ", bgl.baglanti());
                 SqlDataReader drm = komutm.ExecuteReader();
                 while (drm.Read())
                 {
-                    maxrapor = Convert.ToInt32(drm[0].ToString());
+                    string rno = drm[0].ToString();
+
+                    if (rno == "" || rno == null)
+                    {
+                        maxrapor = 240001;
+                    }
+                    else
+                    {
+                        maxrapor = Convert.ToInt32(rno);
+                    }
                 }
                 bgl.baglanti().Close();
             }
@@ -481,7 +491,16 @@ namespace mKYS
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
-                projeID = Convert.ToInt32(dr["ID"].ToString());
+                string pID = dr["ID"].ToString();
+                if (pID == "" || pID == null || pID == "0")
+                {
+                    projeID = 5487;
+                }
+                else
+                {
+                    projeID = Convert.ToInt32(pID);
+                }
+                
             }
             bgl.baglanti().Close();
         }
@@ -785,16 +804,23 @@ namespace mKYS
         void analizler2()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, l.ID as 'aID' from NumuneX1 x
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, x.Termin, l.ID as 'aID', x.ID as 'xID' from NumuneX1 x
             left join StokAnalizListesi l on x.AnalizID = l.ID
             where x.RaporID = '" + ykrID + "' order by l.Kod", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView3.Columns["aID"].Visible = false;
+            gridView3.Columns["xID"].Visible = false;
 
             this.gridView3.Columns[0].Width = 35;
             this.gridView3.Columns[1].Width = 80;
             this.gridView3.Columns[2].Width = 45;
+            this.gridView3.Columns[3].Width = 55;
+
+            RepositoryItemDateEdit da = new RepositoryItemDateEdit();
+            da.ShowToday = true;
+            gridView3.Columns["Termin"].ColumnEdit = da;
+
         }
 
         private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
@@ -875,6 +901,24 @@ namespace mKYS
         {
             try
             {
+
+
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {                   
+                    o2 = gridView3.GetRowCellValue(i, "xID").ToString();
+                    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                        "update NumuneX1 set Termin = @o1, Durum = @o2, HizmetDurum = @o3 where ID = @o4;" +
+                        "COMMIT TRANSACTION", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@o1", Convert.ToDateTime(gridView3.GetRowCellValue(i, "Termin").ToString()));
+                    add2.Parameters.AddWithValue("@o2", "Aktif");
+                    add2.Parameters.AddWithValue("@o3", "Yeni Analiz");
+                    add2.Parameters.AddWithValue("@o4", o2);
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+
+
+
 
                 DialogResult cikis = new DialogResult();
                 cikis = MessageBox.Show("Analizler de tamam. Yeni Numune?", "Uyarı", MessageBoxButtons.YesNo);
