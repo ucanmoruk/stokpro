@@ -26,7 +26,7 @@ namespace mKYS.Musteri
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select c.Tarih, k.Ad + ' ' + k.Soyad as 'Plasiyer', c.Firma, c.FirmaAd as 'Firma Adı', c.Yetkili, c.Iletisim, c.Tur as 'Görüşme türü',
 	        c.Konu, c.Mesaj,c.Durumu, c.ID from CrmMusteri c 
-	        left join  StokKullanici k on c.PlasiyerID = k.ID
+	        left join  StokKullanici k on c.PlasiyerID = k.ID where c.Durum = 'Aktif'
 	        order by c.Tarih desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;

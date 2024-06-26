@@ -87,9 +87,9 @@ namespace mKYS.Numune
             }
             bgl.baglanti().Close();
 
-            listBoxControl1.Items.Add(kabul + " tarihinde Tunahan Eker tarafından kabul edildi.");
+            listBoxControl1.Items.Add(kabul + " tarihinde Can Karadeniz tarafından kabul edildi.");
             listBoxControl1.Items.Add(tanimlama + " tarihinde " + tanimlayan + " tarafından teslim alındı ve tanımlandı.");
-            listBoxControl1.Items.Add(tartim + " tarihinde " + tartan + " tarafından numune hazırlık ve tartım işlemleri gerçekleştirildi.");
+         //   listBoxControl1.Items.Add(tartim + " tarihinde " + tartan + " tarafından numune hazırlık ve tartım işlemleri gerçekleştirildi.");
 
             SqlCommand kom32 = new SqlCommand(@"select l.Kod + ' '+ l.Ad as 'Analiz', CONVERT(VARCHAR(10),x.Tarih,105) Tarih , k.Ad +' '+ k.Soyad as 'Personel' from NumuneX5 x
             left join Numunex2 y on x.x2ID = y.ID

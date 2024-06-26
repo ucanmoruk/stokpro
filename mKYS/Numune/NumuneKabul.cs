@@ -120,7 +120,7 @@ namespace mKYS
             listele();
             txtEvrak.Text = (maxevrak + 1).ToString();
             txtRapor.Text = (maxrapor+ 1).ToString();
-            comboBoxEdit1.Text = "Diğer";
+            comboBoxEdit1.Text = "DİĞER";
             dateTermin.EditValue = DateTime.Now.AddDays(7);
             dateTime.EditValue = DateTime.Now;
 

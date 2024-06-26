@@ -23,12 +23,14 @@ namespace mKYS.Dokuman
 
         private void DokumanGoruntule_Load(object sender, EventArgs e)
         {
-            path = Path.Combine(Anasayfa.kpath, yol);
-
+            //path = Path.Combine(Anasayfa.kpath, yol);
+            
            // yol2 = @"U:/Drive'ım/Ortak Drive/Dokuman";
             // path = "http://" + "www.rootarge.com/cosmo/Raporlar" + "/" + yol;
             // path = @"C:\\Users\\asp\\Desktop\\kayit\\2018 Stok Kampanya.pdf";
             //path = Path.Combine("https://" + "www.rootarge.com/cosmo/Raporlar" + "/", yol);
+            path = Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman" + "\\", yol);
+            //MessageBox.Show(path);
             axAcroPDF1.LoadFile(path);
             
 

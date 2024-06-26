@@ -191,7 +191,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 9F;
+            this.BottomMargin.HeightF = 2F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -256,7 +256,7 @@
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(311.4166F, 23F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(252.4166F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
             this.xrLabel3.Text = "xrLabel3";
@@ -273,7 +273,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(156.8749F, 2.333339F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(130.8332F, 2.333339F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -288,7 +288,7 @@
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField1]")});
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(156.8749F, 25.33332F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(130.8332F, 25.33332F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -323,7 +323,7 @@
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(376F, 25F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(316.9999F, 25F);
             // 
             // xrTableRow1
             // 
@@ -359,7 +359,7 @@
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "xrTableCell2";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell2.Weight = 2.7222215689156766D;
+            this.xrTableCell2.Weight = 2.264856827877427D;
             // 
             // calculatedField3
             // 
@@ -385,9 +385,9 @@
             this.DataSource = this.sqlDataSource1;
             this.FilterString = "[ID] = ?pID";
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(0, 2, 6, 9);
-            this.PageHeight = 400;
-            this.PageWidth = 378;
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 6, 2);
+            this.PageHeight = 235;
+            this.PageWidth = 327;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pID});
