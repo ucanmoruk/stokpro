@@ -109,11 +109,13 @@ namespace mKYS.Numune
                 bgl.baglanti().Close();
             }
 
+            numunetakip();
+
             //DialogResult cikis = new DialogResult();
             //cikis = MessageBox.Show("Kompozit yapmak ister misin ?", "Uyarı", MessageBoxButtons.YesNo);
             //if (cikis == DialogResult.Yes)
             //{
-                   Mix2.raporno = txt_raporno.Text;
+            Mix2.raporno = txt_raporno.Text;
                    Mix2.raporID = raporID;
                    Mix2 m = new Mix2();
                    m.ShowDialog();
@@ -152,20 +154,20 @@ namespace mKYS.Numune
                 "values (@o1,@o2,@o3,@o4); " +
                 "COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@o1", txt_raporno.Text);
-            add2.Parameters.AddWithValue("@o2", "Teslim Alındı");
+            add2.Parameters.AddWithValue("@o2", "Numune teslim alındı");
             add2.Parameters.AddWithValue("@o3", tarih);
             add2.Parameters.AddWithValue("@o4", Giris.kullaniciID);
             add2.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
-        
+
         private void btn_tanimla_Click(object sender, EventArgs e)
         {
 
             if (tanimsayi == 0)
             {
                 yenikayit();
-                numunetakip();
+                
 
             }
             else

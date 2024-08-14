@@ -22,7 +22,7 @@ namespace mKYS.Musteri
             f.Firma_Adi as [Firma adı],  t.Aciklama, t.TeklifDurum, t.ID from TeklifX1 t 
              inner join Firma f on t.FirmaID = f.ID 
             inner join StokKullanici k on k.ID = t.PlasiyerID 
-            where t.Durum <> 'Pasif' order by t.TeklifNo desc", bgl.baglanti());
+            where t.Durum = 'Aktif' order by t.TeklifNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;

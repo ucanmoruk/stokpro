@@ -126,8 +126,8 @@ namespace mKYS
 
                         //   File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
                         //   File.Copy(name, Path.Combine(@"H:\Drive'ım\Root_Satış", path), true);
-                        File.Copy(name, Path.Combine(@Anasayfa.path, path), true);
-
+                        //File.Copy(name, Path.Combine(@Anasayfa.path, path), true);
+                        File.Copy(name, Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman" , path), true);
 
                         SqlCommand add = new SqlCommand("insert into StokSertifika (StokID, Sertifika, SKT, Path, BirimID, Durum) values (@a1,@a2,@a3,@a4, @a5, @a6)", bgl.baglanti());
                         add.Parameters.AddWithValue("@a1", stokid);

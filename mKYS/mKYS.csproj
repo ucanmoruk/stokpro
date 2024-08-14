@@ -13,13 +13,13 @@
     <AssemblyName>mUnique</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>ftp://rootarge.com/httpdocs/cosmo/</PublishUrl>
+    <PublishUrl>C:\Users\asp\Desktop\Publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -27,13 +27,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://rootarge.com/cosmo/</InstallUrl>
+    <UpdateUrl>http://rootarge.com/cosmo/</UpdateUrl>
     <ProductName>mUnique</ProductName>
     <PublisherName>Oğuzhan Eker</PublisherName>
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -59,7 +59,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D26A4DC591F341CB03DDB689D4F5FB88F835C07B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B318A7BCAA55847CADB982667C0753A49BACA439</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>mKYS_TemporaryKey.pfx</ManifestKeyFile>
@@ -68,7 +68,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Panda.ico</ApplicationIcon>
@@ -512,10 +512,10 @@
     <Compile Include="Numune\English.Designer.cs">
       <DependentUpon>English.cs</DependentUpon>
     </Compile>
-    <Compile Include="Numune\Mix.cs">
+    <Compile Include="ÇöpKutusu\Mix.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numune\Mix.Designer.cs">
+    <Compile Include="ÇöpKutusu\Mix.Designer.cs">
       <DependentUpon>Mix.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\Mix2.cs">
@@ -1288,6 +1288,7 @@
     <EmbeddedResource Include="Numune\HizmetTermin.resx">
       <DependentUpon>HizmetTermin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\English\Cosmetic\Stabilityv2.resx">
       <DependentUpon>Stabilityv2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1321,7 +1322,6 @@
     <EmbeddedResource Include="ÇöpKutusu\Tanimlama2.resx">
       <DependentUpon>Tanimlama2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\English\Cosmetic\Dermatological.resx">
       <DependentUpon>Dermatological.cs</DependentUpon>
     </EmbeddedResource>
@@ -1346,7 +1346,7 @@
     <EmbeddedResource Include="Numune\English.resx">
       <DependentUpon>English.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numune\Mix.resx">
+    <EmbeddedResource Include="ÇöpKutusu\Mix.resx">
       <DependentUpon>Mix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\Mix2.resx">
@@ -1700,6 +1700,7 @@
     <None Include="massgrup_massDataSet.xss">
       <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </None>
+    <None Include="mKYS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -1758,6 +1759,7 @@
     <Content Include="Panda.ico" />
     <None Include="Resources\can.jpg" />
     <None Include="Resources\alea.jpg" />
+    <None Include="Resources\images.jpeg" />
     <Content Include="Resources\Muhur.png" />
     <None Include="Resources\Root Intern.png" />
     <None Include="Resources\Root Intern1.png" />

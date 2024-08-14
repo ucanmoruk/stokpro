@@ -171,7 +171,7 @@ namespace mKYS.Numune
                     add.Parameters.AddWithValue("@a8", date_now.EditValue);
                     add.Parameters.AddWithValue("@a9", path);
                     add.Parameters.AddWithValue("@a10", "Aktif");
-                    add.ExecuteNonQuery();
+                    add.ExecuteNonQuery(); ggcx 
                     bgl.baglanti().Close();
 
                     DialogResult Secim = new DialogResult();

@@ -82,7 +82,7 @@ namespace mKYS.Dokuman
         string path, ad;
         void kontrol()
         {
-            SqlCommand komut21 = new SqlCommand("Select * from StokDKDListe where Kod = N'" + dkdkod + "' ", bgl.baglanti());
+            SqlCommand komut21 = new SqlCommand("Select * from StokDKDListe where ID = N'" + dID + "' ", bgl.baglanti());
             SqlDataReader dr21 = komut21.ExecuteReader();
             while (dr21.Read())
             {
@@ -105,7 +105,8 @@ namespace mKYS.Dokuman
             }
             else
             {
-                kontrol();
+                //kontrol(); 
+                DokumanGoruntule.dkd = "yes";
                 DokumanGoruntule.yol = path;
                 DokumanGoruntule.ad = ad;
                 DokumanGoruntule dg = new DokumanGoruntule();
@@ -230,10 +231,10 @@ namespace mKYS.Dokuman
         private void DKDListe_Load(object sender, EventArgs e)
         {
             listele();
-            yetkibul();
+           // yetkibul();
             //Anasayfa.b
         }
-
+        
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             if (e.Column.FieldName == "No" || e.Column.FieldName == "Kontrol Tarihi")

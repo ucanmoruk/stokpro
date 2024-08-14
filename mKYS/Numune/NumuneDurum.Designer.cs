@@ -40,7 +40,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(592, 382);
+            this.gridControl1.Size = new System.Drawing.Size(736, 382);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -62,10 +62,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 382);
+            this.ClientSize = new System.Drawing.Size(736, 382);
             this.Controls.Add(this.gridControl1);
             this.Name = "NumuneDurum";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numune Takip Listesi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumuneDurum_FormClosing);
             this.Load += new System.EventHandler(this.NumuneDurum_Load);

@@ -37,7 +37,7 @@ namespace mKYS
             left join Termin t on n.ID = t.RaporID
             left join StokKullanici k on k.ID = r.TanimlayanID 
             left join NumuneDetay d on d.RaporID = n.ID 
-            where year(r.Tarih) = N'" + combo_year.Text + "' and month(r.Tarih) = N'" + ayi + "' order by n.ID desc  ", bgl.baglanti());
+            where n.Durum='Aktif' and year(r.Tarih) = N'" + combo_year.Text + "' and month(r.Tarih) = N'" + ayi + "' order by n.ID desc  ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();
@@ -178,7 +178,7 @@ namespace mKYS
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("select t.Termin, n.RaporNo as 'Rapor Numarası', n.Numune_Adi as 'Numune Adı', d.Model, n.Tur as 'Numune Türü', k.Ad as 'Son Güncelleyen', r.Durum , r.Tarih as 'Son Güncelleme', r.RaporID from Rapor_Durum r " +
-            "left join NKR n on n.ID = r.RaporID left join Termin t on n.ID = t.RaporID left join StokKullanici k on k.ID = r.TanimlayanID left join NumuneDetay d on d.RaporID = n.ID order by r.RaporNo desc  ", bgl.baglanti());
+            "left join NKR n on n.ID = r.RaporID left join Termin t on n.ID = t.RaporID left join StokKullanici k on k.ID = r.TanimlayanID left join NumuneDetay d on d.RaporID = n.ID where n.Durum = 'Aktif' order by r.RaporNo desc  ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Utils;
 
 namespace mKYS.Numune
 {
@@ -22,8 +23,10 @@ namespace mKYS.Numune
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select d.RaporNo, nk.Numune_Adi ,d.Tarih, d.Durum, k.Ad as 'Kim' from NumuneTeslim d " +
-                "inner join NKR nk on d.RaporNo = nk.RaporNo left join Kullanici k on d.Kim = k.ID order by d.RaporNo desc, d.Tarih desc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select d.RaporNo, nk.Numune_Adi ,d.Tarih, d.Durum, k.Ad as 'Kim' from NumuneTeslim d 
+            left join NKR nk on d.RaporNo = nk.RaporNo 
+            left join Kullanici k on d.Kim = k.ID 
+            order by d.RaporNo desc, d.Tarih desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
         }
@@ -31,10 +34,17 @@ namespace mKYS.Numune
         public void listele2()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select d.RaporNo, nk.Numune_Adi ,d.Tarih, d.Durum, k.Ad as 'Kim' from NumuneTeslim d " +
-                "inner join NKR nk on d.RaporNo = nk.RaporNo left join Kullanici k on d.Kim = k.ID where d.RaporNo = '"+gelis+"' order by d.RaporNo desc, d.Tarih desc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select d.RaporNo, nk.Numune_Adi ,d.Tarih, d.Durum, k.Ad as 'Kim' from NumuneTeslim d 
+            left join NKR nk on d.RaporNo = nk.RaporNo 
+            left join StokKullanici k on d.Kim = k.ID 
+            where d.RaporNo = '" + gelis+"' order by d.RaporNo desc, d.Tarih desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
+
+            gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
+            gridView1.Columns[2].DisplayFormat.FormatString = "dd-MM-yyyy HH:mm";
+
+
         }
 
         public static string gelis;

@@ -169,6 +169,21 @@ namespace mKYS.Numune
 
         string xlimit, xbirim, no1, tanim1, no2, tanim2, agrup2, mix2, kod2, no3, tanim3, agrup3, mix3, kod3, loq, nTur, degerlendirme, altAnalizID;
 
+        private void durumekle()
+        {
+            DateTime tarih = DateTime.Now;
+            SqlCommand add = new SqlCommand("insert into NumuneDurum (RaporNo, Durum, Kim) values (@o1, @o3,@o4) ; " +
+                " insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
+            add.Parameters.AddWithValue("@o1", raporno);
+            add.Parameters.AddWithValue("@o2", tarih);
+            add.Parameters.AddWithValue("@o3", "Numune analizleri başladı!");
+            add.Parameters.AddWithValue("@o4", Giris.kullaniciID);
+            add.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             DateTime tarih = DateTime.Now;
@@ -311,10 +326,7 @@ namespace mKYS.Numune
                     }
                 }
             }
-
-
-  
-
+                       
 
             SqlCommand add2 = new SqlCommand("update Rapor_Durum set Durum=@a1, Tarih=@a2, TanimlayanID=@a3 where RaporID = N'" + raporID + "' ", bgl.baglanti());
             add2.Parameters.AddWithValue("@a1", "Mix Yapıldı");
@@ -327,6 +339,8 @@ namespace mKYS.Numune
             add12.Parameters.AddWithValue("@a1", "Mixed");
             add12.ExecuteNonQuery();
             bgl.baglanti().Close();
+
+            durumekle();
 
             //SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID in (select ID from NumuneX2 where RaporID = '"+raporID+"')", bgl.baglanti());
             //SqlDataReader dr = komut.ExecuteReader();

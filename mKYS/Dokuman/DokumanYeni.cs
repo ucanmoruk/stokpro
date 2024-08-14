@@ -186,7 +186,8 @@ namespace mKYS.Dokuman
                     if (count == "1")
                     {
                         path = txt_kod.Text + "-" + revno + ".pdf";
-                        File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                       // File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                        File.Copy(name, Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman", path), true);
 
                         SqlCommand add = new SqlCommand("update DokumanMaster set Tur = @a1, Kod = @a2, Ad=@a3, YayinTarihi = @a4, RevNo = @a5, Durumu = @a6, " +
                             " Path = @a7, RevTarihi = @a8 where ID = '" + dID + "'", bgl.baglanti());
@@ -227,8 +228,8 @@ namespace mKYS.Dokuman
                         if (Secim == DialogResult.Yes)
                         {
                             path = txt_kod.Text + "-" + revno + ".pdf";
-                            File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
-
+                          //  File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                            File.Copy(name, Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman", path), true);
                             SqlCommand add = new SqlCommand("update DokumanMaster set Tur = @a1, Kod = @a2, Ad=@a3, YayinTarihi = @a4, RevNo = @a5, Durumu = @a6, " +
                                 " Path = @a7, RevTarihi = @a8 where ID = '" + dID + "'", bgl.baglanti());
                             add.Parameters.AddWithValue("@a1", txt_tur.Text);
@@ -300,7 +301,8 @@ namespace mKYS.Dokuman
                 if (count == "1")
                 {
                     path = txt_kod.Text + "-" + revno + ".pdf";
-                    File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                    //File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                    File.Copy(name, Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman" , path), true);
 
                     SqlCommand add = new SqlCommand("insert into DokumanMaster(Tur,Kod,Ad,YayinTarihi,RevNo,Durumu,Durum,RevTarihi,Path) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10)", bgl.baglanti());
                     add.Parameters.AddWithValue("@a1", txt_tur.Text);

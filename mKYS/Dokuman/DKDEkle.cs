@@ -110,21 +110,21 @@ namespace mKYS.Dokuman
             if (btn_ekle.Text == "Güncelle")
             {
                 guncelle();
-                if (Application.OpenForms["DKDListe"] == null)
-                { }
-                else
-                { m.listele(); }
+                //if (Application.OpenForms["DKDListe"] == null)
+                //{ }
+                //else
+                //{ m.listele(); }
             }
             else
             {
                 ekle();
-                if (Application.OpenForms["DKDListe"] == null)
-                { }
-                else
-                { m.listele(); }
+                //if (Application.OpenForms["DKDListe"] == null)
+                //{ }
+                //else
+                //{ m.listele(); }
             }
 
-           
+            MessageBox.Show("İşlem başarılı!");
         }
 
         void temizle()
@@ -173,7 +173,8 @@ namespace mKYS.Dokuman
                 else
                 {
                     path = txt_kod.Text + "-" + txt_tarih.Text + ".pdf";
-                    File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                   // File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+                    File.Copy(name, Path.Combine("\\\\DESKTOP-UCOU692\\Dokuman" , path), true);
                 }
             }
             else

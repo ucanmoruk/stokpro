@@ -70,20 +70,49 @@ namespace mKYS.Numune
         }
 
         public static string raporID, raporNo, x5ID, limit, birim, sonuc, degerlendirme;
+        int kontrolet;
 
+        private void durumekle()
+        {
+            DateTime tarih = DateTime.Now;
+            SqlCommand add = new SqlCommand("insert into NumuneDurum (RaporNo, Durum, Kim) values (@o1, @o3,@o4) ; " +
+                " insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
+            add.Parameters.AddWithValue("@o1", raporNo);
+            add.Parameters.AddWithValue("@o2", tarih);
+            add.Parameters.AddWithValue("@o3", "Analiz Sonuçları Girildi!");
+            add.Parameters.AddWithValue("@o4", Giris.kullaniciID);
+            add.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+        void kontrol()
+        {
+            SqlCommand komut = new SqlCommand(@"select Count(ID) from Numunex5 where X2ID in (select ID from NumuneX2 where RaporID = '" + raporID + "') and Durum = 'Analizde'", bgl.baglanti());
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                kontrolet = Convert.ToInt32(dr[0].ToString());
+            }
+            dr.Close();
+            bgl.baglanti().Close();
+        }
+
+        string analiz;
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //kaydet
 
             for (int i = 0; i <= gridView1.RowCount - 1; i++)
-            {
+            //for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
                 x5ID = gridView1.GetRowCellValue(i, "x5ID").ToString();
                 limit = gridView1.GetRowCellValue(i, "Limit").ToString();
                 birim = gridView1.GetRowCellValue(i, "Birim").ToString();
                 sonuc = gridView1.GetRowCellValue(i, "Sonuc").ToString();
+                analiz = gridView1.GetRowCellValue(i, "Analiz").ToString();
                 degerlendirme = gridView1.GetRowCellValue(i, "Degerlendirme").ToString();
 
-
+               
                 SqlCommand add = new SqlCommand("update NumuneX5 set Limit=@o1 , Birim =@o2, Sonuc=@o3, Degerlendirme=@o4, Durum=@o5 where ID = '"+x5ID+"' ", bgl.baglanti()) { CommandTimeout = 0 };
                 add.Parameters.AddWithValue("@o1", limit);
                 add.Parameters.AddWithValue("@o2", birim);
@@ -92,9 +121,31 @@ namespace mKYS.Numune
                 add.Parameters.AddWithValue("@o5", "Sonuç Girildi");
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
+
+                string analizdurum = analiz + " sonucu girildi.";
+                DateTime tarih = DateTime.Now;
+                SqlCommand add2 = new SqlCommand("insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", raporNo);
+                add2.Parameters.AddWithValue("@o2", tarih);
+                add2.Parameters.AddWithValue("@o3", analizdurum);
+                add2.Parameters.AddWithValue("@o4", Giris.kullaniciID);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
             }
 
             MessageBox.Show("Kaydetme Başarılı");
+
+            //kontrol();
+            //if (kontrolet == 0)
+            //{
+            //    durumekle();
+            //}
+            //else
+            //{
+
+            //}
+            
 
             listele();
         }

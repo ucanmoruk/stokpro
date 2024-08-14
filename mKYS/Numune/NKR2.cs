@@ -545,6 +545,7 @@ namespace mKYS
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle(); 
             Rapor1.raporno = raporNo;
             tReportx2.raporno = raporNo;
             // mNiS.Raporlar.RaporSonuc.raporno = raporNo;
@@ -581,15 +582,15 @@ namespace mKYS
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Numune.NumuneDurum.gelis = raporNo;
-            //Numune.NumuneDurum nd = new Numune.NumuneDurum();
-            //nd.Show();
+            Numune.NumuneDurum.gelis = raporNo;
+            Numune.NumuneDurum nd = new Numune.NumuneDurum();
+            nd.Show();
 
             //denetim
 
-            Numune.NumDurum.raporno = raporNo;
-            Numune.NumDurum nd = new Numune.NumDurum();
-            nd.Show();
+            //Numune.NumDurum.raporno = raporNo;
+            //Numune.NumDurum nd = new Numune.NumDurum();
+            //nd.Show();
         }
 
         private void txt_arama_TextChanged(object sender, EventArgs e)
@@ -644,7 +645,7 @@ namespace mKYS
             //    frm.RaporCoklu();
             //    frm.ShowDialog();
             //}
-
+            durumekle();
 
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
@@ -673,6 +674,8 @@ namespace mKYS
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle();
+
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -715,6 +718,7 @@ namespace mKYS
         string name;
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle();
             //türkçe challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
@@ -750,6 +754,8 @@ namespace mKYS
         string miktar;
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle();
+
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -781,6 +787,7 @@ namespace mKYS
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle();
             //ingilizce challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
@@ -820,7 +827,7 @@ namespace mKYS
         private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //ingilizce tekstil
-
+            durumekle();
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -877,6 +884,17 @@ namespace mKYS
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
+                DateTime tarih = DateTime.Now;
+                SqlCommand add = new SqlCommand("insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
+                add.Parameters.AddWithValue("@o1", nkrno);
+                add.Parameters.AddWithValue("@o2", tarih);
+                add.Parameters.AddWithValue("@o3", "Numune imha edildi!");
+                add.Parameters.AddWithValue("@o4", Giris.kullaniciID);
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+
+
             }
 
             MessageBox.Show("Başarılı!");
@@ -888,6 +906,7 @@ namespace mKYS
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //türkçe stabilite
+            durumekle();
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -928,6 +947,7 @@ namespace mKYS
 
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            durumekle();
             //ingilizce stabiliy
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
@@ -1025,6 +1045,7 @@ namespace mKYS
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //türkçe rapor
+            durumekle();
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
                 id = gridView3.GetSelectedRows()[i].ToString();
@@ -1224,5 +1245,23 @@ namespace mKYS
 
 
         }
+
+
+        private void durumekle()
+        {
+            DateTime tarih = DateTime.Now;
+            SqlCommand add = new SqlCommand("insert into NumuneDurum (RaporNo, Durum, Kim) values (@o1, @o3,@o4) ; " +
+                " insert into NumuneTeslim (RaporNo,Tarih, Durum, Kim) values (@o1, @o2, @o3,@o4)", bgl.baglanti());
+            add.Parameters.AddWithValue("@o1", raporNo);
+            add.Parameters.AddWithValue("@o2", tarih);
+            add.Parameters.AddWithValue("@o3", "Rapor yazdırıldı!");
+            add.Parameters.AddWithValue("@o4", Giris.kullaniciID);
+            add.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+
+
+
     }
 }
